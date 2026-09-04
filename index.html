@@ -331,15 +331,59 @@
             "VR", "VSR", "WO", "X - Special", "X Rare", "XR", "XVR", "ZR", "Ungewöhnlich"
         ];
 
-        // --- Core Application State & LocalStorage Caching ---
+        // --- IndexedDB Helper Registry for Large Metadata ---
+        function openDatabase() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open('TCG_Sim_DB', 1);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains('cache')) {
+                        db.createObjectStore('cache');
+                    }
+                };
+            });
+        }
+
+        async function saveMasterDataToIDB(data) {
+            const db = await openDatabase();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction('cache', 'readwrite');
+                const store = transaction.objectStore('cache');
+                const request = store.put(data, 'master_data_cache');
+                request.onsuccess = () => resolve(true);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        async function loadMasterDataFromIDB() {
+            const db = await openDatabase();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction('cache', 'readonly');
+                const store = transaction.objectStore('cache');
+                const request = store.get('master_data_cache');
+                request.onsuccess = () => resolve(request.result || []);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        // --- Core Application State ---
         let scriptUrl = localStorage.getItem('gs_script_url') || 'https://script.google.com/macros/s/AKfycbxjDEVLYkV36bDuP4nuBe8Js52Y3LD71Av8TlVmQTxs3mBKrqQUloafkD-IAwCfMTpG/exec';
         document.getElementById('script-url').value = scriptUrl;
 
-        let masterData = JSON.parse(localStorage.getItem('master_data_cache')) || [];
+        let masterData = [];
         let userPulls = JSON.parse(localStorage.getItem('user_pulls_cache')) || {}; 
         let pullQueue = []; 
 
-        window.onload = function() {
+        window.onload = async function() {
+            try {
+                masterData = await loadMasterDataFromIDB();
+            } catch (err) {
+                console.error("Failed to load from IndexedDB", err);
+                masterData = [];
+            }
+
             if (scriptUrl && masterData.length === 0) {
                 refreshMasterDataCache();
             } else if (masterData.length > 0) {
@@ -372,7 +416,7 @@
                 
                 if (data.success) {
                     masterData = data.rows; 
-                    localStorage.setItem('master_data_cache', JSON.stringify(masterData));
+                    await saveMasterDataToIDB(masterData);
                     populateFranchises();
                     setStatus("Metadata updated successfully.");
                 } else {
