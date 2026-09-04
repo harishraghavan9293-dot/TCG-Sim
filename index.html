@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Collector's Field Journal</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{
+        %22name%22: %22Card Collector Field Journal%22,
+        %22short_name%22: %22CardJournal%22,
+        %22start_url%22: %22./index.html%22,
+        %22display%22: %22standalone%22,
+        %22background_color%22: %22#f4f1ea%22,
+        %22theme_color%22: %22#4a3b32%22,
+        %22icons%22: []
+    }">
+
+    <!-- Fonts: Architect's Daughter for handwritten accents, Special Elite/Courier for typewritten elements -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Special+Elite&family=Courier+Prime&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f4f1ea;
+            --paper-line: #dcd6cc;
+            --ink-color: #2b2b2b;
+            --accent-red: #8b3a3a;
+            --accent-blue: #2c4c5e;
+            --border-binder: #4a3b32;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--ink-color);
+            font-family: 'Courier Prime', monospace;
+            margin: 0;
+            padding: 10px;
+            background-image: linear-gradient(var(--paper-line) 1px, transparent 1px);
+            background-size: 100% 28px;
+        }
+
+        h1, h2, h3, .handwritten {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .typewriter {
+            font-family: 'Special Elite', monospace;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px double var(--border-binder);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--accent-red);
+            margin: 0;
+        }
+
+        /* Setup / Config Panel */
+        .config-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px dashed var(--border-binder);
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .config-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, button {
+            font-family: 'Courier Prime', monospace;
+            padding: 6px 10px;
+            border: 1px solid var(--border-binder);
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        button {
+            background: var(--border-binder);
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background: #e2dbcc;
+            border: 1px solid var(--border-binder);
+            border-bottom: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .tab-btn.active {
+            background: var(--bg-color);
+            border-bottom: 2px solid var(--bg-color);
+            font-weight: bold;
+            color: var(--accent-red);
+        }
+
+        .tab-content {
+            display: none;
+            border: 2px solid var(--border-binder);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            min-height: 400px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Card Grids Responsive Layouts */
+        .card-grid {
+            display: grid;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Laptop: 5 cards */
+        @media (min-width: 1024px) {
+            .card-grid { grid-template-columns: repeat(5, 1fr); }
+        }
+        /* Tablet: 3 cards */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .card-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        /* Mobile: 2 cards */
+        @media (max-width: 639px) {
+            .card-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .card-slot {
+            border: 2px dashed var(--border-binder);
+            background: #fff;
+            padding: 8px;
+            text-align: center;
+            border-radius: 4px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .card-slot.pulled {
+            border: 2px solid var(--border-binder);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-slot img {
+            max-width: 100%;
+            height: 130px;
+            object-fit: contain;
+            background: #eee;
+        }
+
+        .card-info {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        /* Set Tracker Stats Panel */
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            border: 1px solid var(--border-binder);
+            padding: 10px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--accent-blue);
+        }
+
+        /* Sync Status Indicator */
+        #sync-status {
+            font-size: 0.85rem;
+            font-style: italic;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="handwritten">Card Collector's Field Journal</h1>
+        <p class="typewriter">Interactive Archival Ledger & Pack Simulator v1.1</p>
+    </header>
+
+    <!-- Global Setup Configuration -->
+    <div class="config-panel">
+        <div class="config-row">
+            <label class="typewriter">Google Web App URL:</label>
+            <input type="text" id="script-url" placeholder="Paste Apps Script Web App URL here" style="flex: 2;">
+            <button onclick="saveScriptUrl()">Save URL</button>
+        </div>
+        <div class="config-row">
+            <label class="typewriter">Franchise:</label>
+            <select id="franchise-select" onchange="onFranchiseChange()">
+                <option value="">-- Select Franchise --</option>
+            </select>
+
+            <label class="typewriter">Set Name:</label>
+            <select id="set-select" onchange="onSetChange()">
+                <option value="">-- Select Set --</option>
+            </select>
+
+            <button onclick="refreshMasterDataCache()" title="Refresh MasterData from Sheet">🔄 Refresh Metadata</button>
+            <span id="sync-status">Status: Ready</span>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <div class="tab-btn active" onclick="switchTab('opener')">📦 Pack Opener</div>
+        <div class="tab-btn" onclick="switchTab('journal')">📖 Journal Binder</div>
+        <div class="tab-btn" onclick="switchTab('tracker')">📊 Set Tracker</div>
+    </div>
+
+    <!-- Tab 1: Pack Opener -->
+    <div id="tab-opener" class="tab-content active">
+        <h2 class="handwritten">Pack Opening Chamber</h2>
+        <p class="typewriter">Open 10-card booster packs distributed according to rarity weights. Pulls queue automatically for batch sync.</p>
+        <button onclick="openBoosterPack()" style="font-size: 1.2rem; padding: 10px 20px; margin-bottom: 15px;">✨ Open 10-Card Pack</button>
+        <div id="pack-results" class="card-grid">
+            <p class="typewriter" style="grid-column: 1/-1; text-align: center;">No pack opened yet. Select a set and open your first booster!</p>
+        </div>
+    </div>
+
+    <!-- Tab 2: Journal -->
+    <div id="tab-journal" class="tab-content">
+        <h2 class="handwritten">Collected Journal & Variants</h2>
+        <p class="typewriter">Normal cards are directly followed by their Reverse Holo/Variant counterparts (RH prefix matching card numbers).</p>
+        <div id="journal-grid" class="card-grid">
+            <p class="typewriter" style="grid-column: 1/-1; text-align: center;">Select a set to review your binder pages.</p>
+        </div>
+    </div>
+
+    <!-- Tab 3: Set Tracker -->
+    <div id="tab-tracker" class="tab-content">
+        <h2 class="handwritten">Set Analytics & Statistics</h2>
+        <div class="stats-box" id="tracker-stats">
+            <div class="stat-card"><h3>Completion</h3><p id="stat-completion">0%</p></div>
+            <div class="stat-card"><h3>Unique Cards</h3><p id="stat-unique">0 / 0</p></div>
+            <div class="stat-card"><h3>Total Pulled Qty</h3><p id="stat-total-qty">0</p></div>
+            <div class="stat-card"><h3>Variants Found</h3><p id="stat-variants">0</p></div>
+        </div>
+        <h3 class="handwritten">Master Inventory Listing</h3>
+        <div id="tracker-list" style="max-height: 300px; overflow-y: auto;">
+            <p class="typewriter">Select a set to view raw stats breakdown.</p>
+        </div>
+    </div>
+
+    <script>
+        // Master Rarity List Reference Registry
+        const MASTER_RARITIES = [
+            "10th RRR", "10th SEC", "10th SP", "15thSP", "1st", "Action Point", "Action Point 1-Star", "Alpha Rare", "ALT ART", 
+            "Alternate Art Common", "Alternate Art Rare", "Alternate Art Secret Rare", "Alternate Art Ultra Rare", "Alternate Art Uncommon", 
+            "Anniversary", "Anniversary Rare", "AoButa Rare", "AR", "Argent Rare", "ASR", "Avatar Rare", "Awesome Rare", "AxO", 
+            "Bakugan Elite", "Band Rare", "BanG Dream Rare", "Basic", "BR", "Bronze", "BSR", "C", "C+", "C++", "Chainsaw Man Rare", 
+            "Character", "Character Alternate Art Rare", "Character Card", "Character Common", "Character Common Alternate Art", 
+            "Character Extra Rare", "Character Rare", "Character Rare Alternate Art", "Character Super Rare", "Character Super Rare Alternate Art", 
+            "Character Ultra Rare", "Character Ultra Rare Alternate Art", "Character Uncommon", "Chase", "Chrome Rare", "Climax Common", 
+            "Climax Rare", "Collaboration Rare", "Collaboration X Rare", "Collector Promo", "Collector Super Rare", "Collector Ultra Rare", 
+            "Common", "COMMON (Alt)", "Common 1-Star", "Common 2-Star", "Common Extra Rare", "Commune", "Comune", "CR", "Cross Rare", 
+            "DANDADAN Rare", "DB", "Deadly Sin Rare", "Deculture Rare", "DiR", "Double Frame Rare", "Double Rare", "Double Rare Plus", 
+            "DR", "DSR", "Elite", "Enchanted", "Enchantée", "English Exclusive", "ENR", "Epic", "Epica", "Épique", "Episch", "ER", 
+            "EVA SAGA", "EX", "EXC", "Exceptional", "EXP", "EXRRR", "EXS", "Extra Rare", "Extra Secret Rare", "F - Fomo", "Fabled", 
+            "Festival Parallel", "FFR", "Foil Premium", "FR", "Frame Rare", "Fujimi Fantasia Bunko Rare", "Genesis Extra Rare", 
+            "Gewöhnlich", "Gift Marker", "Girls Band Cry Rare", "Gold", "GR", "Gun Gale Rare", "H", "H - Hero", "Hanayome Rare", 
+            "Harmony Rare", "Hero", "Hidden Rare", "High Rare", "Holo Common", "Holo Double Rare", "Holo Portrait Premium", "Holo Rare", 
+            "Holo Uncommon", "Hololive Parallel", "Holomem Rare", "Iconic", "Iconic Art", "Iconic Legend", "Iconic Other", "Iconic Rare", 
+            "Iconic Secret", "Iconica", "Iconique", "IGR", "Ikonisch", "IMR", "Incantata", "Inhabituelle", "IR", "Itsutsugo Parallel", 
+            "JoJo Rare", "Kaguya Rare", "Kessoku Band Rare", "KR", "L", "LC", "LEADER", "LEADER (Alt)", "Legend", "Legend Rare", 
+            "Légendaire", "Legendär", "Legendary", "Leggendaria", "Lesson", "LGR", "LGRR", "LGRRR", "LGTR", "Lico Rico Rare", "LIR", 
+            "LR", "LR+", "LR++", "LRP", "LSP", "LSR", "LycoReco Parallel", "Maid Dragon Rare", "Majestic", "MAM", "Marvel", "Marvel Rare", 
+            "Memoria", "MSP", "Mythic", "N/A", "Noble Rare", "Non comune", "None", "Normal", "OCR", "OR", "Ordinary", "ORR", "ORRR", 
+            "Oshi Common", "Oshi Super Rare", "Oshi Ultra Rare", "OSR", "Over-Frame Rare", "P", "Persona Rare", "PGS", "PI", 
+            "Pirate Booty", "Platinum Common", "Platinum Rare", "PR", "Premium", "Promo", "PROMO (Alt)", "Promo +", "Promo Plus", 
+            "Promo-Alternate Art", "Promotion", "R", "R+", "Rara", "Rare", "RARE (Alt)", "Rare 1-Star", "Rare 2-Star", "Rare Extra Rare", 
+            "RE", "RE+", "Reprint", "RGR", "RLR", "Round Table Rare", "RR", "RRR", "Ruler Rare", "RWBY Rare", "Saga Rare", "SCR", 
+            "SD", "SEC", "SECP", "Secret", "Secret Rare", "SECRET RARE (Alt)", "Secret Rare Plus", "Secret Super Rare", "Secret Uber", 
+            "Secret Ultra Rare", "SECV", "Selten", "SER", "SER+", "Serial Rare", "SFR", "SGR", "Shadow Rare", "Shana Parallel", "Showcase", 
+            "Silver", "SIR", "SKR", "SP", "Special", "Special Pack Rare", "Special Rare", "Special Yell", "Spectacle Rare", "Spy Rare", 
+            "SR", "SRP", "SSP", "SSR", "ST", "Standard", "Starlight Rare", "Starter", "Starter Exclusive", "Starter Exclusive Extra Rare", 
+            "Starter Rare", "Sub Ruler Rare", "Super Legendary", "Super Rara", "Super Rare", "SUPER RARE (Alt)", "Super Rare 1-Star", 
+            "Super Rare 2-Star", "Super Rare 3-Star", "Super Special", "Super Special Plus", "Super Special Rare", "SVR", "T", "TD", 
+            "TDR", "TGR", "TGR+", "Titan Rare", "Token", "Tokyo Revengers Rare", "TREASURE RARE", "Très Rare", "Trial Deck", "Triple Rare", 
+            "Triple Rare Plus", "TRR", "U", "U+", "Uber Rare", "UC", "Ultimate", "Ultimate Rare", "Ultra Chase", "Ultra Rare", 
+            "Ultra Rare Extra Rare", "Uncommon", "UNCOMMON (Alt)", "Uncommon 1-Star", "Uncommon 2-Star", "Uncommon 3-Star", "Uncommon Extra Rare", 
+            "Gewöhnlich", "Union Rare", "Unique", "UR", "URR", "V - Very Rare", "Variant", "VDR", "Very Rare", "Verzaubert", "Visual Rare", 
+            "VR", "VSR", "WO", "X - Special", "X Rare", "XR", "XVR", "ZR"
+        ];
+
+        // --- Core Application State & LocalStorage Caching ---
+        let scriptUrl = localStorage.getItem('gs_script_url') || '';
+        document.getElementById('script-url').value = scriptUrl;
+
+        let masterData = JSON.parse(localStorage.getItem('master_data_cache')) || [];
+        let userPulls = JSON.parse(localStorage.getItem('user_pulls_cache')) || {}; 
+        let pullQueue = []; 
+
+        window.onload = function() {
+            if (scriptUrl && masterData.length === 0) {
+                refreshMasterDataCache();
+            } else if (masterData.length > 0) {
+                populateFranchises();
+            }
+        };
+
+        function saveScriptUrl() {
+            scriptUrl = document.getElementById('script-url').value.trim();
+            localStorage.setItem('gs_script_url', scriptUrl);
+            alert("Script URL saved successfully!");
+            refreshMasterDataCache();
+        }
+
+        async function refreshMasterDataCache() {
+            if (!scriptUrl) {
+                alert("Please provide and save your Google Apps Script Web App URL first.");
+                return;
+            }
+            setStatus("Fetching MasterData from Sheet...");
+            
+            try {
+                // Using no-cors mode prevents the browser from blocking the opaque response, 
+                // but since we need to read JSON text, we can use a standard fetch with a redirect mode or fallback to a textarea importer if needed.
+                const targetUrl = `${scriptUrl}?action=getMasterData&t=${new Date().getTime()}`;
+                
+                // Note: Google Apps Script GET requests sometimes require redirect following
+                const response = await fetch(targetUrl, { redirect: 'follow' });
+                const textData = await response.text();
+                
+                let data;
+                try {
+                    data = JSON.parse(textData);
+                } catch (parseErr) {
+                    throw new Error("Received non-JSON response (likely blocked or redirected to HTML login).");
+                }
+                
+                if (data.success) {
+                    masterData = data.rows; 
+                    localStorage.setItem('master_data_cache', JSON.stringify(masterData));
+                    populateFranchises();
+                    setStatus("Metadata updated successfully.");
+                } else {
+                    alert("Error fetching data: " + data.message);
+                    setStatus("Fetch failed.");
+                }
+            } catch (err) {
+                console.warn(err);
+                
+                // Fallback: If browser security blocks local file fetching entirely, 
+                // allow pasting the raw JSON payload directly for offline/local testing
+                const manualJson = prompt("CORS blocked direct fetch from local file. If you have the JSON from your browser tab, paste it here, or click Cancel:");
+                if (manualJson) {
+                    try {
+                        const data = JSON.parse(manualJson);
+                        if (data.success) {
+                            masterData = data.rows;
+                            localStorage.setItem('master_data_cache', JSON.stringify(masterData));
+                            populateFranchises();
+                            setStatus("Metadata loaded manually.");
+                            return;
+                        }
+                    } catch (e) {
+                        alert("Invalid JSON pasted.");
+                    }
+                }
+
+                alert("Network error fetching MasterData. Local file previews block Google's redirect. Try opening this file via a local server app or hosting on GitHub Pages.");
+                setStatus("Network error.");
+            }
+        }
+
+        function setStatus(msg) {
+            document.getElementById('sync-status').innerText = "Status: " + msg;
+        }
+
+        function populateFranchises() {
+            const franchiseSelect = document.getElementById('franchise-select');
+            franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
+            const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
+            
+            franchises.forEach(f => {
+                const opt = document.createElement('option');
+                opt.value = f;
+                opt.textContent = f;
+                franchiseSelect.appendChild(opt);
+            });
+            restoreSelections();
+        }
+
+        function onFranchiseChange() {
+            const franchise = document.getElementById('franchise-select').value;
+            const setSelect = document.getElementById('set-select');
+            setSelect.innerHTML = '<option value="">-- Select Set --</option>';
+            
+            if (!franchise) return;
+
+            const sets = [...new Set(masterData.filter(i => i.Franchise === franchise).map(i => i.SetName))].filter(Boolean);
+            sets.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s;
+                opt.textContent = s;
+                setSelect.appendChild(opt);
+            });
+            saveSelections();
+        }
+
+        function onSetChange() {
+            saveSelections();
+            renderActiveTab();
+        }
+
+        function saveSelections() {
+            localStorage.setItem('selected_franchise', document.getElementById('franchise-select').value);
+            localStorage.setItem('selected_set', document.getElementById('set-select').value);
+        }
+
+        function restoreSelections() {
+            const f = localStorage.getItem('selected_franchise');
+            const s = localStorage.getItem('selected_set');
+            if (f) {
+                document.getElementById('franchise-select').value = f;
+                onFranchiseChange();
+                if (s) {
+                    document.getElementById('set-select').value = s;
+                    renderActiveTab();
+                }
+            }
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            renderActiveTab();
+        }
+
+        function renderActiveTab() {
+            const activeTabId = document.querySelector('.tab-content.active').id;
+            if (activeTabId === 'tab-journal') renderJournal();
+            if (activeTabId === 'tab-tracker') renderTracker();
+        }
+
+        // --- Rarity Tier Classifier & Pack Opener Logic ---
+        function getRarityTier(rarityName) {
+            if (!rarityName) return 'common';
+            const r = rarityName.toLowerCase();
+            if (r.includes('sec') || r.includes('secret') || r.includes('alt art') || r.includes('alternate art') || r.includes('ghost') || r.includes('enchanted')) {
+                return 'secret';
+            }
+            if (r.includes('rare') || r.includes('rr') || r.includes('sr') || r.includes('ur') || r.includes('sp') || r.includes('ssr') || r.includes('hr') || r.includes('chase')) {
+                return 'rare';
+            }
+            if (r.includes('uncommon') || r.includes('uc') || r.includes('inhabituelle')) {
+                return 'uncommon';
+            }
+            return 'common';
+        }
+
+        function openBoosterPack() {
+            const setVal = document.getElementById('set-select').value;
+            const franchiseVal = document.getElementById('franchise-select').value;
+            if (!setVal) {
+                alert("Please select a Franchise and Set first!");
+                return;
+            }
+
+            const setCards = masterData.filter(i => i.Franchise === franchiseVal && i.SetName === setVal);
+            if (setCards.length === 0) {
+                alert("No cards found for this set in MasterData.");
+                return;
+            }
+
+            // Categorize set cards by tiers
+            const tiers = { common: [], uncommon: [], rare: [], secret: [] };
+            setCards.forEach(card => {
+                const tier = getRarityTier(card.Rarity);
+                tiers[tier].push(card);
+            });
+
+            // Fallback if a set only contains specific tiers
+            Object.keys(tiers).forEach(t => {
+                if (tiers[t].length === 0) tiers[t] = setCards;
+            });
+
+            // Booster Pack Distribution: 6 Commons, 2 Uncommons, 1 Rare, 1 Premium/Rare+ slot
+            let distribution = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', Math.random() > 0.8 ? 'secret' : 'rare'];
+            let pulledThisPack = [];
+
+            distribution.forEach(tierKey => {
+                const pool = tiers[tierKey];
+                const randIndex = Math.floor(Math.random() * pool.length);
+                pulledThisPack.push(pool[randIndex]);
+            });
+
+            const resultsContainer = document.getElementById('pack-results');
+            resultsContainer.innerHTML = '';
+            const now = new Date().toISOString();
+
+            pulledThisPack.forEach(card => {
+                const cardKey = `${card.Franchise}_${card.SetName}_${card.CardNumber}_${card.Variant || 'Normal'}`;
+                userPulls[cardKey] = (userPulls[cardKey] || 0) + 1;
+
+                pullQueue.push({
+                    LastPulled: now,
+                    Franchise: card.Franchise,
+                    SetName: card.SetName,
+                    CardNumber: card.CardNumber,
+                    CardName: card.CardName,
+                    Rarity: card.Rarity,
+                    Variant: card.Variant || 'Normal',
+                    Qty: 1
+                });
+
+                const slot = document.createElement('div');
+                slot.className = 'card-slot pulled';
+                slot.innerHTML = `
+                    <img src="${card.ImageURL || ''}" alt="${card.CardName}" onerror="this.src='data:image/svg+xml;utf8/<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%23ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'%23666\'>No Image</text></svg>'">
+                    <div class="card-info">
+                        <strong>#${card.CardNumber}</strong> ${card.CardName}<br>
+                        <span style="color:var(--accent-red);">${card.Rarity}</span> | <em>${card.Variant || 'Normal'}</em>
+                    </div>
+                `;
+                resultsContainer.appendChild(slot);
+            });
+
+            localStorage.setItem('user_pulls_cache', JSON.stringify(userPulls));
+            syncPullQueueBatch();
+        }
+
+        async function syncPullQueueBatch() {
+            if (!scriptUrl || pullQueue.length === 0) return;
+            const batchToSend = [...pullQueue];
+            pullQueue = []; 
+
+            try {
+                setStatus("Syncing pulls to Google Sheet...");
+                await fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'recordPulls', pulls: batchToSend })
+                });
+                setStatus("Pulls synced successfully.");
+            } catch (err) {
+                console.error("Batch sync failed, requeueing", err);
+                pullQueue = batchToSend.concat(pullQueue);
+                setStatus("Sync failed, will retry.");
+            }
+        }
+
+        function renderJournal() {
+            const setVal = document.getElementById('set-select').value;
+            const franchiseVal = document.getElementById('franchise-select').value;
+            const grid = document.getElementById('journal-grid');
+            grid.innerHTML = '';
+
+            if (!setVal) {
+                grid.innerHTML = '<p class="typewriter" style="grid-column: 1/-1; text-align: center;">Please select a set to inspect binder pages.</p>';
+                return;
+            }
+
+            const setCards = masterData.filter(i => i.Franchise === franchiseVal && i.SetName === setVal);
+            setCards.sort((a, b) => a.CardNumber.localeCompare(b.CardNumber, undefined, {numeric: true}));
+
+            setCards.forEach(card => {
+                const variantName = card.Variant || 'Normal';
+                const cardKey = `${card.Franchise}_${card.SetName}_${card.CardNumber}_${variantName}`;
+                const qty = userPulls[cardKey] || 0;
+                const isPulled = qty > 0;
+
+                const slot = document.createElement('div');
+                slot.className = `card-slot ${isPulled ? 'pulled' : ''}`;
+                
+                if (isPulled) {
+                    slot.innerHTML = `
+                        <img src="${card.ImageURL || ''}" alt="${card.CardName}">
+                        <div class="card-info">
+                            <strong>#${card.CardNumber}</strong> ${card.CardName}<br>
+                            <small>${card.Rarity} [${variantName}]</small><br>
+                            <span style="color:var(--accent-blue)">Qty: ${qty}</span>
+                        </div>
+                    `;
+                } else {
+                    slot.innerHTML = `
+                        <div style="flex:1; display:flex; align-items:center; justify-content:center; color:#888;" class="typewriter">
+                            [ Slot Empty ]
+                        </div>
+                        <div class="card-info">
+                            <strong>#${card.CardNumber}</strong> ${card.CardName}<br>
+                            <small>${card.Rarity} (${variantName})</small>
+                        </div>
+                    `;
+                }
+                grid.appendChild(slot);
+            });
+        }
+
+        function renderTracker() {
+            const setVal = document.getElementById('set-select').value;
+            const franchiseVal = document.getElementById('franchise-select').value;
+            
+            if (!setVal) return;
+
+            const setCards = masterData.filter(i => i.Franchise === franchiseVal && i.SetName === setVal);
+            const totalUniqueSlots = setCards.length;
+            
+            let uniqueFound = 0;
+            let totalQtyPulled = 0;
+            let variantsFoundCount = 0;
+
+            setCards.forEach(card => {
+                const variantName = card.Variant || 'Normal';
+                const cardKey = `${card.Franchise}_${card.SetName}_${card.CardNumber}_${variantName}`;
+                const q = userPulls[cardKey] || 0;
+                if (q > 0) {
+                    uniqueFound++;
+                    totalQtyPulled += q;
+                    if (card.Variant && card.Variant.includes('RH')) {
+                        variantsFoundCount++;
+                    }
+                }
+            });
+
+            const completionPct = totalUniqueSlots > 0 ? ((uniqueFound / totalUniqueSlots) * 100).toFixed(1) : 0;
+
+            document.getElementById('stat-completion').innerText = completionPct + '%';
+            document.getElementById('stat-unique').innerText = `${uniqueFound} / ${totalUniqueSlots}`;
+            document.getElementById('stat-total-qty').innerText = totalQtyPulled;
+            document.getElementById('stat-variants').innerText = variantsFoundCount;
+
+            const listContainer = document.getElementById('tracker-list');
+            listContainer.innerHTML = `<table style="width:100%; border-collapse: collapse; font-size: 0.85rem;" class="typewriter">
+                <tr style="border-bottom: 1px solid var(--border-binder); text-align: left;">
+                    <th>Number</th><th>Card Name</th><th>Rarity</th><th>Variant</th><th>Owned Qty</th>
+                </tr>
+            ` + setCards.map(c => {
+                const v = c.Variant || 'Normal';
+                const k = `${c.Franchise}_${c.SetName}_${c.CardNumber}_${v}`;
+                const q = userPulls[k] || 0;
+                return `<tr style="border-bottom: 1px dotted var(--paper-line);">
+                    <td>${c.CardNumber}</td><td>${c.CardName}</td><td>${c.Rarity}</td><td>${v}</td><td><strong>${q}</strong></td>
+                </tr>`;
+            }).join('') + `</table>`;
+        }
+
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+                self.addEventListener('install', e => self.skipWaiting());
+                self.addEventListener('activate', e => self.clients.claim());
+                self.addEventListener('fetch', e => { e.respondWith(fetch(e.request).catch(() => caches.match(e.request))); });
+            `;
+            const blob = new Blob([swCode], { type: 'text/javascript' });
+            navigator.ServiceWorker?.register(URL.createObjectURL(blob)).catch(err => console.log('SW registration failed', err));
+        }
+    </script>
+</body>
+</html>
