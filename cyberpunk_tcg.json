@@ -1,0 +1,2678 @@
+{
+  "success": true,
+  "rows": [
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Adam Smasher - Ender of Legends (Epic)",
+      "CardNumber": "B001",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714162_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Dexter DeShawn - Off the Grid (Rare)",
+      "CardNumber": "B002",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714163_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Johnny Silverhand - Rocking Renegade (Secret)",
+      "CardNumber": "B003",
+      "Rarity": "Secret",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714164_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Royce - Psycho on the Edge (Rare)",
+      "CardNumber": "B004",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714165_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "V - Streetkid (a)",
+      "CardNumber": "B005a",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714166_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "V - Streetkid (b)",
+      "CardNumber": "B005b",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714167_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "6th Street Recruits",
+      "CardNumber": "B006",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714168_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Animals Wrecker",
+      "CardNumber": "B007",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714169_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Chrome Fang",
+      "CardNumber": "B008",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714170_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "El Sombreron - La Venganza Lenta",
+      "CardNumber": "B009",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714171_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Japantown Jonin",
+      "CardNumber": "B010",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714172_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Johnny Silverhand - Never Stop Fighting (Epic)",
+      "CardNumber": "B011",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714173_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Kerry Eurodyne - The Last Rockerboy",
+      "CardNumber": "B012",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714174_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "La Llorona - Ghost of the Past",
+      "CardNumber": "B013",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714175_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Meredith Stout - Stone Cold Corpo",
+      "CardNumber": "B014",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714176_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Octant",
+      "CardNumber": "B015",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714177_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Royce - Don't Call Me Simon",
+      "CardNumber": "B016",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714178_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Ruthless Lowlife",
+      "CardNumber": "B017",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714179_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Screw - Lovelorn Fool",
+      "CardNumber": "B018",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714180_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Swordwise Huscle",
+      "CardNumber": "B019",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714181_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "V - Roamer of the Badlands",
+      "CardNumber": "B020",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714182_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Valentino Guerrera",
+      "CardNumber": "B021",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714183_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Yorinobu Arasaka - Steel Dragon",
+      "CardNumber": "B022",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714184_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Arasaka Emergency Radioport",
+      "CardNumber": "B023",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714185_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Deadman Transmitter",
+      "CardNumber": "B024",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714186_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Mantis Blades",
+      "CardNumber": "B025",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714187_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Satori - Sword of Saburo",
+      "CardNumber": "B026",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714188_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "All is Lost",
+      "CardNumber": "B027",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714189_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Appetite for Destruction",
+      "CardNumber": "B028",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714190_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Bonnie and Clyde",
+      "CardNumber": "B029",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714191_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Carnage at the Colosseum",
+      "CardNumber": "B030",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714192_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Detonate",
+      "CardNumber": "B031",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714193_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Gunpoint Diplomacy",
+      "CardNumber": "B032",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714194_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Industrial Assembly",
+      "CardNumber": "B033",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714195_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Over the Edge",
+      "CardNumber": "B034",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714196_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Shattered Memories",
+      "CardNumber": "B035",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714197_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Dum Dum - Maelstrom Triggerman (Rare)",
+      "CardNumber": "B036",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714198_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Kerry Eurodyne - Axe, Attitude, Audience (Rare)",
+      "CardNumber": "B037",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714199_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Muamar Reyes - El Capitan (Rare)",
+      "CardNumber": "B038",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714200_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "River Ward - Detective on the Hunt (Rare)",
+      "CardNumber": "B039",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714201_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rogue Amendiares - Preem Solo (Rare)",
+      "CardNumber": "B040",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714202_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Adam Smasher - Metal Over Meat (Epic)",
+      "CardNumber": "B041",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714203_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Alt Cunningham - Mother of Daemons (Rare)",
+      "CardNumber": "B042",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714204_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Augmented Negotiators",
+      "CardNumber": "B043",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714205_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Caliber - Totentanz's Top Dog",
+      "CardNumber": "B044",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714206_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Gilded Maton",
+      "CardNumber": "B045",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714207_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Hanako Arasaka - In a Gilded Cage (Rare)",
+      "CardNumber": "B046",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714208_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Heywood Ripperdoc",
+      "CardNumber": "B047",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714209_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Jackie Welles - Ride or Die Choom",
+      "CardNumber": "B048",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714210_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Maelstrom Goons",
+      "CardNumber": "B049",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714211_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "MaxTac Suppression Team",
+      "CardNumber": "B050",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714212_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Offduty Malfini",
+      "CardNumber": "B051",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714213_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rockn' Rockerboy",
+      "CardNumber": "B052",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714214_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Secondhand Bombus",
+      "CardNumber": "B053",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714215_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sketchy Ripper",
+      "CardNumber": "B054",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714216_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "T-Bug - Amateur Philosopher",
+      "CardNumber": "B055",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Trauma Team Operatives",
+      "CardNumber": "B056",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714218_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Viktor Vektor - Drop Your Illusions",
+      "CardNumber": "B057",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714219_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Viktor Vektor - You Might Feel a Little Pinch",
+      "CardNumber": "B058",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Adrenaline Converter",
+      "CardNumber": "B059",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714221_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Gorilla Arms",
+      "CardNumber": "B060",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714222_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Kiroshi Optics",
+      "CardNumber": "B061",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714223_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Mandibular Upgrade",
+      "CardNumber": "B062",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714224_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "The Relic - Experimental Biochip (Epic)",
+      "CardNumber": "B063",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714225_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Zetatech Faceplate",
+      "CardNumber": "B064",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714226_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Afterparty at Lizzie's",
+      "CardNumber": "B065",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714227_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Bootleg Black Sapphire Show",
+      "CardNumber": "B066",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714228_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Cyberpsychosis",
+      "CardNumber": "B067",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714229_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Live with the Aftermath",
+      "CardNumber": "B068",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714230_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Safety Override",
+      "CardNumber": "B069",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714231_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "The Heist",
+      "CardNumber": "B070",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714232_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Goro Takemura - Vengeful Bodyguard (Rare)",
+      "CardNumber": "B071",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714233_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Hanako Arasaka - Daughter of the Emperor (Rare)",
+      "CardNumber": "B072",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714234_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Jackie Welles - Mama's Favorite (Rare)",
+      "CardNumber": "B073",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714235_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Padre - Man of the Cross (Rare)",
+      "CardNumber": "B074",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714236_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Panam Palmer - Nomad Cavalry (Epic)",
+      "CardNumber": "B075",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714237_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Corpo Security",
+      "CardNumber": "B076",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714238_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Emergency Atlus",
+      "CardNumber": "B077",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714239_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Field Operator",
+      "CardNumber": "B078",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714240_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Maelstrom Zealots",
+      "CardNumber": "B079",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714241_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "MaxTac AV",
+      "CardNumber": "B080",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714242_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "MaxTac Heavy",
+      "CardNumber": "B081",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714243_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "MaxTac Squadron",
+      "CardNumber": "B082",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714244_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Nadia - Fighting Through Grief",
+      "CardNumber": "B083",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714245_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Pacifica Netrunner",
+      "CardNumber": "B084",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714246_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Panam Palmer - Strength Through Family (Secret)",
+      "CardNumber": "B085",
+      "Rarity": "Secret",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714247_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Pepe Najarro - Working Doubles",
+      "CardNumber": "B086",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714248_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Riding Nomad",
+      "CardNumber": "B087",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714249_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sandayu Oda - Hanako's Guardian (Rare)",
+      "CardNumber": "B088",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714250_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Saul Bright - Stormrider",
+      "CardNumber": "B089",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714251_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Tyger's Whisper",
+      "CardNumber": "B090",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714252_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Valentino Street Racer",
+      "CardNumber": "B091",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714253_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Wraith Marauders",
+      "CardNumber": "B092",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714254_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Overwatch - Panam's Gift (Epic)",
+      "CardNumber": "B093",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714255_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Riot Shield",
+      "CardNumber": "B094",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714256_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sandevistan",
+      "CardNumber": "B095",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714257_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Zetatech Berserk",
+      "CardNumber": "B096",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714258_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Corporate Surveillance",
+      "CardNumber": "B097",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714259_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "(Don't Fear) The Reaper",
+      "CardNumber": "B098",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714260_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Fool on the Hill",
+      "CardNumber": "B099",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714261_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Memory Relapse",
+      "CardNumber": "B100",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714262_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Peace Offering",
+      "CardNumber": "B101",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714263_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Synapse Burnout",
+      "CardNumber": "B102",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714264_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Take Control",
+      "CardNumber": "B103",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714265_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "We Gotta Live Together",
+      "CardNumber": "B104",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714266_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Wild in the Streets",
+      "CardNumber": "B105",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714267_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Alt Cunningham - Soulkiller Architect (Rare)",
+      "CardNumber": "B106",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714268_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Evelyn Parker - Beautiful Enigma (Rare)",
+      "CardNumber": "B107",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714269_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Judy Alvarez - Braindance Maestro (Epic)",
+      "CardNumber": "B108",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714270_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sasha Yakovleva - Won't Let You Down (Secret)",
+      "CardNumber": "B109",
+      "Rarity": "Secret",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714271_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Wakako Okada - Peace and Harmony (Rare)",
+      "CardNumber": "B110",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714272_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Delamain - Rideshare AI",
+      "CardNumber": "B111",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714273_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Delamain Cab",
+      "CardNumber": "B112",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714274_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Evelyn Parker - Scheming Siren",
+      "CardNumber": "B113",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714275_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Hacked Corpo",
+      "CardNumber": "B114",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714276_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Jacked-In Voodoo Boy",
+      "CardNumber": "B115",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714277_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Judy Alvarez - Nothing to Doubt (Secret)",
+      "CardNumber": "B116",
+      "Rarity": "Secret",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714278_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Lizzy Wizzy - Delicate Weapon",
+      "CardNumber": "B117",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714279_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Maman Brigitte - Spirit of Death",
+      "CardNumber": "B118",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Misty Olszewski - Mender of Broken Spirits",
+      "CardNumber": "B119",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Modded Kusanagi",
+      "CardNumber": "B120",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Modded Muramasa",
+      "CardNumber": "B121",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714283_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Mox Inciters",
+      "CardNumber": "B122",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714284_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Placide - Voodoo Sentinel",
+      "CardNumber": "B123",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714285_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Psycho Squad",
+      "CardNumber": "B124",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714286_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rita Wheeler - No Stupid Questions",
+      "CardNumber": "B125",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714287_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rogue Amendiares - Queen of the Afterlife (Epic)",
+      "CardNumber": "B126",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714288_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Westbrook Netrunner",
+      "CardNumber": "B127",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714289_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Dying Night - V's Pistol",
+      "CardNumber": "B128",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714290_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "NetWatch Netdriver",
+      "CardNumber": "B129",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714291_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Tetratronic Rippler",
+      "CardNumber": "B130",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714292_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Chrome Reverie",
+      "CardNumber": "B131",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714293_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Floor It",
+      "CardNumber": "B132",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714294_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Les Elemens",
+      "CardNumber": "B133",
+      "Rarity": "Uncommon",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714295_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Nocturne OP55 N1",
+      "CardNumber": "B134",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714296_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Pyramid Song",
+      "CardNumber": "B135",
+      "Rarity": "Rare",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714297_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Reboot Optics",
+      "CardNumber": "B136",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714298_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Three Mouths, One Desire",
+      "CardNumber": "B137",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714299_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Towerfall (Epic)",
+      "CardNumber": "B138",
+      "Rarity": "Epic",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714300_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Trust No One",
+      "CardNumber": "B139",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714301_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Unlikely Bond",
+      "CardNumber": "B140",
+      "Rarity": "Common",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714302_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Adam Smasher - Ender of Legends (ILegend)",
+      "CardNumber": "B141",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714303_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Dexter DeShawn - Off the Grid (ILegend)",
+      "CardNumber": "B142",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714304_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Royce - Psycho on the Edge (ILegend)",
+      "CardNumber": "B143",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714305_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "V - Streetkid (ILegend)",
+      "CardNumber": "B144",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714306_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Dum Dum - Maelstrom Triggerman (ILegend)",
+      "CardNumber": "B145",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714307_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Kerry Eurodyne - Axe, Attitude, Audience (ILegend)",
+      "CardNumber": "B146",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714308_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Muamar Reyes - El Capitan (ILegend)",
+      "CardNumber": "B147",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714309_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "River Ward - Detective on the Hunt (ILegend)",
+      "CardNumber": "B148",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714310_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rogue Amendiares - Preem Solo (ILegend)",
+      "CardNumber": "B149",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714311_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Goro Takemura - Vengeful Bodyguard (ILegend)",
+      "CardNumber": "B150",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714312_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Hanako Arasaka - Daughter of the Emperor (ILegend)",
+      "CardNumber": "B151",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714313_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Jackie Welles - Mama's Favorite (ILegend)",
+      "CardNumber": "B152",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714314_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Padre - Man of the Cross (ILegend)",
+      "CardNumber": "B153",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714315_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Panam Palmer - Nomad Cavalry (ILegend)",
+      "CardNumber": "B154",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714316_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Alt Cunningham - Soulkiller Architect (ILegend)",
+      "CardNumber": "B155",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714317_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Evelyn Parker - Beautiful Enigma (ILegend)",
+      "CardNumber": "B156",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714318_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Judy Alvarez - Braindance Maestro (ILegend)",
+      "CardNumber": "B157",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714319_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Wakako Okada - Peace and Harmony (ILegend)",
+      "CardNumber": "B158",
+      "Rarity": "Iconic Legend",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714320_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Johnny Silverhand - Never Stop Fighting (IO)",
+      "CardNumber": "B159",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714321_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Adam Smasher - Metal Over Meat (IO)",
+      "CardNumber": "B160",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714322_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Alt Cunningham - Mother of Daemons (IO)",
+      "CardNumber": "B161",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714323_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Hanako Arasaka - In a Gilded Cage (IO)",
+      "CardNumber": "B162",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714324_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "The Relic - Experimental Biochip (IO)",
+      "CardNumber": "B163",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714325_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sandayu Oda - Hanako's Guardian (IO)",
+      "CardNumber": "B164",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714326_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Overwatch - Panam's Gift (IO)",
+      "CardNumber": "B165",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714327_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Rogue Amendiares - Queen of the Afterlife (IO)",
+      "CardNumber": "B166",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714328_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Towerfall (IO)",
+      "CardNumber": "B167",
+      "Rarity": "Iconic Other",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714329_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Johnny Silverhand - Rocking Renegade (ISecret)",
+      "CardNumber": "B168",
+      "Rarity": "Iconic Secret",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714330_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Sasha Yakovleva - Won't Let You Down (ISecret)",
+      "CardNumber": "B169",
+      "Rarity": "Iconic Secret",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714331_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Panam Palmer - Strength Through Family (ISecret)",
+      "CardNumber": "B170",
+      "Rarity": "Iconic Secret",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714332_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "Judy Alvarez - Nothing to Doubt (ISecret)",
+      "CardNumber": "B171",
+      "Rarity": "Iconic Secret",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714333_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Dexter DeShawn - Off the Grid (Rare)",
+      "CardNumber": "RH-B002",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714163_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Royce - Psycho on the Edge (Rare)",
+      "CardNumber": "RH-B004",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714165_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-V - Streetkid (a)",
+      "CardNumber": "RH-B005a",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714166_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-V - Streetkid (b)",
+      "CardNumber": "RH-B005b",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714167_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-6th Street Recruits",
+      "CardNumber": "RH-B006",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714168_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Animals Wrecker",
+      "CardNumber": "RH-B007",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714169_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Chrome Fang",
+      "CardNumber": "RH-B008",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714170_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-El Sombreron - La Venganza Lenta",
+      "CardNumber": "RH-B009",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714171_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Japantown Jonin",
+      "CardNumber": "RH-B010",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714172_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Kerry Eurodyne - The Last Rockerboy",
+      "CardNumber": "RH-B012",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714174_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-La Llorona - Ghost of the Past",
+      "CardNumber": "RH-B013",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714175_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Meredith Stout - Stone Cold Corpo",
+      "CardNumber": "RH-B014",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714176_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Octant",
+      "CardNumber": "RH-B015",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714177_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Royce - Don't Call Me Simon",
+      "CardNumber": "RH-B016",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714178_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Ruthless Lowlife",
+      "CardNumber": "RH-B017",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714179_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Screw - Lovelorn Fool",
+      "CardNumber": "RH-B018",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714180_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Swordwise Huscle",
+      "CardNumber": "RH-B019",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714181_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Valentino Guerrera",
+      "CardNumber": "RH-B021",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714183_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Yorinobu Arasaka - Steel Dragon",
+      "CardNumber": "RH-B022",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714184_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Arasaka Emergency Radioport",
+      "CardNumber": "RH-B023",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714185_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Deadman Transmitter",
+      "CardNumber": "RH-B024",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714186_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Mantis Blades",
+      "CardNumber": "RH-B025",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714187_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Satori - Sword of Saburo",
+      "CardNumber": "RH-B026",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714188_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-All is Lost",
+      "CardNumber": "RH-B027",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714189_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Appetite for Destruction",
+      "CardNumber": "RH-B028",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714190_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Bonnie and Clyde",
+      "CardNumber": "RH-B029",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714191_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Carnage at the Colosseum",
+      "CardNumber": "RH-B030",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714192_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Detonate",
+      "CardNumber": "RH-B031",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714193_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Gunpoint Diplomacy",
+      "CardNumber": "RH-B032",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714194_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Industrial Assembly",
+      "CardNumber": "RH-B033",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714195_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Over the Edge",
+      "CardNumber": "RH-B034",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714196_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Shattered Memories",
+      "CardNumber": "RH-B035",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714197_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Dum Dum - Maelstrom Triggerman (Rare)",
+      "CardNumber": "RH-B036",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714198_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Kerry Eurodyne - Axe, Attitude, Audience (Rare)",
+      "CardNumber": "RH-B037",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714199_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Muamar Reyes - El Capitan (Rare)",
+      "CardNumber": "RH-B038",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714200_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-River Ward - Detective on the Hunt (Rare)",
+      "CardNumber": "RH-B039",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714201_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Rogue Amendiares - Preem Solo (Rare)",
+      "CardNumber": "RH-B040",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714202_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Alt Cunningham - Mother of Daemons (Rare)",
+      "CardNumber": "RH-B042",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714204_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Augmented Negotiators",
+      "CardNumber": "RH-B043",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714205_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Caliber - Totentanz's Top Dog",
+      "CardNumber": "RH-B044",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714206_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Gilded Maton",
+      "CardNumber": "RH-B045",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714207_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Hanako Arasaka - In a Gilded Cage (Rare)",
+      "CardNumber": "RH-B046",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714208_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Heywood Ripperdoc",
+      "CardNumber": "RH-B047",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714209_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Maelstrom Goons",
+      "CardNumber": "RH-B049",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714211_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-MaxTac Suppression Team",
+      "CardNumber": "RH-B050",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714212_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Offduty Malfini",
+      "CardNumber": "RH-B051",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714213_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Rockn' Rockerboy",
+      "CardNumber": "RH-B052",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714214_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Secondhand Bombus",
+      "CardNumber": "RH-B053",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714215_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Sketchy Ripper",
+      "CardNumber": "RH-B054",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714216_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-T-Bug - Amateur Philosopher",
+      "CardNumber": "RH-B055",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Trauma Team Operatives",
+      "CardNumber": "RH-B056",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714218_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Viktor Vektor - You Might Feel a Little Pinch",
+      "CardNumber": "RH-B058",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Adrenaline Converter",
+      "CardNumber": "RH-B059",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714221_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Gorilla Arms",
+      "CardNumber": "RH-B060",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714222_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Kiroshi Optics",
+      "CardNumber": "RH-B061",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714223_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Mandibular Upgrade",
+      "CardNumber": "RH-B062",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714224_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Zetatech Faceplate",
+      "CardNumber": "RH-B064",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714226_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Afterparty at Lizzie's",
+      "CardNumber": "RH-B065",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714227_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Bootleg Black Sapphire Show",
+      "CardNumber": "RH-B066",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714228_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Cyberpsychosis",
+      "CardNumber": "RH-B067",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714229_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Live with the Aftermath",
+      "CardNumber": "RH-B068",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714230_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Safety Override",
+      "CardNumber": "RH-B069",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714231_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-The Heist",
+      "CardNumber": "RH-B070",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714232_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Goro Takemura - Vengeful Bodyguard (Rare)",
+      "CardNumber": "RH-B071",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714233_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Hanako Arasaka - Daughter of the Emperor (Rare)",
+      "CardNumber": "RH-B072",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714234_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Jackie Welles - Mama's Favorite (Rare)",
+      "CardNumber": "RH-B073",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714235_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Padre - Man of the Cross (Rare)",
+      "CardNumber": "RH-B074",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714236_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Corpo Security",
+      "CardNumber": "RH-B076",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714238_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Emergency Atlus",
+      "CardNumber": "RH-B077",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714239_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Field Operator",
+      "CardNumber": "RH-B078",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714240_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Maelstrom Zealots",
+      "CardNumber": "RH-B079",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714241_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-MaxTac AV",
+      "CardNumber": "RH-B080",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714242_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-MaxTac Heavy",
+      "CardNumber": "RH-B081",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714243_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-MaxTac Squadron",
+      "CardNumber": "RH-B082",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714244_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Nadia - Fighting Through Grief",
+      "CardNumber": "RH-B083",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714245_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Pacifica Netrunner",
+      "CardNumber": "RH-B084",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714246_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Pepe Najarro - Working Doubles",
+      "CardNumber": "RH-B086",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714248_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Riding Nomad",
+      "CardNumber": "RH-B087",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714249_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Sandayu Oda - Hanako's Guardian (Rare)",
+      "CardNumber": "RH-B088",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714250_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Saul Bright - Stormrider",
+      "CardNumber": "RH-B089",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714251_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Tyger's Whisper",
+      "CardNumber": "RH-B090",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714252_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Valentino Street Racer",
+      "CardNumber": "RH-B091",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714253_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Wraith Marauders",
+      "CardNumber": "RH-B092",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714254_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Riot Shield",
+      "CardNumber": "RH-B094",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714256_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Sandevistan",
+      "CardNumber": "RH-B095",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714257_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Zetatech Berserk",
+      "CardNumber": "RH-B096",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714258_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Corporate Surveillance",
+      "CardNumber": "RH-B097",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714259_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-(Don't Fear) The Reaper",
+      "CardNumber": "RH-B098",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714260_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Fool on the Hill",
+      "CardNumber": "RH-B099",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714261_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Memory Relapse",
+      "CardNumber": "RH-B100",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714262_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Peace Offering",
+      "CardNumber": "RH-B101",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714263_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Synapse Burnout",
+      "CardNumber": "RH-B102",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714264_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Take Control",
+      "CardNumber": "RH-B103",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714265_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-We Gotta Live Together",
+      "CardNumber": "RH-B104",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714266_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Wild in the Streets",
+      "CardNumber": "RH-B105",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714267_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Alt Cunningham - Soulkiller Architect (Rare)",
+      "CardNumber": "RH-B106",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714268_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Evelyn Parker - Beautiful Enigma (Rare)",
+      "CardNumber": "RH-B107",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714269_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Wakako Okada - Peace and Harmony (Rare)",
+      "CardNumber": "RH-B110",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714272_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Delamain - Rideshare AI",
+      "CardNumber": "RH-B111",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714273_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Delamain Cab",
+      "CardNumber": "RH-B112",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714274_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Evelyn Parker - Scheming Siren",
+      "CardNumber": "RH-B113",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714275_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Hacked Corpo",
+      "CardNumber": "RH-B114",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714276_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Jacked-In Voodoo Boy",
+      "CardNumber": "RH-B115",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714277_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Lizzy Wizzy - Delicate Weapon",
+      "CardNumber": "RH-B117",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714279_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Maman Brigitte - Spirit of Death",
+      "CardNumber": "RH-B118",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Misty Olszewski - Mender of Broken Spirits",
+      "CardNumber": "RH-B119",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Modded Kusanagi",
+      "CardNumber": "RH-B120",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Modded Muramasa",
+      "CardNumber": "RH-B121",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714283_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Mox Inciters",
+      "CardNumber": "RH-B122",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714284_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Placide - Voodoo Sentinel",
+      "CardNumber": "RH-B123",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714285_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Psycho Squad",
+      "CardNumber": "RH-B124",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714286_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Rita Wheeler - No Stupid Questions",
+      "CardNumber": "RH-B125",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714287_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Westbrook Netrunner",
+      "CardNumber": "RH-B127",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714289_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Dying Night - V's Pistol",
+      "CardNumber": "RH-B128",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714290_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-NetWatch Netdriver",
+      "CardNumber": "RH-B129",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714291_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Tetratronic Rippler",
+      "CardNumber": "RH-B130",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714292_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Chrome Reverie",
+      "CardNumber": "RH-B131",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714293_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Floor It",
+      "CardNumber": "RH-B132",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714294_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Les Elemens",
+      "CardNumber": "RH-B133",
+      "Rarity": "Uncommon",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714295_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Nocturne OP55 N1",
+      "CardNumber": "RH-B134",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714296_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Pyramid Song",
+      "CardNumber": "RH-B135",
+      "Rarity": "Rare",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714297_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Reboot Optics",
+      "CardNumber": "RH-B136",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714298_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Three Mouths, One Desire",
+      "CardNumber": "RH-B137",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714299_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Trust No One",
+      "CardNumber": "RH-B139",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714301_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Cyberpunk TCG",
+      "SetName": "Welcome to Night City - Beta",
+      "CardName": "RH-Unlikely Bond",
+      "CardNumber": "RH-B140",
+      "Rarity": "Common",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/714302_in_1000x1000.jpg"
+    }
+  ]
+}
