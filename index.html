@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Collector's Field Journal</title>
+    <title>TCG Simulator</title>
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{
@@ -252,9 +251,9 @@
 
     <!-- Navigation Tabs -->
     <div class="tabs">
-        <div class="tab-btn active" onclick="switchTab('opener')">📦 Pack Opener</div>
-        <div class="tab-btn" onclick="switchTab('journal')">📖 Journal Binder</div>
-        <div class="tab-btn" onclick="switchTab('tracker')">📊 Set Tracker</div>
+        <div class="tab-btn active" onclick="switchTab('opener', event)">📦 Pack Opener</div>
+        <div class="tab-btn" onclick="switchTab('journal', event)">📖 Journal Binder</div>
+        <div class="tab-btn" onclick="switchTab('tracker', event)">📊 Set Tracker</div>
     </div>
 
     <!-- Tab 1: Pack Opener -->
@@ -329,11 +328,11 @@
             "Triple Rare Plus", "TRR", "U", "U+", "Uber Rare", "UC", "Ultimate", "Ultimate Rare", "Ultra Chase", "Ultra Rare", 
             "Ultra Rare Extra Rare", "Uncommon", "UNCOMMON (Alt)", "Uncommon 1-Star", "Uncommon 2-Star", "Uncommon 3-Star", "Uncommon Extra Rare", 
             "Gewöhnlich", "Union Rare", "Unique", "UR", "URR", "V - Very Rare", "Variant", "VDR", "Very Rare", "Verzaubert", "Visual Rare", 
-            "VR", "VSR", "WO", "X - Special", "X Rare", "XR", "XVR", "ZR"
+            "VR", "VSR", "WO", "X - Special", "X Rare", "XR", "XVR", "ZR", "Ungewöhnlich"
         ];
 
         // --- Core Application State & LocalStorage Caching ---
-        let scriptUrl = localStorage.getItem('gs_script_url') || '';
+        let scriptUrl = localStorage.getItem('gs_script_url') || 'https://script.google.com/macros/s/AKfycbxjDEVLYkV36bDuP4nuBe8Js52Y3LD71Av8TlVmQTxs3mBKrqQUloafkD-IAwCfMTpG/exec';
         document.getElementById('script-url').value = scriptUrl;
 
         let masterData = JSON.parse(localStorage.getItem('master_data_cache')) || [];
@@ -355,6 +354,10 @@
             refreshMasterDataCache();
         }
 
+        function setStatus(msg) {
+            document.getElementById('sync-status').innerText = "Status: " + msg;
+        }
+
         async function refreshMasterDataCache() {
             if (!scriptUrl) {
                 alert("Please provide and save your Google Apps Script Web App URL first.");
@@ -363,20 +366,9 @@
             setStatus("Fetching MasterData from Sheet...");
             
             try {
-                // Using no-cors mode prevents the browser from blocking the opaque response, 
-                // but since we need to read JSON text, we can use a standard fetch with a redirect mode or fallback to a textarea importer if needed.
                 const targetUrl = `${scriptUrl}?action=getMasterData&t=${new Date().getTime()}`;
-                
-                // Note: Google Apps Script GET requests sometimes require redirect following
                 const response = await fetch(targetUrl, { redirect: 'follow' });
-                const textData = await response.text();
-                
-                let data;
-                try {
-                    data = JSON.parse(textData);
-                } catch (parseErr) {
-                    throw new Error("Received non-JSON response (likely blocked or redirected to HTML login).");
-                }
+                const data = await response.json();
                 
                 if (data.success) {
                     masterData = data.rows; 
@@ -388,33 +380,10 @@
                     setStatus("Fetch failed.");
                 }
             } catch (err) {
-                console.warn(err);
-                
-                // Fallback: If browser security blocks local file fetching entirely, 
-                // allow pasting the raw JSON payload directly for offline/local testing
-                const manualJson = prompt("CORS blocked direct fetch from local file. If you have the JSON from your browser tab, paste it here, or click Cancel:");
-                if (manualJson) {
-                    try {
-                        const data = JSON.parse(manualJson);
-                        if (data.success) {
-                            masterData = data.rows;
-                            localStorage.setItem('master_data_cache', JSON.stringify(masterData));
-                            populateFranchises();
-                            setStatus("Metadata loaded manually.");
-                            return;
-                        }
-                    } catch (e) {
-                        alert("Invalid JSON pasted.");
-                    }
-                }
-
-                alert("Network error fetching MasterData. Local file previews block Google's redirect. Try opening this file via a local server app or hosting on GitHub Pages.");
+                console.error(err);
+                alert("Network error fetching MasterData. Check your Apps Script URL and deployment permissions.");
                 setStatus("Network error.");
             }
-        }
-
-        function setStatus(msg) {
-            document.getElementById('sync-status').innerText = "Status: " + msg;
         }
 
         function populateFranchises() {
@@ -471,7 +440,7 @@
             }
         }
 
-        function switchTab(tabId) {
+        function switchTab(tabId, event) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             
@@ -560,7 +529,7 @@
                 const slot = document.createElement('div');
                 slot.className = 'card-slot pulled';
                 slot.innerHTML = `
-                    <img src="${card.ImageURL || ''}" alt="${card.CardName}" onerror="this.src='data:image/svg+xml;utf8/<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%23ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'%23666\'>No Image</text></svg>'">
+                    <img src="${card.ImageURL || ''}" alt="${card.CardName}" onerror="this.src='data:image/svg+xml;utf8/<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'100\\' height=\\'130\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'%23ddd\\'/><text x=\\'50%\\' y=\\'50%\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' font-size=\\'10\\' fill=\\'%23666\\'>No Image</text></svg>'">
                     <div class="card-info">
                         <strong>#${card.CardNumber}</strong> ${card.CardName}<br>
                         <span style="color:var(--accent-red);">${card.Rarity}</span> | <em>${card.Variant || 'Normal'}</em>
@@ -696,7 +665,7 @@
                 self.addEventListener('fetch', e => { e.respondWith(fetch(e.request).catch(() => caches.match(e.request))); });
             `;
             const blob = new Blob([swCode], { type: 'text/javascript' });
-            navigator.ServiceWorker?.register(URL.createObjectURL(blob)).catch(err => console.log('SW registration failed', err));
+            navigator.serviceWorker?.register(URL.createObjectURL(blob)).catch(err => console.log('SW registration failed', err));
         }
     </script>
 </body>
