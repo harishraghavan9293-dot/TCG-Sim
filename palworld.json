@@ -1,0 +1,3416 @@
+{
+  "success": true,
+  "rows": [
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Alarm Bell",
+      "CardNumber": "EBP01-018",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Antique Curtain",
+      "CardNumber": "EBP01-039SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-039SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Antique Curtain",
+      "CardNumber": "EBP01-039",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-039.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Antique Dresser",
+      "CardNumber": "EBP01-040",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-040.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Antique Mirror",
+      "CardNumber": "EBP01-042",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-042.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Antique Wooden Chair",
+      "CardNumber": "ETD01-019",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Arsox – Burning Spoils",
+      "CardNumber": "ETD01-005",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Arsox – Burning Spoils",
+      "CardNumber": "ETD01-005TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-005TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Astegon – Aegis Wyvern of Death",
+      "CardNumber": "ETD02-012TSP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-012TSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Astegon – Aegis Wyvern of Death",
+      "CardNumber": "ETD02-012",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Astegon – Aegis Wyvern of Death",
+      "CardNumber": "ETD02-012TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-012TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Aurora's Guide",
+      "CardNumber": "EBP01-048",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-048.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Axel's Strategy",
+      "CardNumber": "EBP01-023",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-023.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Axel's Strategy",
+      "CardNumber": "EBP01-023OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-023OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Axel's Strategy",
+      "CardNumber": "EBP01-023SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-023SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Azurobe – Water Dragon Waltz",
+      "CardNumber": "EBP01-029SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-029SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Azurobe – Water Dragon Waltz",
+      "CardNumber": "EBP01-029",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-029.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Beegarde – Knight of the Flower Garden",
+      "CardNumber": "EBP01-061",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-061.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Berry Plantation",
+      "CardNumber": "ETD02-008",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Berry Plantation",
+      "CardNumber": "ETD02-008TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-008TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Black Marketeer",
+      "CardNumber": "EBP01-097",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-097.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Blazamut – Molten Sovereign",
+      "CardNumber": "ETD01-007",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Blazamut – Molten Sovereign",
+      "CardNumber": "ETD01-007TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-007TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Blazehowl – Hellflame Defender",
+      "CardNumber": "EBP01-014",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Blazehowl Noct – Darkflame Defender",
+      "CardNumber": "ETD02-017",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Blessing of the Flower Spirit",
+      "CardNumber": "EBP01-072",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-072.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Breeding Farm",
+      "CardNumber": "EBP01-063",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-063.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Breeding Farm",
+      "CardNumber": "EBP01-063SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-063SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Broncherry – Brimming Adoration",
+      "CardNumber": "ETD02-006TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-006TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Broncherry – Brimming Adoration",
+      "CardNumber": "ETD02-006",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Bushi – Ephemeral Blade",
+      "CardNumber": "EBP01-004SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-004SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Bushi – Ephemeral Blade",
+      "CardNumber": "EBP01-004",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Campfire",
+      "CardNumber": "ETD02-009",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Cattiva – My First Pal",
+      "CardNumber": "ETD02-023",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-023.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Cattiva – My First Pal",
+      "CardNumber": "ETD02-023TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-023TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Cawgnito – Looming Shadow",
+      "CardNumber": "ETD02-015",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Cawgnito Hat",
+      "CardNumber": "ETD02-020",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Celaray – Loop De Loop",
+      "CardNumber": "EBP01-036",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-036.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Chikipi – My First Pal",
+      "CardNumber": "ETD02-024",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Chikipi – My First Pal",
+      "CardNumber": "ETD02-024TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-024TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Chillet – Dragon Whisperer",
+      "CardNumber": "EBP01-025SSP",
+      "Rarity": "SSP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-025SSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Chillet – Dragon Whisperer",
+      "CardNumber": "EBP01-025",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-025.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Chillet – Dragon Whisperer",
+      "CardNumber": "EBP01-025OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-025OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Cola Vending Machine",
+      "CardNumber": "EBP01-064SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-064SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Cola Vending Machine",
+      "CardNumber": "EBP01-064",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-064.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Cryolinx – Arctic Ordeal",
+      "CardNumber": "EBP01-038",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-038.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Crystal Breath",
+      "CardNumber": "ETD01-022TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-022TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Crystal Breath",
+      "CardNumber": "ETD01-022",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Daedream – Deep Slumber",
+      "CardNumber": "EBP01-082",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-082.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Daedream – First Slumber",
+      "CardNumber": "EBP01-080",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-080.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Daedream – First Slumber",
+      "CardNumber": "EBP01-080SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-080SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Daedream's Necklace",
+      "CardNumber": "EBP01-094",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-094.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Dark Cannon",
+      "CardNumber": "EBP01-096",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-096.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Depresso – Late Night Hustler",
+      "CardNumber": "EBP01-079",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-079.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Depresso – Late Night Hustler",
+      "CardNumber": "EBP01-079SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-079SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Digtoise – Keen Needleback",
+      "CardNumber": "EBP01-059",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-059.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Digtoise – Seismic Drillback",
+      "CardNumber": "EBP01-050OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-050OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Digtoise – Seismic Drillback",
+      "CardNumber": "EBP01-050SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-050SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Digtoise – Seismic Drillback",
+      "CardNumber": "EBP01-050",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-050.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Digtoise's Headband",
+      "CardNumber": "EBP01-068",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-068.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Dinossom – Radiant Fragrance",
+      "CardNumber": "ETD02-004",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Direhowl – Proud Fang",
+      "CardNumber": "EBP01-099",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-099.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Dumud – Mellow Bounty",
+      "CardNumber": "EBP01-057",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-057.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Eikthyrdeer Terra – Guardian of Nature",
+      "CardNumber": "ETD02-005",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Elizabee – Queen of the Flower Garden",
+      "CardNumber": "EBP01-053",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-053.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Elizabee – Queen of the Flower Garden",
+      "CardNumber": "EBP01-053SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-053SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Elphidran – Gentle Radiance",
+      "CardNumber": "EBP01-098",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-098.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Elphidran Aqua – Gentle Ripples",
+      "CardNumber": "ETD01-012TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-012TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Elphidran Aqua – Gentle Ripples",
+      "CardNumber": "ETD01-012TSP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-012TSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Elphidran Aqua – Gentle Ripples",
+      "CardNumber": "ETD01-012",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Farming Hat",
+      "CardNumber": "EBP01-069",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-069.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Feed Box",
+      "CardNumber": "EBP01-065",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-065.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Felbat – Lifestealer",
+      "CardNumber": "ETD02-018TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-018TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Felbat – Lifestealer",
+      "CardNumber": "ETD02-018",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Flambelle – Scorching Tears",
+      "CardNumber": "EBP01-012",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Flame Cauldron",
+      "CardNumber": "EBP01-017",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Flopie – Snack Lover",
+      "CardNumber": "ETD02-003TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-003TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Flopie – Snack Lover",
+      "CardNumber": "ETD02-003",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Found an Egg!",
+      "CardNumber": "EBP01-071",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-071.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Foxparks – A Toasty Hug",
+      "CardNumber": "ETD01-004",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Foxparks – Light of Courage",
+      "CardNumber": "EBP01-006",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Foxparks – Light of Courage",
+      "CardNumber": "EBP01-006SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-006SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Foxparks' Harness",
+      "CardNumber": "EBP01-019",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Foxparks' Harness",
+      "CardNumber": "EBP01-019SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-019SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Fuack – Manic Wave Ripper",
+      "CardNumber": "EBP01-032",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-032.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Gobfin Ignis – Blazing Hothead",
+      "CardNumber": "EBP01-003SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-003SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Gobfin Ignis – Blazing Hothead",
+      "CardNumber": "EBP01-003",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Grappling Gun",
+      "CardNumber": "EBP01-045",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-045.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Grizzbolt – Rumbling Tank",
+      "CardNumber": "ETD01-001TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-001TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Grizzbolt – Rumbling Tank",
+      "CardNumber": "ETD01-001",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Grizzbolt – Rumbling Tank",
+      "CardNumber": "ETD01-001TSP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-001TSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Gumoss – Curious Sprout",
+      "CardNumber": "EBP01-058",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-058.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Gumoss – Dreamy Seedling",
+      "CardNumber": "ETD02-002",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Hanging Trap",
+      "CardNumber": "ETD02-019",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Hangyu Cryst – Frigid Wanderer",
+      "CardNumber": "ETD01-015",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Helzephyr – Wings of the Moonless Night",
+      "CardNumber": "EBP01-073OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-073OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Helzephyr – Wings of the Moonless Night",
+      "CardNumber": "EBP01-073SSP",
+      "Rarity": "SSP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-073SSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Helzephyr – Wings of the Moonless Night",
+      "CardNumber": "EBP01-073",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-073.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Hoocrates – Embodiment of Wisdom",
+      "CardNumber": "ETD02-013",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Hot Spring",
+      "CardNumber": "EBP01-041",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-041.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Ignis Breath",
+      "CardNumber": "ETD01-011TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-011TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Ignis Breath",
+      "CardNumber": "ETD01-011",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Incineram – Lurking Stalker",
+      "CardNumber": "ETD02-016",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Incineram – Lurking Stalker",
+      "CardNumber": "ETD02-016TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-016TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Jolthog – Shocking Yet Innocent",
+      "CardNumber": "ETD01-002",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Jolthog Cryst – Stoic Yet Innocent",
+      "CardNumber": "ETD01-013",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide – Surging Sea Serpent",
+      "CardNumber": "EBP01-027OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-027OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide – Surging Sea Serpent",
+      "CardNumber": "EBP01-027",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-027.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide – Surging Sea Serpent",
+      "CardNumber": "EBP01-027SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-027SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide Ignis – Savage Lava Dragon",
+      "CardNumber": "EBP01-001OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-001OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide Ignis – Savage Lava Dragon",
+      "CardNumber": "EBP01-001SSP",
+      "Rarity": "SSP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-001SSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Jormuntide Ignis – Savage Lava Dragon",
+      "CardNumber": "EBP01-001",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Katress – Abyssal Sorcerer",
+      "CardNumber": "EBP01-075OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-075OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Katress – Abyssal Sorcerer",
+      "CardNumber": "EBP01-075",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-075.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Katress – Abyssal Sorcerer",
+      "CardNumber": "EBP01-075SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-075SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Kelpsea Ignis – Balmy Magma",
+      "CardNumber": "ETD01-003",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Kitsun – Wyrmbane Fangs",
+      "CardNumber": "EBP01-007",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Kitsun – Wyrmbane Fangs",
+      "CardNumber": "EBP01-007SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-007SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Lamball – My First Pal",
+      "CardNumber": "ETD01-023",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-023.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Lamball – My First Pal",
+      "CardNumber": "ETD01-023TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-023TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lamp",
+      "CardNumber": "EBP01-088",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-088.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lamp",
+      "CardNumber": "EBP01-088SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-088SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Leezpunk – Treasure Bandit",
+      "CardNumber": "ETD02-014",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Leezpunk – Treasure Bandit",
+      "CardNumber": "ETD02-014TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-014TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lifmunk – Promising Newbie",
+      "CardNumber": "EBP01-056",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-056.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lifmunk – Promising Newbie",
+      "CardNumber": "EBP01-056SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-056SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lily's Strategy",
+      "CardNumber": "EBP01-070",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-070.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lily's Strategy",
+      "CardNumber": "EBP01-070OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-070OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lily's Strategy",
+      "CardNumber": "EBP01-070SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-070SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Loupmoon – Glinting Moonlight",
+      "CardNumber": "EBP01-087",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-087.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Loveander – Heartstealer",
+      "CardNumber": "EBP01-081SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-081SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Loveander – Heartstealer",
+      "CardNumber": "EBP01-081",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-081.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lyleen – Blessing of the Goddess",
+      "CardNumber": "EBP01-049SSP",
+      "Rarity": "SSP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-049SSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lyleen – Blessing of the Goddess",
+      "CardNumber": "EBP01-049OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-049OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lyleen – Blessing of the Goddess",
+      "CardNumber": "EBP01-049",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-049.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lyleen Noct – Providence of the Goddess",
+      "CardNumber": "EBP01-078SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-078SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Lyleen Noct – Providence of the Goddess",
+      "CardNumber": "EBP01-078",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-078.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Makeshift Handgun",
+      "CardNumber": "EBP01-021",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Mammorest – Roar of the Wilds",
+      "CardNumber": "ETD02-007",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Mammorest – Roar of the Wilds",
+      "CardNumber": "ETD02-007TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-007TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Mammorest Cryst – Roar of the Tundra",
+      "CardNumber": "ETD01-018TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-018TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Mammorest Cryst – Roar of the Tundra",
+      "CardNumber": "ETD01-018",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Maraith – Twilight Messenger",
+      "CardNumber": "EBP01-085",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-085.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Mau Cryst – Harbinger of Riches",
+      "CardNumber": "EBP01-035",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-035.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Meat Cleaver",
+      "CardNumber": "EBP01-093",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-093.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Meat Cleaver",
+      "CardNumber": "EBP01-093SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-093SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Medical Supplies",
+      "CardNumber": "ETD02-022",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Medieval Medicine Workbench",
+      "CardNumber": "EBP01-090",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-090.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Menasting – Darkness-Dwelling Scorpion",
+      "CardNumber": "EBP01-084",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-084.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Mossanda – Guard Captain",
+      "CardNumber": "ETD02-001",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Mossanda – Guard Captain",
+      "CardNumber": "ETD02-001TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-001TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Mossanda – Guard Captain",
+      "CardNumber": "ETD02-001TSP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-001TSP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Mossanda Lux – Vanguard Captain",
+      "CardNumber": "ETD01-006",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Mounted Machine Gun",
+      "CardNumber": "EBP01-015SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-015SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Mounted Machine Gun",
+      "CardNumber": "EBP01-015",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "No Pal's Beyond Sign",
+      "CardNumber": "EBP01-067",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-067.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Nox – The Silent One",
+      "CardNumber": "EBP01-086",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-086.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pal Sphere",
+      "CardNumber": "EBP01-047SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-047SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pal Sphere",
+      "CardNumber": "EBP01-047",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-047.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Pengullet – Frequent Flyer",
+      "CardNumber": "ETD01-014",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Pengullet – Frequent Flyer",
+      "CardNumber": "ETD01-014TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-014TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pengullet – Yearning for the Sky",
+      "CardNumber": "EBP01-028SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-028SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pengullet – Yearning for the Sky",
+      "CardNumber": "EBP01-028",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-028.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pengullet Rocket Launcher",
+      "CardNumber": "EBP01-044SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-044SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pengullet Rocket Launcher",
+      "CardNumber": "EBP01-044",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-044.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Penking – Mighty Warrior of the Deep",
+      "CardNumber": "EBP01-031SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-031SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Penking – Mighty Warrior of the Deep",
+      "CardNumber": "EBP01-031",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-031.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Petallia – Sweet Blessings",
+      "CardNumber": "EBP01-051OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-051OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Petallia – Sweet Blessings",
+      "CardNumber": "EBP01-051SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-051SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Petallia – Sweet Blessings",
+      "CardNumber": "EBP01-051",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-051.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Primitive Furnace",
+      "CardNumber": "EBP01-016",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Primitive Workbench",
+      "CardNumber": "ETD01-020",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pump-Action Shotgun",
+      "CardNumber": "EBP01-020SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-020SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pump-Action Shotgun",
+      "CardNumber": "EBP01-020",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pyrin – Cinder Steed",
+      "CardNumber": "EBP01-013",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pyrin Noct – Steed of Azure Flames",
+      "CardNumber": "EBP01-077SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-077SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Pyrin Noct – Steed of Azure Flames",
+      "CardNumber": "EBP01-077",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-077.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Ragnahawk – Emberwing Striker",
+      "CardNumber": "EBP01-010",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Ranch",
+      "CardNumber": "EBP01-066",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-066.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Refined Metal Spear",
+      "CardNumber": "ETD02-010",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Reindrix – Icy Gaze",
+      "CardNumber": "ETD01-016",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Relaxaurus – Hungry Gunner",
+      "CardNumber": "EBP01-026",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-026.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Relaxaurus – Hungry Gunner",
+      "CardNumber": "EBP01-026OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-026OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Relaxaurus – Hungry Gunner",
+      "CardNumber": "EBP01-026SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-026SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Reptyro – Ore Gorger",
+      "CardNumber": "EBP01-005",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Reptyro – Ore Gorger",
+      "CardNumber": "EBP01-005SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-005SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Reptyro Cryst – Glacial Devourer",
+      "CardNumber": "EBP01-030",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-030.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Reptyro Cryst – Glacial Devourer",
+      "CardNumber": "EBP01-030SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-030SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Ribbuny – Little Princess",
+      "CardNumber": "ETD01-024",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Ribbuny – Little Princess",
+      "CardNumber": "ETD01-024TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-024TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Rooby – Brave Sparks",
+      "CardNumber": "EBP01-011",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Rushoar – Reckless Destruction",
+      "CardNumber": "EBP01-052",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-052.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Rushoar – Reckless Destruction",
+      "CardNumber": "EBP01-052SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-052SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Shadowbeak – Seed of Despair",
+      "CardNumber": "EBP01-074SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-074SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Shadowbeak – Seed of Despair",
+      "CardNumber": "EBP01-074",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-074.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Shadowbeak – Seed of Despair",
+      "CardNumber": "EBP01-074OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-074OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Shoddy Bed",
+      "CardNumber": "EBP01-089",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-089.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Single-Shot Rifle",
+      "CardNumber": "ETD01-010",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Single-Shot Sphere Launcher",
+      "CardNumber": "ETD01-021",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "PROMO",
+      "CardName": "Soul",
+      "CardNumber": "ESOUL-002",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Soul",
+      "CardNumber": "ESOUL-001",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "PROMO",
+      "CardName": "Soul",
+      "CardNumber": "ESOUL-003",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Sparkit – Hazardous Contact",
+      "CardNumber": "EBP01-008",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Sphere Workbench",
+      "CardNumber": "EBP01-043",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-043.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Stone Blast",
+      "CardNumber": "ETD02-011",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Stone Pickaxe",
+      "CardNumber": "EBP01-022",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Stone Pit",
+      "CardNumber": "ETD01-008TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-008TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Stone Pit",
+      "CardNumber": "ETD01-008",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Strike from the Darkness",
+      "CardNumber": "ETD02-021TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-021TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "Strike from the Darkness",
+      "CardNumber": "ETD02-021",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Surfent – Swift Swimmer",
+      "CardNumber": "EBP01-037",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-037.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Suzaku – Hellfire Wings",
+      "CardNumber": "EBP01-002",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Suzaku – Hellfire Wings",
+      "CardNumber": "EBP01-002OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-002OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Suzaku – Hellfire Wings",
+      "CardNumber": "EBP01-002SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-002SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Suzaku Aqua – Way of the Current",
+      "CardNumber": "ETD01-017TSR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-017TSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Suzaku Aqua – Way of the Current",
+      "CardNumber": "ETD01-017",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Tanzee – Cheerful Worker",
+      "CardNumber": "EBP01-060",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-060.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Teafant – Fountain of Cheer",
+      "CardNumber": "EBP01-034",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-034.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "The Adventure Begins",
+      "CardNumber": "EBP01-100SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-100SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "The Adventure Begins",
+      "CardNumber": "EBP01-100",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-100.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Tombat – Out of Nowhere!?",
+      "CardNumber": "EBP01-076",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-076.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Tombat – Out of Nowhere!?",
+      "CardNumber": "EBP01-076SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-076SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Treasure Chest Found!",
+      "CardNumber": "EBP01-024",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Univolt – Valiant Thunderclap",
+      "CardNumber": "EBP01-009",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Vaelet – Bewitching Blossom",
+      "CardNumber": "EBP01-055",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-055.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Vaelet – Bewitching Blossom",
+      "CardNumber": "EBP01-055SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-055SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Vanwyrm – Marauder of the Skies",
+      "CardNumber": "EBP01-083",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-083.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Victor's Strategy",
+      "CardNumber": "EBP01-046SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-046SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Victor's Strategy",
+      "CardNumber": "EBP01-046",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-046.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Victor's Strategy",
+      "CardNumber": "EBP01-046OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-046OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Viewing Cage",
+      "CardNumber": "EBP01-092",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-092.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Warsect – Iron Fortress",
+      "CardNumber": "EBP01-054",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-054.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Warsect – Iron Fortress",
+      "CardNumber": "EBP01-054SR",
+      "Rarity": "SR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-054SR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "Weapon Workbench",
+      "CardNumber": "ETD01-009",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Wooden Wall",
+      "CardNumber": "EBP01-091",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-091.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Wumpo – Frostpeak Sentinel",
+      "CardNumber": "EBP01-033",
+      "Rarity": "U",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-033.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Wumpo Botan – Tropical Sentinel",
+      "CardNumber": "EBP01-062",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-062.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Zoe's Strategy",
+      "CardNumber": "EBP01-095OSR",
+      "Rarity": "OSR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-095OSR.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Zoe's Strategy",
+      "CardNumber": "EBP01-095",
+      "Rarity": "RR",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-095.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "Zoe's Strategy",
+      "CardNumber": "EBP01-095SP",
+      "Rarity": "SP",
+      "Variant": "Normal",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-095SP.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Alarm Bell",
+      "CardNumber": "RH - EBP01-018",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Antique Curtain",
+      "CardNumber": "RH - EBP01-039",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-039.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Antique Dresser",
+      "CardNumber": "RH - EBP01-040",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-040.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Antique Mirror",
+      "CardNumber": "RH - EBP01-042",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-042.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Antique Wooden Chair",
+      "CardNumber": "RH - ETD01-019",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Arsox – Burning Spoils",
+      "CardNumber": "RH - ETD01-005",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Astegon – Aegis Wyvern of Death",
+      "CardNumber": "RH - ETD02-012",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Aurora's Guide",
+      "CardNumber": "RH - EBP01-048",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-048.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Azurobe – Water Dragon Waltz",
+      "CardNumber": "RH - EBP01-029",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-029.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Beegarde – Knight of the Flower Garden",
+      "CardNumber": "RH - EBP01-061",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-061.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Berry Plantation",
+      "CardNumber": "RH - ETD02-008",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Black Marketeer",
+      "CardNumber": "RH - EBP01-097",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-097.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Blazamut – Molten Sovereign",
+      "CardNumber": "RH - ETD01-007",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Blazehowl – Hellflame Defender",
+      "CardNumber": "RH - EBP01-014",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Blazehowl Noct – Darkflame Defender",
+      "CardNumber": "RH - ETD02-017",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Blessing of the Flower Spirit",
+      "CardNumber": "RH - EBP01-072",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-072.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Breeding Farm",
+      "CardNumber": "RH - EBP01-063",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-063.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Broncherry – Brimming Adoration",
+      "CardNumber": "RH - ETD02-006",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Bushi – Ephemeral Blade",
+      "CardNumber": "RH - EBP01-004",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Campfire",
+      "CardNumber": "RH - ETD02-009",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Cattiva – My First Pal",
+      "CardNumber": "RH - ETD02-023",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-023.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Cawgnito – Looming Shadow",
+      "CardNumber": "RH - ETD02-015",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Cawgnito Hat",
+      "CardNumber": "RH - ETD02-020",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Celaray – Loop De Loop",
+      "CardNumber": "RH - EBP01-036",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-036.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Chikipi – My First Pal",
+      "CardNumber": "RH - ETD02-024",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Cola Vending Machine",
+      "CardNumber": "RH - EBP01-064",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-064.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Cryolinx – Arctic Ordeal",
+      "CardNumber": "RH - EBP01-038",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-038.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Crystal Breath",
+      "CardNumber": "RH - ETD01-022",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Daedream – Deep Slumber",
+      "CardNumber": "RH - EBP01-082",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-082.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Daedream – First Slumber",
+      "CardNumber": "RH - EBP01-080",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-080.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Daedream's Necklace",
+      "CardNumber": "RH - EBP01-094",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-094.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Dark Cannon",
+      "CardNumber": "RH - EBP01-096",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-096.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Depresso – Late Night Hustler",
+      "CardNumber": "RH - EBP01-079",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-079.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Digtoise – Keen Needleback",
+      "CardNumber": "RH - EBP01-059",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-059.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Digtoise's Headband",
+      "CardNumber": "RH - EBP01-068",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-068.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Dinossom – Radiant Fragrance",
+      "CardNumber": "RH - ETD02-004",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Direhowl – Proud Fang",
+      "CardNumber": "RH - EBP01-099",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-099.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Dumud – Mellow Bounty",
+      "CardNumber": "RH - EBP01-057",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-057.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Eikthyrdeer Terra – Guardian of Nature",
+      "CardNumber": "RH - ETD02-005",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Elizabee – Queen of the Flower Garden",
+      "CardNumber": "RH - EBP01-053",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-053.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Elphidran – Gentle Radiance",
+      "CardNumber": "RH - EBP01-098",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-098.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Elphidran Aqua – Gentle Ripples",
+      "CardNumber": "RH - ETD01-012",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Farming Hat",
+      "CardNumber": "RH - EBP01-069",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-069.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Feed Box",
+      "CardNumber": "RH - EBP01-065",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-065.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Felbat – Lifestealer",
+      "CardNumber": "RH - ETD02-018",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Flambelle – Scorching Tears",
+      "CardNumber": "RH - EBP01-012",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-012.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Flame Cauldron",
+      "CardNumber": "RH - EBP01-017",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Flopie – Snack Lover",
+      "CardNumber": "RH - ETD02-003",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Found an Egg!",
+      "CardNumber": "RH - EBP01-071",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-071.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Foxparks – A Toasty Hug",
+      "CardNumber": "RH - ETD01-004",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-004.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Foxparks – Light of Courage",
+      "CardNumber": "RH - EBP01-006",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Foxparks' Harness",
+      "CardNumber": "RH - EBP01-019",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Fuack – Manic Wave Ripper",
+      "CardNumber": "RH - EBP01-032",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-032.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Gobfin Ignis – Blazing Hothead",
+      "CardNumber": "RH - EBP01-003",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Grappling Gun",
+      "CardNumber": "RH - EBP01-045",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-045.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Grizzbolt – Rumbling Tank",
+      "CardNumber": "RH - ETD01-001",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Gumoss – Curious Sprout",
+      "CardNumber": "RH - EBP01-058",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-058.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Gumoss – Dreamy Seedling",
+      "CardNumber": "RH - ETD02-002",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Hanging Trap",
+      "CardNumber": "RH - ETD02-019",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-019.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Hangyu Cryst – Frigid Wanderer",
+      "CardNumber": "RH - ETD01-015",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Hoocrates – Embodiment of Wisdom",
+      "CardNumber": "RH - ETD02-013",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Hot Spring",
+      "CardNumber": "RH - EBP01-041",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-041.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Ignis Breath",
+      "CardNumber": "RH - ETD01-011",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Incineram – Lurking Stalker",
+      "CardNumber": "RH - ETD02-016",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Jolthog – Shocking Yet Innocent",
+      "CardNumber": "RH - ETD01-002",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Jolthog Cryst – Stoic Yet Innocent",
+      "CardNumber": "RH - ETD01-013",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Jormuntide – Surging Sea Serpent",
+      "CardNumber": "RH - EBP01-027",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-027.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Katress – Abyssal Sorcerer",
+      "CardNumber": "RH - EBP01-075",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-075.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Kelpsea Ignis – Balmy Magma",
+      "CardNumber": "RH - ETD01-003",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Kitsun – Wyrmbane Fangs",
+      "CardNumber": "RH - EBP01-007",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Lamball – My First Pal",
+      "CardNumber": "RH - ETD01-023",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-023.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Lamp",
+      "CardNumber": "RH - EBP01-088",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-088.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Leezpunk – Treasure Bandit",
+      "CardNumber": "RH - ETD02-014",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Lifmunk – Promising Newbie",
+      "CardNumber": "RH - EBP01-056",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-056.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Loupmoon – Glinting Moonlight",
+      "CardNumber": "RH - EBP01-087",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-087.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Loveander – Heartstealer",
+      "CardNumber": "RH - EBP01-081",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-081.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Lyleen Noct – Providence of the Goddess",
+      "CardNumber": "RH - EBP01-078",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-078.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Makeshift Handgun",
+      "CardNumber": "RH - EBP01-021",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Mammorest – Roar of the Wilds",
+      "CardNumber": "RH - ETD02-007",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-007.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Mammorest Cryst – Roar of the Tundra",
+      "CardNumber": "RH - ETD01-018",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-018.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Maraith – Twilight Messenger",
+      "CardNumber": "RH - EBP01-085",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-085.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Mau Cryst – Harbinger of Riches",
+      "CardNumber": "RH - EBP01-035",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-035.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Meat Cleaver",
+      "CardNumber": "RH - EBP01-093",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-093.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Medical Supplies",
+      "CardNumber": "RH - ETD02-022",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Medieval Medicine Workbench",
+      "CardNumber": "RH - EBP01-090",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-090.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Menasting – Darkness-Dwelling Scorpion",
+      "CardNumber": "RH - EBP01-084",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-084.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Mossanda – Guard Captain",
+      "CardNumber": "RH - ETD02-001",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Mossanda Lux – Vanguard Captain",
+      "CardNumber": "RH - ETD01-006",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-006.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Mounted Machine Gun",
+      "CardNumber": "RH - EBP01-015",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-015.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-No Pal's Beyond Sign",
+      "CardNumber": "RH - EBP01-067",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-067.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Nox – The Silent One",
+      "CardNumber": "RH - EBP01-086",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-086.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pal Sphere",
+      "CardNumber": "RH - EBP01-047",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-047.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Pengullet – Frequent Flyer",
+      "CardNumber": "RH - ETD01-014",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-014.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pengullet – Yearning for the Sky",
+      "CardNumber": "RH - EBP01-028",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-028.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pengullet Rocket Launcher",
+      "CardNumber": "RH - EBP01-044",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-044.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Penking – Mighty Warrior of the Deep",
+      "CardNumber": "RH - EBP01-031",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-031.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Petallia – Sweet Blessings",
+      "CardNumber": "RH - EBP01-051",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-051.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Primitive Furnace",
+      "CardNumber": "RH - EBP01-016",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Primitive Workbench",
+      "CardNumber": "RH - ETD01-020",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pump-Action Shotgun",
+      "CardNumber": "RH - EBP01-020",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-020.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pyrin – Cinder Steed",
+      "CardNumber": "RH - EBP01-013",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-013.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Pyrin Noct – Steed of Azure Flames",
+      "CardNumber": "RH - EBP01-077",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-077.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Ragnahawk – Emberwing Striker",
+      "CardNumber": "RH - EBP01-010",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Ranch",
+      "CardNumber": "RH - EBP01-066",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-066.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Refined Metal Spear",
+      "CardNumber": "RH - ETD02-010",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Reindrix – Icy Gaze",
+      "CardNumber": "RH - ETD01-016",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-016.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Reptyro – Ore Gorger",
+      "CardNumber": "RH - EBP01-005",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-005.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Reptyro Cryst – Glacial Devourer",
+      "CardNumber": "RH - EBP01-030",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-030.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Ribbuny – Little Princess",
+      "CardNumber": "RH - ETD01-024",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Rooby – Brave Sparks",
+      "CardNumber": "RH - EBP01-011",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Rushoar – Reckless Destruction",
+      "CardNumber": "RH - EBP01-052",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-052.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Shoddy Bed",
+      "CardNumber": "RH - EBP01-089",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-089.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Single-Shot Rifle",
+      "CardNumber": "RH - ETD01-010",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-010.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Single-Shot Sphere Launcher",
+      "CardNumber": "RH - ETD01-021",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "PROMO",
+      "CardName": "RH-Soul",
+      "CardNumber": "RH - ESOUL-002",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-002.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Soul",
+      "CardNumber": "RH - ESOUL-001",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-001.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "PROMO",
+      "CardName": "RH-Soul",
+      "CardNumber": "RH - ESOUL-003",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/Souls/SOUL-003.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Sparkit – Hazardous Contact",
+      "CardNumber": "RH - EBP01-008",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Sphere Workbench",
+      "CardNumber": "RH - EBP01-043",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-043.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Stone Blast",
+      "CardNumber": "RH - ETD02-011",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-011.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Stone Pickaxe",
+      "CardNumber": "RH - EBP01-022",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-022.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Stone Pit",
+      "CardNumber": "RH - ETD01-008",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-008.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD02",
+      "CardName": "RH-Strike from the Darkness",
+      "CardNumber": "RH - ETD02-021",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD02/ETD02-021.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Surfent – Swift Swimmer",
+      "CardNumber": "RH - EBP01-037",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-037.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Suzaku Aqua – Way of the Current",
+      "CardNumber": "RH - ETD01-017",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-017.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Tanzee – Cheerful Worker",
+      "CardNumber": "RH - EBP01-060",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-060.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Teafant – Fountain of Cheer",
+      "CardNumber": "RH - EBP01-034",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-034.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-The Adventure Begins",
+      "CardNumber": "RH - EBP01-100",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-100.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Tombat – Out of Nowhere!?",
+      "CardNumber": "RH - EBP01-076",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-076.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Treasure Chest Found!",
+      "CardNumber": "RH - EBP01-024",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-024.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Univolt – Valiant Thunderclap",
+      "CardNumber": "RH - EBP01-009",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Vaelet – Bewitching Blossom",
+      "CardNumber": "RH - EBP01-055",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-055.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Vanwyrm – Marauder of the Skies",
+      "CardNumber": "RH - EBP01-083",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-083.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Viewing Cage",
+      "CardNumber": "RH - EBP01-092",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-092.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Warsect – Iron Fortress",
+      "CardNumber": "RH - EBP01-054",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-054.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "ETD01",
+      "CardName": "RH-Weapon Workbench",
+      "CardNumber": "RH - ETD01-009",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/ETD01/ETD01-009.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Wooden Wall",
+      "CardNumber": "RH - EBP01-091",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-091.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Wumpo – Frostpeak Sentinel",
+      "CardNumber": "RH - EBP01-033",
+      "Rarity": "U",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-033.webp"
+    },
+    {
+      "Franchise": "Palworld",
+      "SetName": "EBP01",
+      "CardName": "RH-Wumpo Botan – Tropical Sentinel",
+      "CardNumber": "RH - EBP01-062",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://palpagos.gg/card-images/EBP01/EBP01-062.webp"
+    }
+  ]
+}
