@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TCG Field Journal & Pack Simulator</title>
+    <title>Card Collector's Field Journal</title>
     <style>
         :root {
             --bg-color: #f4f1ea;
@@ -34,69 +34,41 @@
             overflow-x: hidden;
         }
 
-        /* App Header */
         header {
-            height: var(--header-height);
             background-color: var(--container-bg);
             border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 1rem;
+            text-align: center;
         }
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-color);
         }
 
-        /* Responsive App Layout Grid */
-        .app-container {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            flex: 1;
-            max-width: 1400px;
-            width: 100%;
-            margin: 0 auto;
-            gap: 1.5rem;
-            padding: 1.5rem;
+        .subtitle {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.2rem;
         }
 
-        /* Sidebar Controls */
-        sidebar {
+        /* Top Config Panel */
+        .config-panel {
             background: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-            height: fit-content;
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 1rem;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Main Stage Area */
-        main {
-            background: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
+        .config-group {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            min-height: 70vh;
-        }
-
-        /* Form Controls & Inputs */
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         label {
@@ -106,18 +78,12 @@
         }
 
         select, input, button {
-            width: 100%;
-            padding: 0.75rem;
+            padding: 0.5rem 0.75rem;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 0.95rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             background: #fff;
             color: var(--text-color);
-        }
-
-        select:focus, input:focus {
-            outline: 2px solid var(--accent-color);
-            border-color: transparent;
         }
 
         button {
@@ -127,98 +93,154 @@
             border: none;
             cursor: pointer;
             transition: background 0.2s ease;
-            min-height: 44px; /* Touch-friendly size */
         }
 
         button:hover {
             background-color: var(--accent-hover);
         }
 
-        /* Status & Sync Notification Box */
-        .sync-status {
-            font-size: 0.8rem;
-            padding: 0.5rem;
-            border-radius: 6px;
-            background: #f0ebe1;
-            text-align: center;
+        /* Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            background: var(--border-color);
+            gap: 2px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* Dynamic Card Reveal Grid */
-        .pack-opening-stage {
+        .tab-btn {
+            background: #e8dfd1;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+            max-width: 200px;
+            text-align: center;
+            color: #5c4b43;
+            border-radius: 0;
+        }
+
+        .tab-btn.active {
+            background: var(--container-bg);
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        /* Main Workspace Container */
+        .workspace {
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .workspace.active {
+            display: flex;
+        }
+
+        /* Card Grid Architecture (Pack & Binder) */
+        .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
             gap: 1rem;
             justify-content: center;
-            align-content: center;
-            flex: 1;
         }
 
         .card-slot {
             aspect-ratio: 2.5 / 3.5;
-            background: #eae2d0;
-            border: 2px dashed var(--border-color);
+            background: #e2d9c8;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 0.85rem;
-            padding: 0.5rem;
-            color: #7c6b61;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .card-slot:hover {
+            transform: translateY(-3px);
         }
 
         .card-slot img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 6px;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
-
-        /* Tablet Layout adjustments */
-        @media (max-width: 1024px) {
-            .app-container {
-                grid-template-columns: 240px 1fr;
-                padding: 1rem;
-                gap: 1rem;
-            }
+        .card-number-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-size: 0.7rem;
+            text-align: center;
+            padding: 0.2rem;
+            font-family: monospace;
         }
 
-        /* Mobile Layout adjustments (Stacked) */
+        .card-slot.unowned {
+            filter: grayscale(100%) opacity(0.4);
+        }
+
+        /* Set Tracker View Styles */
+        .tracker-container {
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .tracker-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: #f9f6f0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .stat-card h4 {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        .stat-card p {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
-            body {
-                background-color: var(--container-bg);
+            .config-panel {
+                flex-direction: column;
+                align-items: stretch;
             }
-
-            header {
-                padding: 0 0.75rem;
+            .config-group {
+                flex-direction: column;
+                align-items: stretch;
             }
-
-            .app-container {
-                grid-template-columns: 1fr;
-                padding: 0.75rem;
-                gap: 1rem;
-            }
-
-            sidebar {
-                box-shadow: none;
-                border: none;
-                background: #f9f6f0;
-            }
-
-            main {
-                border: none;
-                box-shadow: none;
-                padding: 0.5rem;
-            }
-
-            .pack-opening-stage {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
             }
         }
     </style>
@@ -226,67 +248,85 @@
 <body>
 
     <header>
-        <h1>TCG Field Journal</h1>
-        <div id="connection-badge" style="font-size: 0.8rem; color: #666;">Ready</div>
+        <h1>Card Collector's Field Journal</h1>
+        <div class="subtitle">Interactive Archival Ledger & Pack Simulator</div>
     </header>
 
-    <div class="app-container">
-        <!-- Sidebar Navigation & Controls -->
-        <sidebar>
-            <div class="control-group">
-                <label for="script-url">Apps Script Endpoint</label>
-                <input type="text" id="script-url" placeholder="https://script.google.com/..." />
-                <button onclick="saveScriptUrl()">Save & Sync</button>
-            </div>
+    <!-- Top Configuration Bar -->
+    <div class="config-panel">
+        <div class="config-group">
+            <label for="script-url">Web App URL:</label>
+            <input type="text" id="script-url" style="width: 280px;" placeholder="https://script.google.com/..." />
+            <button onclick="saveScriptUrl()">Save URL</button>
+        </div>
+        <div class="config-group">
+            <label for="franchise-select">Franchise:</label>
+            <select id="franchise-select" onchange="handleFranchiseChange()">
+                <option value="">-- Select Franchise --</option>
+            </select>
+        </div>
+        <div class="config-group">
+            <label for="set-select">Set Name:</label>
+            <select id="set-select" onchange="handleSetChange()">
+                <option value="">-- Select Set --</option>
+            </select>
+        </div>
+        <button onclick="refreshMasterData(true)">🔄 Refresh Metadata</button>
+        <span id="status-badge" style="font-size: 0.8rem; font-style: italic; color: #666;">Ready</span>
+    </div>
 
-            <hr style="border:0; border-top:1px solid var(--border-color);">
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
+        <button class="tab-btn" onclick="switchTab('binder')">📖 Journal Binder</button>
+        <button class="tab-btn" onclick="switchTab('tracker')">📊 Set Tracker</button>
+    </div>
 
-            <div class="control-group">
-                <label for="franchise-select">Select Franchise</label>
-                <select id="franchise-select" onchange="handleFranchiseChange()">
-                    <option value="">-- Choose Franchise --</option>
-                </select>
-            </div>
+    <!-- Tab 1: Pack Opener Workspace -->
+    <div id="packer-workspace" class="workspace active">
+        <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem;">
+            <h2>Pack Opening Chamber</h2>
+            <p style="font-size: 0.85rem; color:#666; margin-bottom: 1rem;">Open 10-card booster packs distributed according to rarity weights. Cards are saved automatically to your local inventory binder.</p>
+            <button onclick="openPack()">✨ Open 10-Card Pack</button>
+        </div>
+        <div class="card-grid" id="pack-stage">
+            <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">No pack opened yet. Select a set and open your first booster!</div>
+        </div>
+    </div>
 
-            <div class="control-group">
-                <label for="set-select">Select Expansion Set</label>
-                <select id="set-select">
-                    <option value="">-- Choose Set --</option>
-                </select>
-            </div>
+    <!-- Tab 2: Journal Binder Workspace -->
+    <div id="binder-workspace" class="workspace">
+        <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; display:flex; justify-content:space-between; align-items:center;">
+            <h2>Collection Binder Inventory</h2>
+            <span id="binder-counter" style="font-size: 0.9rem; font-weight:600;">0 / 0 Owned</span>
+        </div>
+        <div class="card-grid" id="binder-grid"></div>
+    </div>
 
-            <button onclick="openPack()" style="margin-top: 0.5rem;">Open Booster Pack</button>
-            
-            <div class="sync-status" id="sync-status-box">
-                Queue: 0 pending syncs
+    <!-- Tab 3: Set Tracker Workspace -->
+    <div id="tracker-workspace" class="workspace">
+        <div class="tracker-container">
+            <h2>Set Completion Analysis</h2>
+            <div class="tracker-stats-grid" id="tracker-stats">
+                <div class="stat-card">
+                    <h4>Overall Set Completion</h4>
+                    <p id="stat-total-progress">0 / 0 (0%)</p>
+                </div>
             </div>
-        </sidebar>
-
-        <!-- Main Display / Pack Simulation Workspace -->
-        <main>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h2 id="workspace-title" style="font-size: 1.1rem;">Pack Simulator Workspace</h2>
-                <span id="card-count-badge" style="font-size: 0.85rem; color: #666;">0 Cards Loaded</span>
+            <div id="breakdown-details" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Dynamically populated rarity & finish breakdowns -->
             </div>
-            
-            <div class="pack-opening-stage" id="pack-stage">
-                <div class="card-slot">Select a set & open a pack to view pulls!</div>
-                <div class="card-slot">Card Slot 2</div>
-                <div class="card-slot">Card Slot 3</div>
-                <div class="card-slot">Card Slot 4</div>
-            </div>
-        </main>
+        </div>
     </div>
 
     <script>
-        // Core application state
         let scriptUrl = localStorage.getItem('gs_script_url') || '';
         let masterData = [];
-        let pullQueue = JSON.parse(localStorage.getItem('tcg_pull_queue') || '[]');
+        let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}'); // Format: { "cardNumber_finish": count }
 
         document.getElementById('script-url').value = scriptUrl;
 
-        // --- IndexedDB Configuration ---
+        // IndexedDB Local Caching Framework
         const dbName = "TCGFieldJournalDB";
         const storeName = "masterMetadata";
 
@@ -321,33 +361,36 @@
             });
         }
 
-        // --- Initialization & Setup ---
         window.onload = async () => {
+            updateStatus("Loading local cache...");
             try {
                 const cachedData = await loadMasterDataFromIDB();
-                if (cachedData) {
+                if (cachedData && cachedData.length > 0) {
                     masterData = cachedData;
                     populateFranchises();
-                    updateStatus("Loaded from local cache");
-                }
-                if (scriptUrl) {
-                    refreshMasterDataCache();
+                    updateStatus("Loaded from local memory.");
+                } else if (scriptUrl) {
+                    await refreshMasterData(false);
+                } else {
+                    updateStatus("Please provide Web App URL");
                 }
             } catch (err) {
-                console.error("Initialization error:", err);
+                console.error("Cache load error:", err);
             }
-            updateQueueUI();
         };
 
         function saveScriptUrl() {
             scriptUrl = document.getElementById('script-url').value.trim();
             localStorage.setItem('gs_script_url', scriptUrl);
-            refreshMasterDataCache();
+            refreshMasterData(true);
         }
 
-        async function refreshMasterDataCache() {
-            if (!scriptUrl) return;
-            updateStatus("Syncing master data...");
+        async function refreshMasterData(forceFetch = false) {
+            if (!scriptUrl) {
+                alert("Please enter a valid Google Web App URL first.");
+                return;
+            }
+            updateStatus("Fetching MasterData from Sheet...");
             try {
                 const targetUrl = `${scriptUrl}?action=getMasterData&t=${Date.now()}`;
                 const response = await fetch(targetUrl, { redirect: 'follow' });
@@ -358,10 +401,10 @@
                 await saveMasterDataToIDB(data);
                 
                 populateFranchises();
-                updateStatus("Master data synchronized!");
+                updateStatus("Metadata updated successfully!");
             } catch (err) {
                 console.error("Sync failed:", err);
-                updateStatus("Sync failed (using local cache)");
+                updateStatus("Fetch failed. Using local storage cache.");
             }
         }
 
@@ -369,21 +412,20 @@
             const franchiseSelect = document.getElementById('franchise-select');
             const franchises = [...new Set(masterData.map(item => item.franchise))];
             
-            franchiseSelect.innerHTML = '<option value="">-- Choose Franchise --</option>';
+            franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
             franchises.forEach(f => {
                 const opt = document.createElement('option');
                 opt.value = f;
                 opt.textContent = f;
                 franchiseSelect.appendChild(opt);
             });
-            document.getElementById('card-count-badge').textContent = `${masterData.length} Cards Loaded`;
         }
 
         function handleFranchiseChange() {
             const selectedFranchise = document.getElementById('franchise-select').value;
             const setSelect = document.getElementById('set-select');
             
-            setSelect.innerHTML = '<option value="">-- Choose Set --</option>';
+            setSelect.innerHTML = '<option value="">-- Select Set --</option>';
             if (!selectedFranchise) return;
 
             const sets = [...new Set(masterData.filter(i => i.franchise === selectedFranchise).map(i => i.setName))];
@@ -393,6 +435,29 @@
                 opt.textContent = s;
                 setSelect.appendChild(opt);
             });
+        }
+
+        function handleSetChange() {
+            renderBinder();
+            renderTracker();
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.workspace').forEach(w => w.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            if (tabId === 'packer') {
+                document.getElementById('packer-workspace').classList.add('active');
+                event.target.classList.add('active');
+            } else if (tabId === 'binder') {
+                document.getElementById('binder-workspace').classList.add('active');
+                event.target.classList.add('active');
+                renderBinder();
+            } else if (tabId === 'tracker') {
+                document.getElementById('tracker-workspace').classList.add('active');
+                event.target.classList.add('active');
+                renderTracker();
+            }
         }
 
         function openPack() {
@@ -405,58 +470,145 @@
             }
 
             const availableCards = masterData.filter(i => i.setName === selectedSet);
+            if (availableCards.length === 0) {
+                alert("No cards found for this set.");
+                return;
+            }
+
             stage.innerHTML = '';
-            
-            // Simulate opening a 4-card pack layout
             const packResults = [];
-            for (let i = 0; i < 4; i++) {
-                const randomCard = availableCards[Math.floor(Math.random() * availableCards.length)] || { name: "Common Card" };
-                packResults.push(randomCard);
+
+            // Simulate 10-card booster pack pull
+            for (let i = 0; i < 10; i++) {
+                const card = availableCards[Math.floor(Math.random() * availableCards.length)];
+                packResults.push(card);
+
+                // Add to local inventory automatically
+                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                inventory[key] = (inventory[key] || 0) + 1;
 
                 const slot = document.createElement('div');
                 slot.className = 'card-slot';
-                slot.innerHTML = `<span>${randomCard.name || "Card"}</span>`;
+                slot.innerHTML = `
+                    <img src="${card.imageUrl || ''}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <div class="card-number-badge">${card.cardNumber}</div>
+                `;
                 stage.appendChild(slot);
             }
 
-            // Push to offline-ready sync queue
-            queuePulls(packResults);
+            localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
         }
 
-        function queuePulls(pulls) {
-            pullQueue.push({ timestamp: Date.now(), pulls });
-            localStorage.setItem('tcg_pull_queue', JSON.stringify(pullQueue));
-            updateQueueUI();
-            syncPullQueueBatch();
-        }
+        function renderBinder() {
+            const selectedSet = document.getElementById('set-select').value;
+            const grid = document.getElementById('binder-grid');
+            grid.innerHTML = '';
 
-        async function syncPullQueueBatch() {
-            if (pullQueue.length === 0 || !scriptUrl) return;
-            const batchToSend = pullQueue[0];
-
-            try {
-                await fetch(scriptUrl, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'recordPulls', pulls: batchToSend })
-                });
-                
-                // Assume success under no-cors opaque response constraints, pop queue item
-                pullQueue.shift();
-                localStorage.setItem('tcg_pull_queue', JSON.stringify(pullQueue));
-                updateQueueUI();
-            } catch (err) {
-                console.warn("Background sync deferred due to network limitation.");
+            if (!selectedSet) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">Select a set to view your binder inventory.</div>';
+                document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
+                return;
             }
+
+            const setCards = masterData.filter(i => i.setName === selectedSet);
+            let ownedCount = 0;
+
+            setCards.forEach(card => {
+                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                const isOwned = (inventory[key] || 0) > 0;
+                if (isOwned) ownedCount++;
+
+                const slot = document.createElement('div');
+                slot.className = `card-slot ${isOwned ? '' : 'unowned'}`;
+                slot.innerHTML = `
+                    <img src="${card.imageUrl || ''}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <div class="card-number-badge">${card.cardNumber} (${card.finish || 'Normal'})</div>
+                `;
+                grid.appendChild(slot);
+            });
+
+            document.getElementById('binder-counter').textContent = `${ownedCount} / ${setCards.length} Unique Cards Owned`;
         }
 
-        function updateQueueUI() {
-            document.getElementById('sync-status-box').textContent = `Queue: ${pullQueue.length} pending syncs`;
+        function renderTracker() {
+            const selectedSet = document.getElementById('set-select').value;
+            const statsContainer = document.getElementById('tracker-stats');
+            const breakdownContainer = document.getElementById('breakdown-details');
+            
+            statsContainer.innerHTML = '';
+            breakdownContainer.innerHTML = '';
+
+            if (!selectedSet) {
+                statsContainer.innerHTML = '<div class="stat-card"><h4>Select a set</h4><p>-</p></div>';
+                return;
+            }
+
+            const setCards = masterData.filter(i => i.setName === selectedSet);
+            let totalCards = setCards.length;
+            let totalOwned = 0;
+
+            setCards.forEach(card => {
+                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                if ((inventory[key] || 0) > 0) totalOwned++;
+            });
+
+            const overallPct = totalCards > 0 ? ((totalOwned / totalCards) * 100).toFixed(1) : 0;
+            statsContainer.innerHTML = `
+                <div class="stat-card">
+                    <h4>Overall Set Completion</h4>
+                    <p>${totalOwned} / ${totalCards} (${overallPct}%)</p>
+                </div>
+            `;
+
+            // Finish breakdown calculation (Normal vs Variant)
+            const finishMap = {};
+            setCards.forEach(card => {
+                const finish = card.finish || 'Normal';
+                if (!finishMap[finish]) finishMap[finish] = { total: 0, owned: 0 };
+                finishMap[finish].total++;
+                const key = `${card.cardNumber}_${finish}`;
+                if ((inventory[key] || 0) > 0) finishMap[finish].owned++;
+            });
+
+            let finishHtml = '<h3>Finish Breakdown</h3><div class="tracker-stats-grid">';
+            for (const [finish, data] of Object.entries(finishMap)) {
+                const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
+                finishHtml += `
+                    <div class="stat-card">
+                        <h4>${finish} Finish</h4>
+                        <p>${data.owned} / ${data.total} (${pct}%)</p>
+                    </div>
+                `;
+            }
+            finishHtml += '</div>';
+
+            // Rarity breakdown calculation
+            const rarityMap = {};
+            setCards.forEach(card => {
+                const rarity = card.rarity || 'Common';
+                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned: 0 };
+                rarityMap[rarity].total++;
+                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
+            });
+
+            let rarityHtml = '<h3 style="margin-top:1rem;">Rarity Breakdown</h3><div class="tracker-stats-grid">';
+            for (const [rarity, data] of Object.entries(rarityMap)) {
+                const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
+                rarityHtml += `
+                    <div class="stat-card">
+                        <h4>${rarity}</h4>
+                        <p>${data.owned} / ${data.total} (${pct}%)</p>
+                    </div>
+                `;
+            }
+            rarityHtml += '</div>';
+
+            breakdownContainer.innerHTML = finishHtml + rarityHtml;
         }
 
         function updateStatus(text) {
-            document.getElementById('connection-badge').textContent = text;
+            document.getElementById('status-badge').textContent = text;
         }
     </script>
 </body>
