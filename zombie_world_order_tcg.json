@@ -1,0 +1,1454 @@
+{
+  "success": true,
+  "rows": [
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "ZWO Promo Cards",
+      "CardName": "Mad Queen",
+      "CardNumber": "1",
+      "Rarity": "PR",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139365_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Mr. Handshaker",
+      "CardNumber": "1",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139152_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Legendary Yokozuna",
+      "CardNumber": "2",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139153_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Karate Master",
+      "CardNumber": "3",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139154_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Okonomiyaki Flipper",
+      "CardNumber": "4",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139155_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Kyon-she",
+      "CardNumber": "5",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139156_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Samurai General",
+      "CardNumber": "6",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139157_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "One with the Cherry Blossoms",
+      "CardNumber": "7",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139158_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Master Ninja",
+      "CardNumber": "8",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139159_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Foxy Idol",
+      "CardNumber": "9",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139160_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Omikoshi",
+      "CardNumber": "10",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139161_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Sardine Can",
+      "CardNumber": "11",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139162_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "B-Girl",
+      "CardNumber": "12",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139215_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Mad Lord",
+      "CardNumber": "13",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Mad Lord",
+      "CardNumber": "13",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Sushi Overlord",
+      "CardNumber": "14",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139219_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Sushi Overlord",
+      "CardNumber": "14",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139219_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Legendary Samurai Trooper",
+      "CardNumber": "15",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Legendary Samurai Trooper",
+      "CardNumber": "15",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Magic Grower",
+      "CardNumber": "16",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139221_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Wild Rider",
+      "CardNumber": "17",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139222_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Forgotten Diver",
+      "CardNumber": "18",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139223_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Battle Monger",
+      "CardNumber": "19",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139226_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Gaping Mouth",
+      "CardNumber": "20",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139227_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Electro Girl",
+      "CardNumber": "21",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139273_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Noisy Watchman",
+      "CardNumber": "22",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139274_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Ambush Soldier",
+      "CardNumber": "23",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139275_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Rocketman",
+      "CardNumber": "24",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139276_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Leaking Girl",
+      "CardNumber": "25",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139277_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Head Chef",
+      "CardNumber": "26",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139278_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Overkill",
+      "CardNumber": "27",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139279_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Rocketmom",
+      "CardNumber": "28",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Rocketmom",
+      "CardNumber": "28",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombie Sterilizer",
+      "CardNumber": "29",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombie Sterilizer",
+      "CardNumber": "29",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "The Professors",
+      "CardNumber": "30",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "The Professors",
+      "CardNumber": "30",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Immortal Devotee",
+      "CardNumber": "31",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139288_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Immortal Devotee (Ascetic)",
+      "CardNumber": "32",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139289_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Immortal Devotee (Matured)",
+      "CardNumber": "33",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139290_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Immortal Devotee (Unworthy)",
+      "CardNumber": "34",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139294_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Deldelgia",
+      "CardNumber": "35",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139296_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Enreal",
+      "CardNumber": "36",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139297_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Deadly Miki",
+      "CardNumber": "37",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139298_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Pera",
+      "CardNumber": "38",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139301_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Addicted Humfu",
+      "CardNumber": "39",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139302_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Imogen Cole",
+      "CardNumber": "40",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139332_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Gore Gwar",
+      "CardNumber": "41",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139334_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Polluting Kowatto",
+      "CardNumber": "42",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139336_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Customized Ticktis",
+      "CardNumber": "43",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139338_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Customized Ticktis",
+      "CardNumber": "43",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139338_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Experimental Eureka",
+      "CardNumber": "44",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139340_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Experimental Eureka",
+      "CardNumber": "44",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139340_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Unjust Severen",
+      "CardNumber": "45",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139341_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Unjust Severen",
+      "CardNumber": "45",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139341_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Legendary Yokozuna Mecha-Zombie",
+      "CardNumber": "46",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139342_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "High-Tech Girl",
+      "CardNumber": "47",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139343_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Kunoichi The Double Crosser",
+      "CardNumber": "48",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139344_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Tengu",
+      "CardNumber": "49",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139345_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "The Hacked Immortal",
+      "CardNumber": "50",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139346_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Waste Lax & Exploitation Dave",
+      "CardNumber": "51",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139347_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombie World Order",
+      "CardNumber": "52",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139348_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Linger",
+      "CardNumber": "53",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139349_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombie Cinema",
+      "CardNumber": "54",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139350_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Butterfly Effect",
+      "CardNumber": "55",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139351_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombie Evolution Theory",
+      "CardNumber": "56",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139352_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Bone Odori",
+      "CardNumber": "57",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139353_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Cherry Blossom Picnic",
+      "CardNumber": "58",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139354_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Zombiefish",
+      "CardNumber": "59",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139355_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Japan's Islands of the Dead",
+      "CardNumber": "60",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139356_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Japan's Islands of the Dead",
+      "CardNumber": "60",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139356_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "YZK Disruption",
+      "CardNumber": "61",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139357_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "The Factory",
+      "CardNumber": "62",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139358_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Entrance to Tech Industries",
+      "CardNumber": "63",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139359_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Man-eating Tank",
+      "CardNumber": "64",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139360_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Man-eating Tank",
+      "CardNumber": "64",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139360_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Grabbing Hands",
+      "CardNumber": "65",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139361_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Gate to the Immortal World",
+      "CardNumber": "66",
+      "Rarity": "C",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139362_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "Marriage of the Zombie and Immortal",
+      "CardNumber": "67",
+      "Rarity": "UC",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139363_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "New Seventh",
+      "CardNumber": "68",
+      "Rarity": "R",
+      "Variant": "Normal",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139364_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "New Seventh",
+      "CardNumber": "68",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139364_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Mr. Handshaker",
+      "CardNumber": "RH-1",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139152_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Legendary Yokozuna",
+      "CardNumber": "RH-2",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139153_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Karate Master",
+      "CardNumber": "RH-3",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139154_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Okonomiyaki Flipper",
+      "CardNumber": "RH-4",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139155_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Kyon-she",
+      "CardNumber": "RH-5",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139156_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Samurai General",
+      "CardNumber": "RH-6",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139157_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-One with the Cherry Blossoms",
+      "CardNumber": "RH-7",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139158_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Master Ninja",
+      "CardNumber": "RH-8",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139159_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Foxy Idol",
+      "CardNumber": "RH-9",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139160_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Omikoshi",
+      "CardNumber": "RH-10",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139161_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Sardine Can",
+      "CardNumber": "RH-11",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139162_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-B-Girl",
+      "CardNumber": "RH-12",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139215_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Mad Lord",
+      "CardNumber": "RH-13",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Mad Lord",
+      "CardNumber": "RH-13",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139217_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Sushi Overlord",
+      "CardNumber": "RH-14",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139219_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Sushi Overlord",
+      "CardNumber": "RH-14",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139219_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Legendary Samurai Trooper",
+      "CardNumber": "RH-15",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Legendary Samurai Trooper",
+      "CardNumber": "RH-15",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139220_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Magic Grower",
+      "CardNumber": "RH-16",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139221_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Wild Rider",
+      "CardNumber": "RH-17",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139222_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Forgotten Diver",
+      "CardNumber": "RH-18",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139223_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Battle Monger",
+      "CardNumber": "RH-19",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139226_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Gaping Mouth",
+      "CardNumber": "RH-20",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139227_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Electro Girl",
+      "CardNumber": "RH-21",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139273_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Noisy Watchman",
+      "CardNumber": "RH-22",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139274_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Ambush Soldier",
+      "CardNumber": "RH-23",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139275_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Rocketman",
+      "CardNumber": "RH-24",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139276_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Leaking Girl",
+      "CardNumber": "RH-25",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139277_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Head Chef",
+      "CardNumber": "RH-26",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139278_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Overkill",
+      "CardNumber": "RH-27",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139279_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Rocketmom",
+      "CardNumber": "RH-28",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Rocketmom",
+      "CardNumber": "RH-28",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139280_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombie Sterilizer",
+      "CardNumber": "RH-29",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombie Sterilizer",
+      "CardNumber": "RH-29",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139281_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-The Professors",
+      "CardNumber": "RH-30",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-The Professors",
+      "CardNumber": "RH-30",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139282_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Immortal Devotee",
+      "CardNumber": "RH-31",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139288_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Immortal Devotee (Ascetic)",
+      "CardNumber": "RH-32",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139289_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Immortal Devotee (Matured)",
+      "CardNumber": "RH-33",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139290_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Immortal Devotee (Unworthy)",
+      "CardNumber": "RH-34",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139294_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Deldelgia",
+      "CardNumber": "RH-35",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139296_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Enreal",
+      "CardNumber": "RH-36",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139297_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Deadly Miki",
+      "CardNumber": "RH-37",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139298_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Pera",
+      "CardNumber": "RH-38",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139301_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Addicted Humfu",
+      "CardNumber": "RH-39",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139302_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Imogen Cole",
+      "CardNumber": "RH-40",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139332_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Gore Gwar",
+      "CardNumber": "RH-41",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139334_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Polluting Kowatto",
+      "CardNumber": "RH-42",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139336_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Customized Ticktis",
+      "CardNumber": "RH-43",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139338_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Customized Ticktis",
+      "CardNumber": "RH-43",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139338_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Experimental Eureka",
+      "CardNumber": "RH-44",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139340_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Experimental Eureka",
+      "CardNumber": "RH-44",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139340_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Unjust Severen",
+      "CardNumber": "RH-45",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139341_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Unjust Severen",
+      "CardNumber": "RH-45",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139341_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Legendary Yokozuna Mecha-Zombie",
+      "CardNumber": "RH-46",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139342_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-High-Tech Girl",
+      "CardNumber": "RH-47",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139343_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Kunoichi The Double Crosser",
+      "CardNumber": "RH-48",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139344_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Tengu",
+      "CardNumber": "RH-49",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139345_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-The Hacked Immortal",
+      "CardNumber": "RH-50",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139346_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Waste Lax & Exploitation Dave",
+      "CardNumber": "RH-51",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139347_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombie World Order",
+      "CardNumber": "RH-52",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139348_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Linger",
+      "CardNumber": "RH-53",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139349_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombie Cinema",
+      "CardNumber": "RH-54",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139350_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Butterfly Effect",
+      "CardNumber": "RH-55",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139351_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombie Evolution Theory",
+      "CardNumber": "RH-56",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139352_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Bone Odori",
+      "CardNumber": "RH-57",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139353_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Cherry Blossom Picnic",
+      "CardNumber": "RH-58",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139354_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Zombiefish",
+      "CardNumber": "RH-59",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139355_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Japan's Islands of the Dead",
+      "CardNumber": "RH-60",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139356_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Japan's Islands of the Dead",
+      "CardNumber": "RH-60",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139356_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-YZK Disruption",
+      "CardNumber": "RH-61",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139357_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-The Factory",
+      "CardNumber": "RH-62",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139358_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Entrance to Tech Industries",
+      "CardNumber": "RH-63",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139359_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Man-eating Tank",
+      "CardNumber": "RH-64",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139360_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Man-eating Tank",
+      "CardNumber": "RH-64",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139360_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Grabbing Hands",
+      "CardNumber": "RH-65",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139361_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Gate to the Immortal World",
+      "CardNumber": "RH-66",
+      "Rarity": "C",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139362_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-Marriage of the Zombie and Immortal",
+      "CardNumber": "RH-67",
+      "Rarity": "UC",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139363_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-New Seventh",
+      "CardNumber": "RH-68",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139364_in_1000x1000.jpg"
+    },
+    {
+      "Franchise": "Zombie World Order TCG",
+      "SetName": "Zombie World Order TCG - Set 1",
+      "CardName": "RH-New Seventh",
+      "CardNumber": "RH-68",
+      "Rarity": "R",
+      "Variant": "Variant",
+      "ImageURL": "https://tcgplayer-cdn.tcgplayer.com/product/139364_in_1000x1000.jpg"
+    }
+  ]
+}
