@@ -419,7 +419,7 @@
                     fetch(baseUrl + fileName).then(res => {
                         if (!res.ok) throw new Error(`Failed to load ${fileName}`);
                         return res.json();
-                    })
+                    }).then(data => data.rows || [])
                 );
 
                 const allDatasets = await Promise.all(filePromises);
