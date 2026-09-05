@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arcane Binder - TCG Collector Simulator</title>
+    <title>TCG Simulator</title>
     <!-- Imported Writing & Fantasy/Collector Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -347,7 +347,7 @@
 
     <header>
         <h1>Arcane Binder</h1>
-        <div class="subtitle">Master TCG Collector's Journal & Pack Simulator</div>
+        <div class="subtitle"></div>
     </header>
 
     <!-- Top Configuration Bar -->
@@ -355,42 +355,46 @@
         <div class="config-group">
             <label for="Franchise-select">Franchise:</label>
             <select id="Franchise-select" onchange="handleFranchiseChange()">
-                <option value="">-- Choose Franchise --</option>
+                <option value="">Choose Franchise</option>
             </select>
         </div>
         <div class="config-group">
-            <label for="SetName-select">Expansion Set:</label>
+            <label for="SetName-select">Set:</label>
             <select id="SetName-select" onchange="handleSetChange()">
-                <option value="">-- Choose Set --</option>
+                <option value="">Choose Set</option>
             </select>
         </div>
-        <button onclick="refreshMasterData()">🔄 Sync Datasets</button>
+        <button onclick="refreshMasterData()">🔄 Sync Database</button>
         <span id="status-badge">Ready</span>
+    </div>
+	<div class="config-group">
+    <button onclick="resetCollection()" style="background: linear-gradient(135deg, #a93226, #78281f);">Reset Collection</button>
+    <button onclick="exportSetCSV()">Export History</button>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="tabs-nav">
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
-        <button class="tab-btn" onclick="switchTab('binder')">📖 Collection Journal</button>
-        <button class="tab-btn" onclick="switchTab('tracker')">📊 Completion Analytics</button>
+        <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
+        <button class="tab-btn" onclick="switchTab('tracker')">📊 Analytics</button>
     </div>
 
     <!-- Tab 1: Pack Opener Workspace -->
     <div id="packer-workspace" class="workspace active">
         <div class="section-header-card" style="display:flex; flex-direction:column; align-items:flex-start; gap:0.75rem;">
-            <h2>Booster Pack Dispenser</h2>
-            <p style="font-family:'Caveat', cursive; font-size:1.3rem; color:#665544;">Tear open a fresh booster pack to reveal 10 cards mapped precisely to historical franchise rarity weights.</p>
-            <button onclick="openPack()" style="font-size:1.1rem; padding: 0.75rem 2rem;">✨ Rip Booster Pack</button>
+            <h2>Pack Opener</h2>
+            <p style="font-family:'Caveat', cursive; font-size:1.3rem; color:#665544;"></p>
+            <button onclick="openPack()" style="font-size:1.1rem; padding: 0.75rem 2rem;">✨ Rip Pack</button>
         </div>
         <div class="card-grid" id="pack-stage">
-            <div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:'Caveat', cursive; font-size:1.5rem; color: #8a735c;">Your opened cards will appear here like a fresh stack...</div>
+            <div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:'Caveat', cursive; font-size:1.5rem; color: #8a735c;"></div>
         </div>
     </div>
 
     <!-- Tab 2: Journal Binder Workspace -->
     <div id="binder-workspace" class="workspace">
         <div class="section-header-card">
-            <h2>Collection Journal</h2>
+            <h2>Journal</h2>
             <span id="binder-counter" style="font-family:'Caveat', cursive; font-size:1.4rem; color: var(--wood-medium);">0 / 0 Owned</span>
         </div>
         <div class="card-grid" id="binder-grid"></div>
@@ -399,10 +403,10 @@
     <!-- Tab 3: Set Tracker Workspace -->
     <div id="tracker-workspace" class="workspace">
         <div class="tracker-container">
-            <h2>Expansion Analytics</h2>
+            <h2>Analytics</h2>
             <div class="tracker-stats-grid" id="tracker-stats">
                 <div class="stat-card">
-                    <h4>Overall Set Completion</h4>
+                    <h4>Set Completion</h4>
                     <p id="stat-total-progress">0 / 0 (0%)</p>
                 </div>
             </div>
@@ -675,104 +679,116 @@
             return 'common';
         }
 
-        function createCardSlotElement(card, isOwned = true) {
-            const isSpecialVariant = card.Variant === "Variant";
-            const slot = document.createElement('div');
-            slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
-            
-            let specialBadgeHtml = isSpecialVariant ? `<div class="special-badge">Variant</div>` : '';
-            
-            slot.innerHTML = `
-                <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
-                ${specialBadgeHtml}
-            `;
-            return slot;
-        }
+        function createCardSlotElement(card, isOwned = true, isNew = false) {
+    const isSpecialVariant = card.Variant === "Variant";
+    const slot = document.createElement('div');
+    slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
+    
+    let badgesHtml = '';
+    if (isSpecialVariant) {
+        badgesHtml += `<div class="special-badge">Variant</div>`;
+    }
+    if (isNew) {
+        badgesHtml += `<div class="special-badge" style="background: linear-gradient(135deg, #27ae60, #1e8449); left: 8px; right: auto;">New!</div>`;
+    }
+    
+    slot.innerHTML = `
+        <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
+        ${badgesHtml}
+    `;
+    return slot;
+    }
 
         function openPack() {
-            const selectedSet = document.getElementById('SetName-select').value;
-            const stage = document.getElementById('pack-stage');
-            
-            if (!selectedSet) {
-                alert("Please select a franchise and an expansion set first!");
-                return;
+    const selectedSet = document.getElementById('SetName-select').value;
+    const stage = document.getElementById('pack-stage');
+    
+    if (!selectedSet) {
+        alert("Please select a franchise and an expansion set first!");
+        return;
+    }
+
+    const setCards = masterData.filter(i => i.SetName === selectedSet);
+    if (setCards.length === 0) {
+        alert("No cards found for this set.");
+        return;
+    }
+
+    const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
+    setCards.forEach(card => {
+        const tier = getRarityTier(card.Rarity);
+        tiers[tier].push(card);
+    });
+
+    const fallbackPool = setCards;
+
+    function drawFromTier(tierKeys) {
+        for (let k of tierKeys) {
+            if (tiers[k] && tiers[k].length > 0) {
+                return tiers[k][Math.floor(Math.random() * tiers[k].length)];
             }
-
-            const setCards = masterData.filter(i => i.SetName === selectedSet);
-            if (setCards.length === 0) {
-                alert("No cards found for this set.");
-                return;
-            }
-
-            const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
-            setCards.forEach(card => {
-                const tier = getRarityTier(card.Rarity);
-                tiers[tier].push(card);
-            });
-
-            const fallbackPool = setCards;
-
-            function drawFromTier(tierKeys) {
-                for (let k of tierKeys) {
-                    if (tiers[k] && tiers[k].length > 0) {
-                        return tiers[k][Math.floor(Math.random() * tiers[k].length)];
-                    }
-                }
-                return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
-            }
-
-            stage.innerHTML = '';
-
-            // 10-Card Booster Pack Distribution Blueprint
-            const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
-
-            slotBlueprint.forEach(targetTier => {
-                let card;
-                if (targetTier === 'common') {
-                    card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
-                } else if (targetTier === 'uncommon') {
-                    card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
-                } else if (targetTier === 'rare') {
-                    card = drawFromTier(['rare', 'ultra', 'uncommon', 'common']);
-                } else {
-                    card = drawFromTier(['ultra', 'rare', 'uncommon', 'common']);
-                }
-
-                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-                inventory[key] = (inventory[key] || 0) + 1;
-
-                const slot = createCardSlotElement(card, true);
-                stage.appendChild(slot);
-            });
-
-            localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
         }
+        return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
+    }
+
+    stage.innerHTML = '';
+
+    // 10-Card Booster Pack Distribution Blueprint
+    const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
+
+    slotBlueprint.forEach(targetTier => {
+        let card;
+        if (targetTier === 'common') {
+            card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
+        } else if (targetTier === 'uncommon') {
+            card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
+        } else if (targetTier === 'rare') {
+            card = drawFromTier(['rare', 'ultra', 'uncommon', 'common']);
+        } else {
+            card = drawFromTier(['ultra', 'rare', 'uncommon', 'common']);
+        }
+
+        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+        
+        // Determine if this is a brand new card pull
+        const currentQty = inventory[key] || 0;
+        const isNewPull = currentQty === 0;
+
+        inventory[key] = currentQty + 1;
+
+        const slot = createCardSlotElement(card, true, isNewPull);
+        stage.appendChild(slot);
+    });
+
+    localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
+    updateStatus("Pack opened successfully!");
+}
 
         function renderBinder() {
-            const selectedSet = document.getElementById('SetName-select').value;
-            const grid = document.getElementById('binder-grid');
-            grid.innerHTML = '';
+    const selectedSet = document.getElementById('SetName-select').value;
+    const grid = document.getElementById('binder-grid');
+    grid.innerHTML = '';
 
-            if (!selectedSet) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">Select an expansion set to browse your binder pages.</div>';
-                document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
-                return;
-            }
+    if (!selectedSet) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">Select an expansion set to browse your binder pages.</div>';
+        document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
+        return;
+    }
 
-            const setCards = masterData.filter(i => i.SetName === selectedSet);
-            let ownedCount = 0;
+    const setCards = masterData.filter(i => i.SetName === selectedSet);
+    let ownedCount = 0;
 
-            setCards.forEach(card => {
-                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-                const isOwned = (inventory[key] || 0) > 0;
-                if (isOwned) ownedCount++;
+    setCards.forEach(card => {
+        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+        const isOwned = (inventory[key] || 0) > 0;
+        if (isOwned) ownedCount++;
 
-                const slot = createCardSlotElement(card, isOwned);
-                grid.appendChild(slot);
-            });
+        const slot = createCardSlotElement(card, isOwned, false);
+        grid.appendChild(slot);
+    });
 
-            document.getElementById('binder-counter').textContent = `${ownedCount} / ${setCards.length} Unique Cards Owned`;
-        }
+    document.getElementById('binder-counter').textContent = `${ownedCount} / ${setCards.length} Unique Cards Owned`;
+}
 
         function renderTracker() {
             const selectedSet = document.getElementById('SetName-select').value;
@@ -854,6 +870,64 @@
         function updateStatus(text) {
             document.getElementById('status-badge').textContent = text;
         }
+		function resetCollection() {
+    if (confirm("Are you sure you want to wipe your local collection inventory memory? This cannot be undone.")) {
+        inventory = {};
+        localStorage.removeItem('tcg_local_inventory');
+        updateStatus("Collection has been reset.");
+        
+        // Refresh active views if visible
+        renderBinder();
+        renderTracker();
+    }
+}
+
+function exportSetCSV() {
+    const selectedSet = document.getElementById('SetName-select').value;
+    if (!selectedSet) {
+        alert("Please select an expansion set to export.");
+        return;
+    }
+
+    const setCards = masterData.filter(i => i.SetName === selectedSet);
+    
+    // Filter for unique pulls/owned cards only (avoiding quantity increments)
+    const ownedCards = setCards.filter(card => {
+        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+        return (inventory[key] || 0) > 0;
+    });
+
+    if (ownedCards.length === 0) {
+        alert("No owned cards found in this set to export.");
+        return;
+    }
+
+    // Build CSV columns (adjust keys based on your master metadata schema)
+    const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL"];
+    let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
+
+    ownedCards.forEach(card => {
+        const row = [
+            `"${(card.Franchise || '').replace(/"/g, '""')}"`,
+            `"${(card.SetName || '').replace(/"/g, '""')}"`,
+            `"${(card.CardNumber || '').replace(/"/g, '""')}"`,
+            `"${(card.Rarity || '').replace(/"/g, '""')}"`,
+            `"${(card.Variant || 'Normal').replace(/"/g, '""')}"`,
+            `"${(card.ImageURL || '').replace(/"/g, '""')}"`
+        ];
+        csvContent += row.join(",") + "\n";
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${selectedSet.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_collection.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    updateStatus("CSV exported successfully!");
+}
     </script>
 </body>
 </html>
