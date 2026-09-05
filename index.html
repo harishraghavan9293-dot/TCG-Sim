@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Card Collector's Field Journal</title>
+    <title>TCG Simulator</title>
     <style>
         :root {
             --bg-color: #f4f1ea;
@@ -14,7 +14,6 @@
             --border-color: #d3c5b4;
             --shadow: 0 4px 12px rgba(44, 34, 30, 0.08);
             --radius: 12px;
-            --header-height: 60px;
         }
 
         * {
@@ -53,7 +52,7 @@
             margin-top: 0.2rem;
         }
 
-        /* Top Config Panel */
+        /* Top Configuration Panel */
         .config-panel {
             background: var(--container-bg);
             border-bottom: 1px solid var(--border-color);
@@ -77,7 +76,7 @@
             color: #5c4b43;
         }
 
-        select, input, button {
+        select, button {
             padding: 0.5rem 0.75rem;
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -181,10 +180,11 @@
             right: 0;
             background: rgba(0, 0, 0, 0.75);
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-align: center;
-            padding: 0.2rem;
+            padding: 0.25rem;
             font-family: monospace;
+            font-weight: bold;
         }
 
         .card-slot.unowned {
@@ -248,56 +248,51 @@
 <body>
 
     <header>
-        <h1>Card Collector's Field Journal</h1>
-        <div class="subtitle">Interactive Archival Ledger & Pack Simulator</div>
+        <h1>TCG sim</h1>
+        <div class="subtitle"></div>
     </header>
 
     <!-- Top Configuration Bar -->
     <div class="config-panel">
         <div class="config-group">
-            <label for="script-url">Web App URL:</label>
-            <input type="text" id="script-url" style="width: 280px;" placeholder="https://script.google.com/..." />
-            <button onclick="saveScriptUrl()">Save URL</button>
-        </div>
-        <div class="config-group">
             <label for="franchise-select">Franchise:</label>
             <select id="franchise-select" onchange="handleFranchiseChange()">
-                <option value="">-- Select Franchise --</option>
+                <option value="">Select Franchise</option>
             </select>
         </div>
         <div class="config-group">
-            <label for="set-select">Set Name:</label>
+            <label for="set-select">Set:</label>
             <select id="set-select" onchange="handleSetChange()">
-                <option value="">-- Select Set --</option>
+                <option value="">Select Set</option>
             </select>
         </div>
-        <button onclick="refreshMasterData(true)">🔄 Refresh Metadata</button>
+        <button onclick="refreshMasterData()">🔄 Refresh</button>
         <span id="status-badge" style="font-size: 0.8rem; font-style: italic; color: #666;">Ready</span>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="tabs-nav">
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
-        <button class="tab-btn" onclick="switchTab('binder')">📖 Journal Binder</button>
+        <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
         <button class="tab-btn" onclick="switchTab('tracker')">📊 Set Tracker</button>
     </div>
 
     <!-- Tab 1: Pack Opener Workspace -->
     <div id="packer-workspace" class="workspace active">
         <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem;">
-            <h2>Pack Opening Chamber</h2>
-            <p style="font-size: 0.85rem; color:#666; margin-bottom: 1rem;">Open 10-card booster packs distributed according to rarity weights. Cards are saved automatically to your local inventory binder.</p>
-            <button onclick="openPack()">✨ Open 10-Card Pack</button>
+            <h2>Pack Opener</h2>
+            <p style="font-size: 0.85rem; color:#666; margin-bottom: 1rem;"></p>
+            <button onclick="openPack()">✨ Open Pack</button>
         </div>
         <div class="card-grid" id="pack-stage">
-            <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">No pack opened yet. Select a set and open your first booster!</div>
+            <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">No pack opened yet.</div>
         </div>
     </div>
 
     <!-- Tab 2: Journal Binder Workspace -->
     <div id="binder-workspace" class="workspace">
         <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; display:flex; justify-content:space-between; align-items:center;">
-            <h2>Collection Binder Inventory</h2>
+            <h2>Journal</h2>
             <span id="binder-counter" style="font-size: 0.9rem; font-weight:600;">0 / 0 Owned</span>
         </div>
         <div class="card-grid" id="binder-grid"></div>
@@ -306,25 +301,20 @@
     <!-- Tab 3: Set Tracker Workspace -->
     <div id="tracker-workspace" class="workspace">
         <div class="tracker-container">
-            <h2>Set Completion Analysis</h2>
+            <h2>Set Analytics</h2>
             <div class="tracker-stats-grid" id="tracker-stats">
                 <div class="stat-card">
                     <h4>Overall Set Completion</h4>
                     <p id="stat-total-progress">0 / 0 (0%)</p>
                 </div>
             </div>
-            <div id="breakdown-details" style="display: flex; flex-direction: column; gap: 1rem;">
-                <!-- Dynamically populated rarity & finish breakdowns -->
-            </div>
+            <div id="breakdown-details" style="display: flex; flex-direction: column; gap: 1rem;"></div>
         </div>
     </div>
 
     <script>
-        let scriptUrl = localStorage.getItem('gs_script_url') || '';
         let masterData = [];
-        let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}'); // Format: { "cardNumber_finish": count }
-
-        document.getElementById('script-url').value = scriptUrl;
+        let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
 
         // IndexedDB Local Caching Framework
         const dbName = "TCGFieldJournalDB";
@@ -368,98 +358,85 @@
                 if (cachedData && cachedData.length > 0) {
                     masterData = cachedData;
                     populateFranchises();
-                    updateStatus("Loaded from local memory.");
-                } else if (scriptUrl) {
-                    await refreshMasterData(false);
+                    updateStatus("Loaded from local cache instantly!");
                 } else {
-                    updateStatus("Please provide Web App URL");
+                    await refreshMasterData();
                 }
             } catch (err) {
                 console.error("Cache load error:", err);
+                await refreshMasterData();
             }
         };
 
-        function saveScriptUrl() {
-            scriptUrl = document.getElementById('script-url').value.trim();
-            localStorage.setItem('gs_script_url', scriptUrl);
-            refreshMasterData(true);
+        async function refreshMasterData() {
+            updateStatus("Fetching all 39 files from GitHub...");
+            try {
+                const fileNames = [
+                    "alpha_clash.json",
+                    "argent_saga_tcg.json",
+                    "bakugan_tcg.json",
+                    "battle_spirits_saga.json",
+                    "cardfight_vanguard.json",
+                    "cookierun_braverse_tcg.json",
+                    "cyberpunk_tcg.json",
+                    "digimon.json",
+                    "dragon_ball_z.json",
+                    "elestrals.json",
+                    "exodus_tcg.json",
+                    "final_fantasy_tcg.json",
+                    "flesh__blood.json",
+                    "force_of_will.json",
+                    "future_card_buddyfight.json",
+                    "grand_archive.json",
+                    "gundam.json",
+                    "harry_potter.json",
+                    "heroclix.json",
+                    "hololive.json",
+                    "kryptik___alternative.json",
+                    "lightseekers_tcg.json",
+                    "lorcana.json",
+                    "marvel.json",
+                    "metax_tcg.json",
+                    "metazoo_keepers.json",
+                    "munchkin_ccg.json",
+                    "onepiece.json",
+                    "palworld.json",
+                    "riftbound.json",
+                    "shadowverse_evolve.json",
+                    "sorcery.json",
+                    "star_wars_unlimited.json",
+                    "transformers_tcg.json",
+                    "union_arena.json",
+                    "universus.json",
+                    "weiss___schwarz.json",
+                    "wixoss.json",
+                    "zombie_world_order_tcg.json"
+                ];
+
+                const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
+
+                const filePromises = fileNames.map(fileName => 
+                    fetch(baseUrl + fileName).then(res => {
+                        if (!res.ok) throw new Error(`Failed to load ${fileName}`);
+                        return res.json();
+                    })
+                );
+
+                const allDatasets = await Promise.all(filePromises);
+                masterData = allDatasets.flat();
+                
+                await saveMasterDataToIDB(masterData);
+                populateFranchises();
+                updateStatus("Successfully loaded all datasets from GitHub!");
+            } catch (err) {
+                console.error("GitHub fetch failed:", err);
+                updateStatus("Fetch failed. Check connection or filename spelling.");
+            }
         }
-
-        async function refreshMasterData(forceFetch = false) {
-    updateStatus("Fetching metadata files from GitHub...");
-    try {
-        // List of all your JSON files in your repository
-        const fileNames = [
-                        "alpha_clash.json",
-            "argent_saga_tcg.json",
-            "bakugan_tcg.json",
-            "battle_spirits_saga.json",
-            "cardfight_vanguard.json",
-            "cookierun_braverse_tcg.json",
-            "cyberpunk_tcg.json",
-            "digimon.json",
-            "dragon_ball_z.json",
-            "elestrals.json",
-            "exodus_tcg.json",
-            "final_fantasy_tcg.json",
-            "flesh__blood.json",
-            "force_of_will.json",
-            "future_card_buddyfight.json",
-            "grand_archive.json",
-            "gundam.json",
-            "harry_potter.json",
-			"heroclix.json",
-			"hololive.json",
-			"kryptik___alternative.json",
-			"lightseekers_tcg.json",
-			"lorcana.json",
-			"marvel.json",
-			"metax_tcg.json",
-			"metazoo_keepers.json",
-			"munchkin_ccg.json",
-			"onepiece.json",
-			"palworld.json",
-			"riftbound.json",
-			"shadowverse_evolve.json"
-			"sorcery.json",
-			"star_wars_unlimited.json",
-			"transformers_tcg.json",
-			"union_arena.json",
-			"universus.json",
-			"weiss___schwarz.json",
-			"wixoss.json",
-			"zombie_world_order_tcg.json"
-        ];
-
-        const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
-
-        // Automatically map filenames to full URLs and fetch them all in parallel
-        const filePromises = fileNames.map(fileName => 
-            fetch(baseUrl + fileName).then(res => {
-                if (!res.ok) throw new Error(`Failed to load ${fileName}`);
-                return res.json();
-            })
-        );
-
-        const allDatasets = await Promise.all(filePromises);
-        
-        // Flatten all datasets into your single masterData array
-        masterData = allDatasets.flat();
-        
-        // Save to browser local IndexedDB cache
-        await saveMasterDataToIDB(masterData);
-        
-        populateFranchises();
-        updateStatus("All GitHub datasets loaded & cached!");
-    } catch (err) {
-        console.error("GitHub fetch failed:", err);
-        updateStatus("Fetch failed. Using local storage cache.");
-    }
-}
 
         function populateFranchises() {
             const franchiseSelect = document.getElementById('franchise-select');
-            const franchises = [...new Set(masterData.map(item => item.franchise))];
+            const franchises = [...new Set(masterData.map(item => item.franchise))].filter(Boolean);
             
             franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
             franchises.forEach(f => {
@@ -477,7 +454,7 @@
             setSelect.innerHTML = '<option value="">-- Select Set --</option>';
             if (!selectedFranchise) return;
 
-            const sets = [...new Set(masterData.filter(i => i.franchise === selectedFranchise).map(i => i.setName))];
+            const sets = [...new Set(masterData.filter(i => i.franchise === selectedFranchise).map(i => i.setName))].filter(Boolean);
             sets.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s;
@@ -527,19 +504,17 @@
             stage.innerHTML = '';
             const packResults = [];
 
-            // Simulate 10-card booster pack pull
             for (let i = 0; i < 10; i++) {
                 const card = availableCards[Math.floor(Math.random() * availableCards.length)];
                 packResults.push(card);
 
-                // Add to local inventory automatically
                 const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
                 inventory[key] = (inventory[key] || 0) + 1;
 
                 const slot = document.createElement('div');
                 slot.className = 'card-slot';
                 slot.innerHTML = `
-                    <img src="${card.imageUrl || ''}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <img src="${card.imageUrl || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
                     <div class="card-number-badge">${card.cardNumber}</div>
                 `;
                 stage.appendChild(slot);
@@ -570,8 +545,8 @@
                 const slot = document.createElement('div');
                 slot.className = `card-slot ${isOwned ? '' : 'unowned'}`;
                 slot.innerHTML = `
-                    <img src="${card.imageUrl || ''}" alt="${card.name}" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
-                    <div class="card-number-badge">${card.cardNumber} (${card.finish || 'Normal'})</div>
+                    <img src="${card.imageUrl || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <div class="card-number-badge">${card.cardNumber}</div>
                 `;
                 grid.appendChild(slot);
             });
@@ -609,7 +584,7 @@
                 </div>
             `;
 
-            // Finish breakdown calculation (Normal vs Variant)
+            // Finish breakdown calculation
             const finishMap = {};
             setCards.forEach(card => {
                 const finish = card.finish || 'Normal';
@@ -635,7 +610,7 @@
             const rarityMap = {};
             setCards.forEach(card => {
                 const rarity = card.rarity || 'Common';
-                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned: 0 };
+                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned:0 };
                 rarityMap[rarity].total++;
                 const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
                 if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
