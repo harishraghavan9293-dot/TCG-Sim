@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TCG Simulator</title>
+    <title>Arcane Binder - TCG Collector Simulator</title>
+    <!-- Imported Writing & Fantasy/Collector Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #f4f1ea;
-            --container-bg: #fffdf9;
-            --text-color: #2c221e;
-            --accent-color: #8b4513;
-            --accent-hover: #a0522d;
-            --border-color: #d3c5b4;
-            --shadow: 0 4px 12px rgba(44, 34, 30, 0.08);
-            --radius: 12px;
+            --bg-parchment: #f4efe6;
+            --container-bg: #fffbf5;
+            --text-main: #33261d;
+            --accent-gold: #c59b27;
+            --accent-gold-hover: #dda82d;
+            --wood-dark: #2a1b12;
+            --wood-medium: #4e3524;
+            --border-binder: #d1bfa3;
+            --shadow-card: 0 6px 16px rgba(42, 27, 18, 0.15);
+            --radius-box: 16px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Lora', serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-parchment);
+            background-image: radial-gradient(circle, rgba(209, 191, 163, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -34,96 +43,130 @@
         }
 
         header {
-            background-color: var(--container-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem;
+            background: linear-gradient(135deg, var(--wood-dark), var(--wood-medium));
+            color: #f9f5ec;
+            border-bottom: 4px solid var(--accent-gold);
+            padding: 1.5rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent-color);
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .subtitle {
-            font-size: 0.85rem;
-            color: #666;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #d6ccb1;
             margin-top: 0.2rem;
         }
 
-        /* Top Configuration Panel */
+        /* Top Configuration Panel styled like an antique desk workspace */
         .config-panel {
             background: var(--container-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.75rem 1rem;
+            border-bottom: 2px dashed var(--border-binder);
+            padding: 1rem 1.5rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.25rem;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 12px rgba(42, 27, 18, 0.03);
         }
 
         .config-group {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #5c4b43;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--wood-medium);
         }
 
         select, button {
-            padding: 0.5rem 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            background: #fff;
-            color: var(--text-color);
+            padding: 0.55rem 1rem;
+            border: 2px solid var(--border-binder);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #fffdf9;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        select:focus, button:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 8px rgba(197, 155, 39, 0.3);
         }
 
         button {
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, var(--accent-gold), #9f7514);
             color: white;
+            font-family: 'Lora', serif;
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: background 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
 
         button:hover {
-            background-color: var(--accent-hover);
+            background: linear-gradient(135deg, var(--accent-gold-hover), #b58417);
+            transform: translateY(-1px);
         }
 
-        /* Navigation Tabs */
+        #status-badge {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #725a41;
+        }
+
+        /* Navigation Tabs styled as Leather Binder Index Tabs */
         .tabs-nav {
             display: flex;
             justify-content: center;
-            background: var(--border-color);
-            gap: 2px;
-            border-bottom: 1px solid var(--border-color);
+            background: var(--wood-dark);
+            gap: 4px;
+            padding: 0.5rem 1rem 0 1rem;
+            border-bottom: 2px solid var(--accent-gold);
         }
 
         .tab-btn {
-            background: #e8dfd1;
+            background: #3b271b;
             border: none;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 0.75rem 1.75rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
             cursor: pointer;
             flex: 1;
-            max-width: 200px;
+            max-width: 220px;
             text-align: center;
-            color: #5c4b43;
-            border-radius: 0;
+            color: #b5a48f;
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn:hover {
+            background: #503726;
+            color: #fff;
         }
 
         .tab-btn.active {
             background: var(--container-bg);
-            color: var(--accent-color);
-            border-bottom: 3px solid var(--accent-color);
+            color: var(--wood-dark);
+            font-weight: bold;
+            border-top: 3px solid var(--accent-gold);
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
         }
 
         /* Main Workspace Container */
@@ -132,39 +175,71 @@
             max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             display: none;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .workspace.active {
             display: flex;
         }
 
-        /* Card Grid Architecture (Pack & Binder) */
+        /* Section Heading Style with Hand-writing fonts */
+        .section-header-card {
+            background: var(--container-bg);
+            border: 2px solid var(--border-binder);
+            border-radius: var(--radius-box);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-header-card h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.3rem;
+            color: var(--wood-medium);
+        }
+
+        /* Card Grid Architecture (Responsive: 5 laptop, 3 tablet, 2 mobile) */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
             justify-content: center;
+        }
+
+        @media (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
         }
 
         .card-slot {
             aspect-ratio: 2.5 / 3.5;
             background: #e2d9c8;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border: 2px solid var(--border-binder);
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .card-slot:hover {
-            transform: translateY(-3px);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(42, 27, 18, 0.25);
         }
 
         .card-slot img {
@@ -173,60 +248,87 @@
             object-fit: cover;
         }
 
-        .card-number-badge {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.75);
-            color: #fff;
-            font-size: 0.75rem;
-            text-align: center;
-            padding: 0.25rem;
-            font-family: monospace;
-            font-weight: bold;
+        .card-slot.unowned {
+            filter: grayscale(100%) opacity(0.35);
+            border-style: dashed;
         }
 
-        .card-slot.unowned {
-            filter: grayscale(100%) opacity(0.4);
+        /* Special Variant Styling ("Variant": "Variant") */
+        .card-slot.special-variant {
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 16px rgba(197, 155, 39, 0.6);
+        }
+
+        .special-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(135deg, var(--accent-gold), #85610b);
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
         }
 
         /* Set Tracker View Styles */
         .tracker-container {
             background: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
+            border: 2px solid var(--border-binder);
+            border-radius: var(--radius-box);
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
+        .tracker-container h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--wood-medium);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-binder);
+            padding-bottom: 0.5rem;
+        }
+
+        .tracker-container h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--wood-medium);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
         .tracker-stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .stat-card {
-            background: #f9f6f0;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
+            background: #fdfaf5;
+            border: 2px solid var(--border-binder);
+            border-radius: 12px;
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
         .stat-card h4 {
-            font-size: 0.9rem;
-            color: var(--accent-color);
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: var(--wood-medium);
         }
 
         .stat-card p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             font-weight: bold;
+            color: var(--accent-gold);
         }
 
         @media (max-width: 768px) {
@@ -238,18 +340,14 @@
                 flex-direction: column;
                 align-items: stretch;
             }
-            .card-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.5rem;
-            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>TCG sim</h1>
-        <div class="subtitle"></div>
+        <h1>Arcane Binder</h1>
+        <div class="subtitle">Master TCG Collector's Journal & Pack Simulator</div>
     </header>
 
     <!-- Top Configuration Bar -->
@@ -257,43 +355,43 @@
         <div class="config-group">
             <label for="Franchise-select">Franchise:</label>
             <select id="Franchise-select" onchange="handleFranchiseChange()">
-                <option value="">Select Franchise</option>
+                <option value="">-- Choose Franchise --</option>
             </select>
         </div>
         <div class="config-group">
-            <label for="SetName-select">Set:</label>
+            <label for="SetName-select">Expansion Set:</label>
             <select id="SetName-select" onchange="handleSetChange()">
-                <option value="">Select Set</option>
+                <option value="">-- Choose Set --</option>
             </select>
         </div>
-        <button onclick="refreshMasterData()">🔄 Refresh</button>
-        <span id="status-badge" style="font-size: 0.8rem; font-style: italic; color: #666;">Ready</span>
+        <button onclick="refreshMasterData()">🔄 Sync Datasets</button>
+        <span id="status-badge">Ready</span>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="tabs-nav">
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
-        <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
-        <button class="tab-btn" onclick="switchTab('tracker')">📊 Set Tracker</button>
+        <button class="tab-btn" onclick="switchTab('binder')">📖 Collection Journal</button>
+        <button class="tab-btn" onclick="switchTab('tracker')">📊 Completion Analytics</button>
     </div>
 
     <!-- Tab 1: Pack Opener Workspace -->
     <div id="packer-workspace" class="workspace active">
-        <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem;">
-            <h2>Pack Opener</h2>
-            <p style="font-size: 0.85rem; color:#666; margin-bottom: 1rem;"></p>
-            <button onclick="openPack()">✨ Open Pack</button>
+        <div class="section-header-card" style="display:flex; flex-direction:column; align-items:flex-start; gap:0.75rem;">
+            <h2>Booster Pack Dispenser</h2>
+            <p style="font-family:'Caveat', cursive; font-size:1.3rem; color:#665544;">Tear open a fresh booster pack to reveal 10 cards mapped precisely to historical franchise rarity weights.</p>
+            <button onclick="openPack()" style="font-size:1.1rem; padding: 0.75rem 2rem;">✨ Rip Booster Pack</button>
         </div>
         <div class="card-grid" id="pack-stage">
-            <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">No pack opened yet.</div>
+            <div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:'Caveat', cursive; font-size:1.5rem; color: #8a735c;">Your opened cards will appear here like a fresh stack...</div>
         </div>
     </div>
 
     <!-- Tab 2: Journal Binder Workspace -->
     <div id="binder-workspace" class="workspace">
-        <div style="background:var(--container-bg); border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; display:flex; justify-content:space-between; align-items:center;">
-            <h2>Journal</h2>
-            <span id="binder-counter" style="font-size: 0.9rem; font-weight:600;">0 / 0 Owned</span>
+        <div class="section-header-card">
+            <h2>Collection Journal</h2>
+            <span id="binder-counter" style="font-family:'Caveat', cursive; font-size:1.4rem; color: var(--wood-medium);">0 / 0 Owned</span>
         </div>
         <div class="card-grid" id="binder-grid"></div>
     </div>
@@ -301,7 +399,7 @@
     <!-- Tab 3: Set Tracker Workspace -->
     <div id="tracker-workspace" class="workspace">
         <div class="tracker-container">
-            <h2>Set Analytics</h2>
+            <h2>Expansion Analytics</h2>
             <div class="tracker-stats-grid" id="tracker-stats">
                 <div class="stat-card">
                     <h4>Overall Set Completion</h4>
@@ -352,13 +450,13 @@
         }
 
         window.onload = async () => {
-            updateStatus("Loading local cache...");
+            updateStatus("Checking local archives...");
             try {
                 const cachedData = await loadMasterDataFromIDB();
                 if (cachedData && cachedData.length > 0) {
                     masterData = cachedData;
                     populateFranchises();
-                    updateStatus("Loaded from local cache instantly!");
+                    updateStatus("Archives loaded instantly!");
                 } else {
                     await refreshMasterData();
                 }
@@ -369,48 +467,19 @@
         };
 
         async function refreshMasterData() {
-            updateStatus("Fetching all 39 files from GitHub...");
+            updateStatus("Syncing datasets from cloud...");
             try {
                 const fileNames = [
-                    "alpha_clash.json",
-                    "argent_saga_tcg.json",
-                    "bakugan_tcg.json",
-                    "battle_spirits_saga.json",
-                    "cardfight_vanguard.json",
-                    "cookierun_braverse_tcg.json",
-                    "cyberpunk_tcg.json",
-                    "digimon.json",
-                    "dragon_ball_z.json",
-                    "elestrals.json",
-                    "exodus_tcg.json",
-                    "final_fantasy_tcg.json",
-                    "flesh___blood.json",
-                    "force_of_will.json",
-                    "future_card_buddyfight.json",
-                    "grand_archive.json",
-                    "gundam.json",
-                    "harry_potter.json",
-                    "heroclix.json",
-                    "hololive.json",
-                    "kryptik___alternative.json",
-                    "lightseekers_tcg.json",
-                    "lorcana.json",
-                    "marvel.json",
-                    "metax_tcg.json",
-                    "metazoo_keepers.json",
-                    "munchkin_ccg.json",
-                    "onepiece.json",
-                    "palworld.json",
-                    "riftbound.json",
-                    "shadowverse_evolve.json",
-                    "sorcery.json",
-                    "star_wars_unlimited.json",
-                    "transformers_tcg.json",
-                    "union_arena.json",
-                    "universus.json",
-                    "weiss___schwarz.json",
-                    "wixoss.json",
-                    "zombie_world_order_tcg.json"
+                    "alpha_clash.json", "argent_saga_tcg.json", "bakugan_tcg.json", "battle_spirits_saga.json",
+                    "cardfight_vanguard.json", "cookierun_braverse_tcg.json", "cyberpunk_tcg.json", "digimon.json",
+                    "dragon_ball_z.json", "elestrals.json", "exodus_tcg.json", "final_fantasy_tcg.json",
+                    "flesh___blood.json", "force_of_will.json", "future_card_buddyfight.json", "grand_archive.json",
+                    "gundam.json", "harry_potter.json", "heroclix.json", "hololive.json",
+                    "kryptik___alternative.json", "lightseekers_tcg.json", "lorcana.json", "marvel.json",
+                    "metax_tcg.json", "metazoo_keepers.json", "munchkin_ccg.json", "onepiece.json",
+                    "palworld.json", "riftbound.json", "shadowverse_evolve.json", "sorcery.json",
+                    "star_wars_unlimited.json", "transformers_tcg.json", "union_arena.json", "universus.json",
+                    "weiss___schwarz.json", "wixoss.json", "zombie_world_order_tcg.json"
                 ];
 
                 const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
@@ -427,19 +496,18 @@
                 
                 await saveMasterDataToIDB(masterData);
                 populateFranchises();
-                updateStatus("Successfully loaded all datasets from GitHub!");
+                updateStatus("Datasets successfully synced!");
             } catch (err) {
                 console.error("GitHub fetch failed:", err);
-                updateStatus("Fetch failed. Check connection or filename spelling.");
+                updateStatus("Sync failed. Check connection.");
             }
         }
 
         function populateFranchises() {
             const franchiseSelect = document.getElementById('Franchise-select');
-            
             const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
             
-            franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
+            franchiseSelect.innerHTML = '<option value="">-- Choose Franchise --</option>';
             franchises.forEach(f => {
                 const opt = document.createElement('option');
                 opt.value = f;
@@ -452,7 +520,7 @@
             const selectedFranchise = document.getElementById('Franchise-select').value;
             const setSelect = document.getElementById('SetName-select');
             
-            setSelect.innerHTML = '<option value="">-- Select Set --</option>';
+            setSelect.innerHTML = '<option value="">-- Choose Set --</option>';
             if (!selectedFranchise) return;
 
             const sets = [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
@@ -487,39 +555,195 @@
             }
         }
 
+        // Exact mapping dictionary incorporating your 325 rarities into probability tiers
+        const rarityTierMap = {
+            "10th RRR": "ultra", "10th SEC": "ultra", "10th SP": "ultra", "15thSP": "ultra",
+            "Alpha Rare": "ultra", "ALT ART": "ultra", "Alternate Art Common": "ultra", 
+            "Alternate Art Rare": "ultra", "Alternate Art Secret Rare": "ultra", 
+            "Alternate Art Ultra Rare": "ultra", "Alternate Art Uncommon": "ultra", 
+            "Anniversary Rare": "ultra", "AoButa Rare": "ultra", "AR": "ultra", 
+            "Argent Rare": "ultra", "ASR": "ultra", "Avatar Rare": "ultra", 
+            "Awesome Rare": "ultra", "AxO": "ultra", "Bakugan Elite": "ultra", 
+            "Band Rare": "ultra", "BanG Dream Rare": "ultra", "BR": "ultra", 
+            "BSR": "ultra", "Chainsaw Man Rare": "ultra", "Character Alternate Art Rare": "ultra", 
+            "Character Extra Rare": "ultra", "Character Rare Alternate Art": "ultra", 
+            "Character Super Rare Alternate Art": "ultra", "Character Ultra Rare Alternate Art": "ultra", 
+            "Chase": "ultra", "Chrome Rare": "ultra", "Collaboration X Rare": "ultra", 
+            "Collector Super Rare": "ultra", "Collector Ultra Rare": "ultra", 
+            "DANDADAN Rare": "ultra", "Deadly Sin Rare": "ultra", "Deculture Rare": "ultra", 
+            "DiR": "ultra", "Double Frame Rare": "ultra", "Double Rare Plus": "ultra", 
+            "DR": "ultra", "DSR": "ultra", "Elite": "ultra", "Enchanted": "ultra", 
+            "Enchantée": "ultra", "ENR": "ultra", "Epica": "ultra", "Épique": "ultra", 
+            "Episch": "ultra", "ER": "ultra", "EVA SAGA": "ultra", "EX": "ultra", 
+            "EXC": "ultra", "Exceptional": "ultra", "EXP": "ultra", "EXRRR": "ultra", 
+            "EXS": "ultra", "Extra Rare": "ultra", "Extra Secret Rare": "ultra", 
+            "Festival Parallel": "ultra", "FFR": "ultra", "Foil Premium": "ultra", 
+            "FR": "ultra", "Frame Rare": "ultra", "Fujimi Fantasia Bunko Rare": "ultra", 
+            "Genesis Extra Rare": "ultra", "Girls Band Cry Rare": "ultra", "Gold": "ultra", 
+            "GR": "ultra", "Gun Gale Rare": "ultra", "Hidden Rare": "ultra", 
+            "High Rare": "ultra", "Hololive Parallel": "ultra", "Iconic Art": "ultra", 
+            "Iconic Legend": "ultra", "Iconic Secret": "ultra", "IGR": "ultra", 
+            "IMR": "ultra", "IR": "ultra", "Itsutsugo Parallel": "ultra", "JoJo Rare": "ultra", 
+            "Kaguya Rare": "ultra", "Kessoku Band Rare": "ultra", "KR": "ultra", 
+            "LEADER (Alt)": "ultra", "Legend": "ultra", "Legend Rare": "ultra", 
+            "Légendaire": "ultra", "Legendär": "ultra", "Legendary": "ultra", 
+            "Leggendaria": "ultra", "LGR": "ultra", "LGRR": "ultra", "LGRRR": "ultra", 
+            "LGTR": "ultra", "Lico Rico Rare": "ultra", "LIR": "ultra", "LR+": "ultra", 
+            "LR++": "ultra", "LRP": "ultra", "LSP": "ultra", "LSR": "ultra", 
+            "LycoReco Parallel": "ultra", "Maid Dragon Rare": "ultra", "Majestic": "ultra", 
+            "MAM": "ultra", "Marvel Rare": "ultra", "MSP": "ultra", "Mythic": "ultra", 
+            "Noble Rare": "ultra", "OCR": "ultra", "OR": "ultra", "ORR": "ultra", 
+            "ORRR": "ultra", "Oshi Super Rare": "ultra", "Oshi Ultra Rare": "ultra", 
+            "OSR": "ultra", "Over-Frame Rare": "ultra", "Persona Rare": "ultra", 
+            "PGS": "ultra", "PI": "ultra", "Pirate Booty": "ultra", "Platinum Rare": "ultra", 
+            "PROMO (Alt)": "ultra", "Promo +": "ultra", "Promo Plus": "ultra", 
+            "Promo-Alternate Art": "ultra", "RARE (Alt)": "ultra", "Rare 1-Star": "ultra", 
+            "Rare 2-Star": "ultra", "Rare Extra Rare": "ultra", "RE+": "ultra", 
+            "RGR": "ultra", "RLR": "ultra", "Round Table Rare": "ultra", "RRR": "ultra", 
+            "Ruler Rare": "ultra", "RWBY Rare": "ultra", "Saga Rare": "ultra", 
+            "SCR": "ultra", "SEC": "ultra", "SECP": "ultra", "Secret": "ultra", 
+            "Secret Rare": "ultra", "SECRET RARE (Alt)": "ultra", "Secret Rare Plus": "ultra", 
+            "Secret Super Rare": "ultra", "Secret Uber": "ultra", "Secret Ultra Rare": "ultra", 
+            "SECV": "ultra", "SER": "ultra", "SER+": "ultra", "Serial Rare": "ultra", 
+            "SFR": "ultra", "SGR": "ultra", "Shadow Rare": "ultra", "Shana Parallel": "ultra", 
+            "Showcase": "ultra", "SIR": "ultra", "SKR": "ultra", "SP": "ultra", 
+            "Special": "ultra", "Special Pack Rare": "ultra", "Special Rare": "ultra", 
+            "Spectacle Rare": "ultra", "Spy Rare": "ultra", "SR": "ultra", "SRP": "ultra", 
+            "SSP": "ultra", "SSR": "ultra", "Starlight Rare": "ultra", "Starter Exclusive Extra Rare": "ultra", 
+            "Starter Rare": "ultra", "Sub Ruler Rare": "ultra", "Super Legendary": "ultra", 
+            "SUPER RARE (Alt)": "ultra", "Super Rare 1-Star": "ultra", "Super Rare 2-Star": "ultra", 
+            "Super Rare 3-Star": "ultra", "Super Special": "ultra", "Super Special Plus": "ultra", 
+            "Super Special Rare": "ultra", "SVR": "ultra", "TDR": "ultra", "TGR+": "ultra", 
+            "Titan Rare": "ultra", "Tokyo Revengers Rare": "ultra", "TREASURE RARE": "ultra", 
+            "Triple Rare": "ultra", "Triple Rare Plus": "ultra", "TRR": "ultra", 
+            "Uber Rare": "ultra", "Ultimate": "ultra", "Ultimate Rare": "ultra", 
+            "Ultra Chase": "ultra", "Ultra Rare": "ultra", "Ultra Rare Extra Rare": "ultra", 
+            "Union Rare": "ultra", "UR": "ultra", "URR": "ultra", "V - Very Rare": "ultra", 
+            "Variant": "ultra", "VDR": "ultra", "Very Rare": "ultra", "Verzaubert": "ultra", 
+            "Visual Rare": "ultra", "VR": "ultra", "VSR": "ultra", "X - Special": "ultra", 
+            "X Rare": "ultra", "XR": "ultra", "XVR": "ultra", "ZR": "ultra",
+
+            "Anniversary": "rare", "Epic": "rare", "Fabled": "rare", "Harmony Rare": "rare", 
+            "Hero": "rare", "Holo Double Rare": "rare", "Holo Portrait Premium": "rare", 
+            "Holo Rare": "rare", "Iconic": "rare", "Iconic Other": "rare", "Iconic Rare": "rare", 
+            "Iconica": "rare", "Iconique": "rare", "Ikonisch": "rare", "Incantata": "rare", 
+            "LEADER": "rare", "Lesson": "rare", "Marvel": "rare", "Memoria": "rare", 
+            "Premium": "rare", "R": "rare", "R+": "rare", "Rara": "rare", "Rare": "rare", 
+            "RE": "rare", "Reprint": "rare", "RR": "rare", "SD": "rare", "Selten": "rare", 
+            "ST": "rare", "Standard": "rare", "Starter": "rare", "Starter Exclusive": "rare", 
+            "T": "rare", "TD": "rare", "TGR": "rare", "Très Rare": "rare", "Trial Deck": "rare", 
+            "U+": "rare", "Unique": "rare",
+
+            "C+": "uncommon", "C++": "uncommon", "Character Uncommon": "uncommon", 
+            "Common 1-Star": "uncommon", "Common 2-Star": "uncommon", "Inhabituelle": "uncommon", 
+            "Oshi Common": "uncommon", "UC": "uncommon", "Uncommon": "uncommon", 
+            "UNCOMMON (Alt)": "uncommon", "Uncommon 1-Star": "uncommon", "Uncommon 2-Star": "uncommon", 
+            "Uncommon 3-Star": "uncommon", "Uncommon Extra Rare": "uncommon", "Ungewöhnlich": "uncommon", 
+
+            "1st": "common", "Action Point": "common", "Action Point 1-Star": "common", 
+            "Basic": "common", "Bronze": "common", "C": "common", "Character": "common", 
+            "Character Card": "common", "Character Common": "common", 
+            "Character Common Alternate Art": "common", "Character Uncommon": "common", 
+            "Climax Common": "common", "Climax Rare": "common", "Collaboration Rare": "common", 
+            "Collector Promo": "common", "Commune": "common", "Comune": "common", 
+            "Cross Rare": "common", "DB": "common", "F - Fomo": "common", "Gewöhnlich": "common", 
+            "Gift Marker": "common", "H": "common", "H - Hero": "common", "Hanayome Rare": "common", 
+            "Holo Common": "common", "Holo Uncommon": "common", "Holomem Rare": "common", 
+            "LC": "common", "N/A": "common", "Non comune": "common", "None": "common", 
+            "Normal": "common", "Ordinary": "common", "P": "common", "Platinum Common": "common", 
+            "PR": "common", "Promo": "common", "Promotion": "common", "Saga Rare": "common", 
+            "Silver": "common", "Special Yell": "common", "Token": "common", "WO": "common"
+        };
+
+        function getRarityTier(rarityStr) {
+            if (!rarityStr) return 'common';
+            if (rarityTierMap[rarityStr]) {
+                return rarityTierMap[rarityStr];
+            }
+            const r = rarityStr.toLowerCase();
+            if (r.includes('sec') || r.includes('secret') || r.includes('sp') || r.includes('alt') || 
+                r.includes('alternate') || r.includes('variant') || r.includes('ssr') || r.includes('ur') || 
+                r.includes('lgr') || r.includes('lr') || r.includes('asr') || r.includes('ser')) {
+                return 'ultra';
+            }
+            if (r.includes('rare') || r.includes('r') || r.includes('holo') || r.includes('leader')) {
+                return 'rare';
+            }
+            if (r.includes('uncommon') || r.includes('uc')) {
+                return 'uncommon';
+            }
+            return 'common';
+        }
+
+        function createCardSlotElement(card, isOwned = true) {
+            const isSpecialVariant = card.Variant === "Variant";
+            const slot = document.createElement('div');
+            slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
+            
+            let specialBadgeHtml = isSpecialVariant ? `<div class="special-badge">Variant</div>` : '';
+            
+            slot.innerHTML = `
+                <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
+                ${specialBadgeHtml}
+            `;
+            return slot;
+        }
+
         function openPack() {
             const selectedSet = document.getElementById('SetName-select').value;
             const stage = document.getElementById('pack-stage');
             
             if (!selectedSet) {
-                alert("Please select a franchise and a set first!");
+                alert("Please select a franchise and an expansion set first!");
                 return;
             }
 
-            const availableCards = masterData.filter(i => i.SetName === selectedSet);
-            if (availableCards.length === 0) {
+            const setCards = masterData.filter(i => i.SetName === selectedSet);
+            if (setCards.length === 0) {
                 alert("No cards found for this set.");
                 return;
             }
 
-            stage.innerHTML = '';
-            const packResults = [];
+            const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
+            setCards.forEach(card => {
+                const tier = getRarityTier(card.Rarity);
+                tiers[tier].push(card);
+            });
 
-            for (let i = 0; i < 10; i++) {
-                const card = availableCards[Math.floor(Math.random() * availableCards.length)];
-                packResults.push(card);
+            const fallbackPool = setCards;
+
+            function drawFromTier(tierKeys) {
+                for (let k of tierKeys) {
+                    if (tiers[k] && tiers[k].length > 0) {
+                        return tiers[k][Math.floor(Math.random() * tiers[k].length)];
+                    }
+                }
+                return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
+            }
+
+            stage.innerHTML = '';
+
+            // 10-Card Booster Pack Distribution Blueprint
+            const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
+
+            slotBlueprint.forEach(targetTier => {
+                let card;
+                if (targetTier === 'common') {
+                    card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
+                } else if (targetTier === 'uncommon') {
+                    card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
+                } else if (targetTier === 'rare') {
+                    card = drawFromTier(['rare', 'ultra', 'uncommon', 'common']);
+                } else {
+                    card = drawFromTier(['ultra', 'rare', 'uncommon', 'common']);
+                }
 
                 const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 inventory[key] = (inventory[key] || 0) + 1;
 
-                const slot = document.createElement('div');
-                slot.className = 'card-slot';
-                slot.innerHTML = `
-                    <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
-                    <div class="card-number-badge">${card.CardNumber}</div>
-                `;
+                const slot = createCardSlotElement(card, true);
                 stage.appendChild(slot);
-            }
+            });
 
             localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
         }
@@ -530,7 +754,7 @@
             grid.innerHTML = '';
 
             if (!selectedSet) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: #7c6b61;">Select a set to view your binder inventory.</div>';
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">Select an expansion set to browse your binder pages.</div>';
                 document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
                 return;
             }
@@ -543,12 +767,7 @@
                 const isOwned = (inventory[key] || 0) > 0;
                 if (isOwned) ownedCount++;
 
-                const slot = document.createElement('div');
-                slot.className = `card-slot ${isOwned ? '' : 'unowned'}`;
-                slot.innerHTML = `
-                    <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
-                    <div class="card-number-badge">${card.CardNumber}</div>
-                `;
+                const slot = createCardSlotElement(card, isOwned);
                 grid.appendChild(slot);
             });
 
@@ -564,7 +783,7 @@
             breakdownContainer.innerHTML = '';
 
             if (!selectedSet) {
-                statsContainer.innerHTML = '<div class="stat-card"><h4>Select a set</h4><p>-</p></div>';
+                statsContainer.innerHTML = '<div class="stat-card"><h4>Select an expansion set</h4><p>-</p></div>';
                 return;
             }
 
@@ -585,7 +804,7 @@
                 </div>
             `;
 
-            // Variant / Finish breakdown calculation
+            // Variant breakdown calculation
             const variantMap = {};
             setCards.forEach(card => {
                 const variant = card.Variant || 'Normal';
@@ -611,13 +830,13 @@
             const rarityMap = {};
             setCards.forEach(card => {
                 const rarity = card.Rarity || 'Common';
-                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned:0 };
+                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned: 0 };
                 rarityMap[rarity].total++;
                 const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
             });
 
-            let rarityHtml = '<h3 style="margin-top:1rem;">Rarity Breakdown</h3><div class="tracker-stats-grid">';
+            let rarityHtml = '<h3 style="margin-top:1.5rem;">Rarity Breakdown</h3><div class="tracker-stats-grid">';
             for (const [rarity, data] of Object.entries(rarityMap)) {
                 const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
                 rarityHtml += `
