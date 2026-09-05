@@ -436,7 +436,9 @@
 
         function populateFranchises() {
             const franchiseSelect = document.getElementById('franchise-select');
-            const franchises = [...new Set(masterData.map(item => item.franchise))].filter(Boolean);
+            
+            // Automatically checks 'franchise', 'game', 'series', or 'tcg' property names
+            const franchises = [...new Set(masterData.map(item => item.franchise || item.game || item.series || item.tcg))].filter(Boolean);
             
             franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
             franchises.forEach(f => {
@@ -454,7 +456,7 @@
             setSelect.innerHTML = '<option value="">-- Select Set --</option>';
             if (!selectedFranchise) return;
 
-            const sets = [...new Set(masterData.filter(i => i.franchise === selectedFranchise).map(i => i.setName))].filter(Boolean);
+            const sets = [...new Set(masterData.filter(i => (i.franchise || i.game || i.series || i.tcg) === selectedFranchise).map(i => i.setName))].filter(Boolean);
             sets.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s;
