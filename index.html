@@ -386,27 +386,76 @@
         }
 
         async function refreshMasterData(forceFetch = false) {
-            if (!scriptUrl) {
-                alert("Please enter a valid Google Web App URL first.");
-                return;
-            }
-            updateStatus("Fetching MasterData from Sheet...");
-            try {
-                const targetUrl = `${scriptUrl}?action=getMasterData&t=${Date.now()}`;
-                const response = await fetch(targetUrl, { redirect: 'follow' });
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                
-                const data = await response.json();
-                masterData = data;
-                await saveMasterDataToIDB(data);
-                
-                populateFranchises();
-                updateStatus("Metadata updated successfully!");
-            } catch (err) {
-                console.error("Sync failed:", err);
-                updateStatus("Fetch failed. Using local storage cache.");
-            }
-        }
+    updateStatus("Fetching metadata files from GitHub...");
+    try {
+        // List of all your JSON files in your repository
+        const fileNames = [
+                        "alpha_clash.json",
+            "argent_saga_tcg.json",
+            "bakugan_tcg.json",
+            "battle_spirits_saga.json",
+            "cardfight_vanguard.json",
+            "cookierun_braverse_tcg.json",
+            "cyberpunk_tcg.json",
+            "digimon.json",
+            "dragon_ball_z.json",
+            "elestrals.json",
+            "exodus_tcg.json",
+            "final_fantasy_tcg.json",
+            "flesh__blood.json",
+            "force_of_will.json",
+            "future_card_buddyfight.json",
+            "grand_archive.json",
+            "gundam.json",
+            "harry_potter.json",
+			"heroclix.json",
+			"hololive.json",
+			"kryptik___alternative.json",
+			"lightseekers_tcg.json",
+			"lorcana.json",
+			"marvel.json",
+			"metax_tcg.json",
+			"metazoo_keepers.json",
+			"munchkin_ccg.json",
+			"onepiece.json",
+			"palworld.json",
+			"riftbound.json",
+			"shadowverse_evolve.json"
+			"sorcery.json",
+			"star_wars_unlimited.json",
+			"transformers_tcg.json",
+			"union_arena.json",
+			"universus.json",
+			"weiss___schwarz.json",
+			"wixoss.json",
+			"zombie_world_order_tcg.json"
+        ];
+
+        const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
+
+        // Automatically map filenames to full URLs and fetch them all in parallel
+        const filePromises = fileNames.map(fileName => 
+            fetch(baseUrl + fileName).then(res => {
+                if (!res.ok) throw new Error(`Failed to load ${fileName}`);
+                return res.json();
+            })
+        );
+
+        const allDatasets = await Promise.all(filePromises);
+        
+        // Flatten all datasets into your single masterData array
+        masterData = allDatasets.flat();
+        
+        // Save to browser local IndexedDB cache
+        await saveMasterDataToIDB(masterData);
+        
+        populateFranchises();
+        updateStatus("All GitHub datasets loaded & cached!");
+    } catch (err) {
+        console.error("GitHub fetch failed:", err);
+        updateStatus("Fetch failed. Using local storage cache.");
+    }
+}
 
         function populateFranchises() {
             const franchiseSelect = document.getElementById('franchise-select');
