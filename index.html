@@ -883,37 +883,33 @@
 }
 
 function exportSetCSV() {
-    const selectedSet = document.getElementById('SetName-select').value;
-    if (!selectedSet) {
-        alert("Please select an expansion set to export.");
-        return;
-    }
-
-    const setCards = masterData.filter(i => i.SetName === selectedSet);
-    
-    // Filter for unique pulls/owned cards only (avoiding quantity increments)
-    const ownedCards = setCards.filter(card => {
+    // Filter masterData for all cards that exist in your local inventory across any set/franchise
+    const ownedCards = masterData.filter(card => {
         const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
         return (inventory[key] || 0) > 0;
     });
 
     if (ownedCards.length === 0) {
-        alert("No owned cards found in this set to export.");
+        alert("No owned cards found in your collection history to export.");
         return;
     }
 
-    // Build CSV columns (adjust keys based on your master metadata schema)
-    const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL"];
+    // Build CSV columns including Franchise and SetName so you know where each card belongs
+    const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL", "Quantity"];
     let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
 
     ownedCards.forEach(card => {
+        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+        const qty = inventory[key] || 1;
+
         const row = [
             `"${(card.Franchise || '').replace(/"/g, '""')}"`,
             `"${(card.SetName || '').replace(/"/g, '""')}"`,
             `"${(card.CardNumber || '').replace(/"/g, '""')}"`,
             `"${(card.Rarity || '').replace(/"/g, '""')}"`,
             `"${(card.Variant || 'Normal').replace(/"/g, '""')}"`,
-            `"${(card.ImageURL || '').replace(/"/g, '""')}"`
+            `"${(card.ImageURL || '').replace(/"/g, '""')}"`,
+            qty
         ];
         csvContent += row.join(",") + "\n";
     });
@@ -921,12 +917,12 @@ function exportSetCSV() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `${selectedSet.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_collection.csv`);
+    link.setAttribute("download", `full_tcg_collection_history.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     
-    updateStatus("CSV exported successfully!");
+    updateStatus("Full collection CSV exported successfully!");
 }
     </script>
 </body>
