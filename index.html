@@ -366,6 +366,56 @@
             color: #b39b7d;
             background: rgba(234, 225, 210, 0.4);
         }
+		/* Workspace Visibility Control */
+.workspace {
+    display: none;
+}
+
+.workspace.active {
+    display: block;
+}
+
+/* Table Design & Mini Progress Bar */
+.overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    text-align: left;
+    background: #fffdf9;
+}
+
+.overview-table th, .overview-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-binder);
+}
+
+.overview-table th {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.85rem;
+    color: var(--wood-medium);
+    background: #f4efe6;
+}
+
+.overview-table tr:hover {
+    background: rgba(197, 155, 39, 0.05);
+}
+
+.table-progress-bar {
+    width: 100px;
+    height: 10px;
+    background: #e2d9c8;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-binder);
+}
+
+.table-progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-gold), #9f7514);
+    transition: width 0.3s ease;
+}
     </style>
 </head>
 <body>
@@ -441,7 +491,7 @@
     </div>
 	
 	<!-- Tab 4: Sim Overview -->
-	<div id="overview-workspace" class="workspace" style="display: none;">
+	<div id="overview-workspace" class="workspace">
     <div class="tracker-container">
         <h2>Multi-Franchise Collection Overview</h2>
         <div style="overflow-x: auto;">
