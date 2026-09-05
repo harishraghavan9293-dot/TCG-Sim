@@ -255,8 +255,8 @@
     <!-- Top Configuration Bar -->
     <div class="config-panel">
         <div class="config-group">
-            <label for="franchise-select">Franchise:</label>
-            <select id="franchise-select" onchange="handleFranchiseChange()">
+            <label for="Franchise-select">Franchise:</label>
+            <select id="Franchise-select" onchange="handleFranchiseChange()">
                 <option value="">Select Franchise</option>
             </select>
         </div>
@@ -435,10 +435,10 @@
         }
 
         function populateFranchises() {
-            const franchiseSelect = document.getElementById('franchise-select');
+            const franchiseSelect = document.getElementById('Franchise-select');
             
             // Automatically checks 'franchise', 'game', 'series', or 'tcg' property names
-            const franchises = [...new Set(masterData.map(item => item.franchise || item.game || item.series || item.tcg))].filter(Boolean);
+            const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
             
             franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
             franchises.forEach(f => {
@@ -450,13 +450,13 @@
         }
 
         function handleFranchiseChange() {
-            const selectedFranchise = document.getElementById('franchise-select').value;
+            const selectedFranchise = document.getElementById('Franchise-select').value;
             const setSelect = document.getElementById('set-select');
             
             setSelect.innerHTML = '<option value="">-- Select Set --</option>';
             if (!selectedFranchise) return;
 
-            const sets = [...new Set(masterData.filter(i => (i.franchise || i.game || i.series || i.tcg) === selectedFranchise).map(i => i.setName))].filter(Boolean);
+            const sets = [...new Set(masterData.filter(i => (i.Franchise || i.game || i.series || i.tcg) === selectedFranchise).map(i => i.setName))].filter(Boolean);
             sets.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s;
