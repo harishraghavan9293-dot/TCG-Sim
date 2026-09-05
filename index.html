@@ -261,8 +261,8 @@
             </select>
         </div>
         <div class="config-group">
-            <label for="set-select">Set:</label>
-            <select id="set-select" onchange="handleSetChange()">
+            <label for="SetName-select">Set:</label>
+            <select id="SetName-select" onchange="handleSetChange()">
                 <option value="">Select Set</option>
             </select>
         </div>
@@ -437,7 +437,6 @@
         function populateFranchises() {
             const franchiseSelect = document.getElementById('Franchise-select');
             
-            // Automatically checks 'franchise', 'game', 'series', or 'tcg' property names
             const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
             
             franchiseSelect.innerHTML = '<option value="">-- Select Franchise --</option>';
@@ -451,12 +450,12 @@
 
         function handleFranchiseChange() {
             const selectedFranchise = document.getElementById('Franchise-select').value;
-            const setSelect = document.getElementById('set-select');
+            const setSelect = document.getElementById('SetName-select');
             
             setSelect.innerHTML = '<option value="">-- Select Set --</option>';
             if (!selectedFranchise) return;
 
-            const sets = [...new Set(masterData.filter(i => (i.Franchise || i.game || i.series || i.tcg) === selectedFranchise).map(i => i.setName))].filter(Boolean);
+            const sets = [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
             sets.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s;
@@ -489,7 +488,7 @@
         }
 
         function openPack() {
-            const selectedSet = document.getElementById('set-select').value;
+            const selectedSet = document.getElementById('SetName-select').value;
             const stage = document.getElementById('pack-stage');
             
             if (!selectedSet) {
@@ -497,7 +496,7 @@
                 return;
             }
 
-            const availableCards = masterData.filter(i => i.setName === selectedSet);
+            const availableCards = masterData.filter(i => i.SetName === selectedSet);
             if (availableCards.length === 0) {
                 alert("No cards found for this set.");
                 return;
@@ -510,14 +509,14 @@
                 const card = availableCards[Math.floor(Math.random() * availableCards.length)];
                 packResults.push(card);
 
-                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 inventory[key] = (inventory[key] || 0) + 1;
 
                 const slot = document.createElement('div');
                 slot.className = 'card-slot';
                 slot.innerHTML = `
-                    <img src="${card.imageUrl || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
-                    <div class="card-number-badge">${card.cardNumber}</div>
+                    <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <div class="card-number-badge">${card.CardNumber}</div>
                 `;
                 stage.appendChild(slot);
             }
@@ -526,7 +525,7 @@
         }
 
         function renderBinder() {
-            const selectedSet = document.getElementById('set-select').value;
+            const selectedSet = document.getElementById('SetName-select').value;
             const grid = document.getElementById('binder-grid');
             grid.innerHTML = '';
 
@@ -536,19 +535,19 @@
                 return;
             }
 
-            const setCards = masterData.filter(i => i.setName === selectedSet);
+            const setCards = masterData.filter(i => i.SetName === selectedSet);
             let ownedCount = 0;
 
             setCards.forEach(card => {
-                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 const isOwned = (inventory[key] || 0) > 0;
                 if (isOwned) ownedCount++;
 
                 const slot = document.createElement('div');
                 slot.className = `card-slot ${isOwned ? '' : 'unowned'}`;
                 slot.innerHTML = `
-                    <img src="${card.imageUrl || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
-                    <div class="card-number-badge">${card.cardNumber}</div>
+                    <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'#666\'>No Image</text></svg>'">
+                    <div class="card-number-badge">${card.CardNumber}</div>
                 `;
                 grid.appendChild(slot);
             });
@@ -557,7 +556,7 @@
         }
 
         function renderTracker() {
-            const selectedSet = document.getElementById('set-select').value;
+            const selectedSet = document.getElementById('SetName-select').value;
             const statsContainer = document.getElementById('tracker-stats');
             const breakdownContainer = document.getElementById('breakdown-details');
             
@@ -569,12 +568,12 @@
                 return;
             }
 
-            const setCards = masterData.filter(i => i.setName === selectedSet);
+            const setCards = masterData.filter(i => i.SetName === selectedSet);
             let totalCards = setCards.length;
             let totalOwned = 0;
 
             setCards.forEach(card => {
-                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 if ((inventory[key] || 0) > 0) totalOwned++;
             });
 
@@ -586,35 +585,35 @@
                 </div>
             `;
 
-            // Finish breakdown calculation
-            const finishMap = {};
+            // Variant / Finish breakdown calculation
+            const variantMap = {};
             setCards.forEach(card => {
-                const finish = card.finish || 'Normal';
-                if (!finishMap[finish]) finishMap[finish] = { total: 0, owned: 0 };
-                finishMap[finish].total++;
-                const key = `${card.cardNumber}_${finish}`;
-                if ((inventory[key] || 0) > 0) finishMap[finish].owned++;
+                const variant = card.Variant || 'Normal';
+                if (!variantMap[variant]) variantMap[variant] = { total: 0, owned: 0 };
+                variantMap[variant].total++;
+                const key = `${card.CardNumber}_${variant}`;
+                if ((inventory[key] || 0) > 0) variantMap[variant].owned++;
             });
 
-            let finishHtml = '<h3>Finish Breakdown</h3><div class="tracker-stats-grid">';
-            for (const [finish, data] of Object.entries(finishMap)) {
+            let variantHtml = '<h3>Variant Breakdown</h3><div class="tracker-stats-grid">';
+            for (const [variant, data] of Object.entries(variantMap)) {
                 const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
-                finishHtml += `
+                variantHtml += `
                     <div class="stat-card">
-                        <h4>${finish} Finish</h4>
+                        <h4>${variant} Variant</h4>
                         <p>${data.owned} / ${data.total} (${pct}%)</p>
                     </div>
                 `;
             }
-            finishHtml += '</div>';
+            variantHtml += '</div>';
 
             // Rarity breakdown calculation
             const rarityMap = {};
             setCards.forEach(card => {
-                const rarity = card.rarity || 'Common';
+                const rarity = card.Rarity || 'Common';
                 if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned:0 };
                 rarityMap[rarity].total++;
-                const key = `${card.cardNumber}_${card.finish || 'Normal'}`;
+                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
                 if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
             });
 
@@ -630,7 +629,7 @@
             }
             rarityHtml += '</div>';
 
-            breakdownContainer.innerHTML = finishHtml + rarityHtml;
+            breakdownContainer.innerHTML = variantHtml + rarityHtml;
         }
 
         function updateStatus(text) {
