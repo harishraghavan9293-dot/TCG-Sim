@@ -552,834 +552,844 @@
     </div>
 	
     <script>
-        let masterData = [];
-        let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
+    let masterData = [];
+    let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
 
-        // IndexedDB Local Caching Framework
-        const dbName = "TCGFieldJournalDB";
-        const storeName = "masterMetadata";
+    // IndexedDB Local Caching Framework
+    const dbName = "TCGFieldJournalDB";
+    const storeName = "masterMetadata";
 
-        function openIDB() {
-            return new Promise((resolve, reject) => {
-                const request = indexedDB.open(dbName, 1);
-                request.onerror = () => reject(request.error);
-                request.onsuccess = () => resolve(request.result);
-                request.onupgradeneeded = (event) => {
-                    const db = event.target.result;
-                    if (!db.objectStoreNames.contains(storeName)) {
-                        db.createObjectStore(storeName);
-                    }
-                };
-            });
-        }
-
-        async function saveMasterDataToIDB(data) {
-            const db = await openIDB();
-            const tx = db.transaction(storeName, "readwrite");
-            tx.objectStore(storeName).put(data, "currentMasterData");
-            return tx.complete;
-        }
-
-        async function loadMasterDataFromIDB() {
-            const db = await openIDB();
-            return new Promise((resolve, reject) => {
-                const tx = db.transaction(storeName, "readonly");
-                const request = tx.objectStore(storeName).get("currentMasterData");
-                request.onsuccess = () => resolve(request.result);
-                request.onerror = () => reject(request.error);
-            });
-        }
-
-        window.onload = async () => {
-            updateStatus("Checking local archives...");
-            try {
-                const cachedData = await loadMasterDataFromIDB();
-                if (cachedData && cachedData.length > 0) {
-                    masterData = cachedData;
-                    populateFranchises();
-                    updateStatus("Archives loaded instantly!");
-                } else {
-                    await refreshMasterData();
+    function openIDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(dbName, 1);
+            request.onerror = () => reject(request.error);
+            request.onsuccess = () => resolve(request.result);
+            request.onupgradeneeded = (event) => {
+                const db = event.target.result;
+                if (!db.objectStoreNames.contains(storeName)) {
+                    db.createObjectStore(storeName);
                 }
-            } catch (err) {
-                console.error("Cache load error:", err);
+            };
+        });
+    }
+
+    async function saveMasterDataToIDB(data) {
+        const db = await openIDB();
+        const tx = db.transaction(storeName, "readwrite");
+        tx.objectStore(storeName).put(data, "currentMasterData");
+        return tx.complete;
+    }
+
+    async function loadMasterDataFromIDB() {
+        const db = await openIDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(storeName, "readonly");
+            const request = tx.objectStore(storeName).get("currentMasterData");
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
+    }
+
+    window.onload = async () => {
+        updateStatus("Checking local archives...");
+        try {
+            const cachedData = await loadMasterDataFromIDB();
+            if (cachedData && cachedData.length > 0) {
+                masterData = cachedData;
+                populateFranchises();
+                updateStatus("Archives loaded instantly!");
+            } else {
                 await refreshMasterData();
             }
-        };
-
-        async function refreshMasterData() {
-            updateStatus("Syncing datasets from cloud...");
-            try {
-                const fileNames = [
-                    "alpha_clash.json", "argent_saga_tcg.json", "bakugan_tcg.json", "battle_spirits_saga.json",
-                    "cardfight_vanguard.json", "cookierun_braverse_tcg.json", "cyberpunk_tcg.json", "digimon.json",
-                    "dragon_ball_z.json", "elestrals.json", "exodus_tcg.json", "final_fantasy_tcg.json",
-                    "flesh___blood.json", "force_of_will.json", "future_card_buddyfight.json", "grand_archive.json",
-                    "gundam.json", "harry_potter.json", "heroclix.json", "hololive.json",
-                    "kryptik___alternative.json", "lightseekers_tcg.json", "lorcana.json", "marvel.json",
-                    "metax_tcg.json", "metazoo_keepers.json", "munchkin_ccg.json", "onepiece.json",
-                    "palworld.json", "riftbound.json", "shadowverse_evolve.json", "sorcery.json",
-                    "star_wars_unlimited.json", "transformers_tcg.json", "union_arena.json", "universus.json",
-                    "weiss___schwarz.json", "wixoss.json", "zombie_world_order_tcg.json", "pokemon.json", "yugi_oh.json"
-                ];
-
-                const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
-
-                const filePromises = fileNames.map(fileName => 
-                    fetch(baseUrl + fileName).then(res => {
-                        if (!res.ok) throw new Error(`Failed to load ${fileName}`);
-                        return res.json();
-                    }).then(data => data.rows || [])
-                );
-
-                const allDatasets = await Promise.all(filePromises);
-                masterData = allDatasets.flat();
-                
-                await saveMasterDataToIDB(masterData);
-                populateFranchises();
-                updateStatus("Datasets successfully synced!");
-            } catch (err) {
-                console.error("GitHub fetch failed:", err);
-                updateStatus("Sync failed. Check connection.");
-            }
+        } catch (err) {
+            console.error("Cache load error:", err);
+            await refreshMasterData();
         }
+    };
 
-        function populateFranchises() {
-            const franchiseSelect = document.getElementById('Franchise-select');
-            const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
+    async function refreshMasterData() {
+        updateStatus("Syncing datasets from cloud...");
+        try {
+            const fileNames = [
+                "alpha_clash.json", "argent_saga_tcg.json", "bakugan_tcg.json", "battle_spirits_saga.json",
+                "cardfight_vanguard.json", "cookierun_braverse_tcg.json", "cyberpunk_tcg.json", "digimon.json",
+                "dragon_ball_z.json", "elestrals.json", "exodus_tcg.json", "final_fantasy_tcg.json",
+                "flesh___blood.json", "force_of_will.json", "future_card_buddyfight.json", "grand_archive.json",
+                "gundam.json", "harry_potter.json", "heroclix.json", "hololive.json",
+                "kryptik___alternative.json", "lightseekers_tcg.json", "lorcana.json", "marvel.json",
+                "metax_tcg.json", "metazoo_keepers.json", "munchkin_ccg.json", "onepiece.json",
+                "palworld.json", "riftbound.json", "shadowverse_evolve.json", "sorcery.json",
+                "star_wars_unlimited.json", "transformers_tcg.json", "union_arena.json", "universus.json",
+                "weiss___schwarz.json", "wixoss.json", "zombie_world_order_tcg.json", "pokemon.json", "yugi_oh.json", "mtg.min.json"
+            ];
+
+            const baseUrl = "https://raw.githubusercontent.com/harishraghavan9293-dot/TCG-Sim/refs/heads/main/";
+
+            const filePromises = fileNames.map(fileName => 
+                fetch(baseUrl + fileName).then(res => {
+                    if (!res.ok) throw new Error(`Failed to load ${fileName}`);
+                    return res.json();
+                }).then(data => data.rows || [])
+            );
+
+            const allDatasets = await Promise.all(filePromises);
+            masterData = allDatasets.flat();
             
-            franchiseSelect.innerHTML = '<option value="">-- Choose Franchise --</option>';
-            franchises.forEach(f => {
-                const opt = document.createElement('option');
-                opt.value = f;
-                opt.textContent = f;
-                franchiseSelect.appendChild(opt);
-            });
+            await saveMasterDataToIDB(masterData);
+            populateFranchises();
+            updateStatus("Datasets successfully synced!");
+        } catch (err) {
+            console.error("GitHub fetch failed:", err);
+            updateStatus("Sync failed. Check connection.");
         }
-
-        function handleFranchiseChange() {
-            const selectedFranchise = document.getElementById('Franchise-select').value;
-            const setSelect = document.getElementById('SetName-select');
-            
-            setSelect.innerHTML = '<option value="">-- Choose Set --</option>';
-            if (!selectedFranchise) return;
-
-            const sets = [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
-            sets.forEach(s => {
-                const opt = document.createElement('option');
-                opt.value = s;
-                opt.textContent = s;
-                setSelect.appendChild(opt);
-            });
-        }
-
-        function handleSetChange() {
-            renderBinder();
-            renderTracker();
-        }
-
-        function switchTab(tabId) {
-            document.querySelectorAll('.workspace').forEach(w => w.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-            if (tabId === 'packer') {
-                document.getElementById('packer-workspace').classList.add('active');
-                event.target.classList.add('active');
-            } else if (tabId === 'binder') {
-                document.getElementById('binder-workspace').classList.add('active');
-                event.target.classList.add('active');
-                renderBinder();
-            } else if (tabId === 'tracker') {
-                document.getElementById('tracker-workspace').classList.add('active');
-                event.target.classList.add('active');
-                renderTracker();
-            } else if (tabId === 'overview') {
-                document.getElementById('overview-workspace').classList.add('active');
-                event.target.classList.add('active');
-                renderGlobalOverview();
-            }
-        }
-
-        // Exact mapping dictionary incorporating your 325 rarities into probability tiers
-        const rarityTierMap = {
-    // Ultra Tier Rarities
-    "10000 Secret Rare": "ultra",
-    "10th RRR": "ultra",
-    "10th SEC": "ultra",
-    "10th SP": "ultra",
-    "15thSP": "ultra",
-    "ACE": "ultra",
-    "ACE SPEC Rare": "ultra",
-    "Alpha Rare": "ultra",
-    "ALT ART": "ultra",
-    "Alternate Art Common": "ultra",
-    "Alternate Art Rare": "ultra",
-    "Alternate Art Secret Rare": "ultra",
-    "Alternate Art Ultra Rare": "ultra",
-    "Alternate Art Uncommon": "ultra",
-    "Amazing Rare": "ultra",
-    "Anniversary Rare": "ultra",
-    "AoButa Rare": "ultra",
-    "AR": "ultra",
-    "Argent Rare": "ultra",
-    "ASR": "ultra",
-    "Avatar Rare": "ultra",
-    "Awesome Rare": "ultra",
-    "AxO": "ultra",
-    "Bakugan Elite": "ultra",
-    "Band Rare": "ultra",
-    "BanG Dream Rare": "ultra",
-    "BR": "ultra",
-    "BSR": "ultra",
-    "Chainsaw Man Rare": "ultra",
-    "Character Alternate Art Rare": "ultra",
-    "Character Common Alternate Art": "ultra",
-    "Character Extra Rare": "ultra",
-    "Character Rare": "ultra",
-    "Character Rare Alternate Art": "ultra",
-    "Character Super Rare": "ultra",
-    "Character Super Rare Alternate Art": "ultra",
-    "Character Ultra Rare": "ultra",
-    "Character Ultra Rare Alternate Art": "ultra",
-    "Chase": "ultra",
-    "CHR": "ultra",
-    "Chrome Rare": "ultra",
-    "Classic Collection": "ultra",
-    "Collaboration X Rare": "ultra",
-    "Collector Super Rare": "ultra",
-    "Collector Ultra Rare": "ultra",
-    "Collector's Rare": "ultra",
-    "COMMON (Alt)": "ultra",
-    "Crown": "ultra",
-    "Crown Rare": "ultra",
-    "CSR": "ultra",
-    "DANDADAN Rare": "ultra",
-    "Deadly Sin Rare": "ultra",
-    "Deculture Rare": "ultra",
-    "DiR": "ultra",
-    "Double Frame Rare": "ultra",
-    "Double Rare": "ultra",
-    "Double Rare Plus": "ultra",
-    "DR": "ultra",
-    "DSR": "ultra",
-    "Duel Terminal Normal Parallel Rare": "ultra",
-    "Duel Terminal Normal Rare Parallel Rare": "ultra",
-    "Duel Terminal Rare Parallel Rare": "ultra",
-    "Duel Terminal Super Parallel Rare": "ultra",
-    "Duel Terminal Ultra Parallel Rare": "ultra",
-    "Enchanted": "ultra",
-    "Enchantée": "ultra",
-    "ENR": "ultra",
-    "Epica": "ultra",
-    "Épique": "ultra",
-    "Episch": "ultra",
-    "ER": "ultra",
-    "European & Oceanian debut": "ultra",
-    "European debut": "ultra",
-    "EVA SAGA": "ultra",
-    "EX": "ultra",
-    "EXC": "ultra",
-    "Exceptional": "ultra",
-    "EXP": "ultra",
-    "EXRRR": "ultra",
-    "EXS": "ultra",
-    "Extra Rare": "ultra",
-    "Extra Secret": "ultra",
-    "Extra Secret Rare": "ultra",
-    "Festival Parallel": "ultra",
-    "FFR": "ultra",
-    "Foil Premium": "ultra",
-    "force-SMW": "ultra",
-    "FR": "ultra",
-    "Frame Rare": "ultra",
-    "Fujimi Fantasia Bunko Rare": "ultra",
-    "Full Art Trainer": "ultra",
-    "Genesis Extra Rare": "ultra",
-    "Girls Band Cry Rare": "ultra",
-    "Gold": "ultra",
-    "Gold Rare": "ultra",
-    "Gold Secret Rare": "ultra",
-    "GR": "ultra",
-    "Grand Master Rare": "ultra",
-    "Gun Gale Rare": "ultra",
-    "Hidden Rare": "ultra",
-    "High Rare": "ultra",
-    "Holo Rare V": "ultra",
-    "Holo Rare VMAX": "ultra",
-    "Holo Rare VSTAR": "ultra",
-    "Hololive Parallel": "ultra",
-    "HR": "ultra",
-    "Hyper rare": "ultra",
-    "Iconic Art": "ultra",
-    "Iconic Legend": "ultra",
-    "Iconic Secret": "ultra",
-    "IGR": "ultra",
-    "IM": "ultra",
-    "IMR": "ultra",
-    "IR": "ultra",
-    "Itsutsugo Parallel": "ultra",
-    "JoJo Rare": "ultra",
-    "Kaguya Rare": "ultra",
-    "Kessoku Band Rare": "ultra",
-    "KR": "ultra",
-    "LEADER (Alt)": "ultra",
-    "Legend": "ultra",
-    "Legend Rare": "ultra",
-    "Légendaire": "ultra",
-    "Legendär": "ultra",
-    "Legendary": "ultra",
-    "Leggendaria": "ultra",
-    "LGR": "ultra",
-    "LGRR": "ultra",
-    "LGRRR": "ultra",
-    "LGTR": "ultra",
-    "Lico Rico Rare": "ultra",
-    "LIR": "ultra",
-    "LR+": "ultra",
-    "LR++": "ultra",
-    "LRP": "ultra",
-    "LSP": "ultra",
-    "LSR": "ultra",
-    "LycoReco Parallel": "ultra",
-    "Maid Dragon Rare": "ultra",
-    "Majestic": "ultra",
-    "MAM": "ultra",
-    "Marvel Rare": "ultra",
-    "Mega Hyper Rare": "ultra",
-    "Mega Ultra Rare": "ultra",
-    "Mosaic Rare": "ultra",
-    "MSP": "ultra",
-    "Mythic": "ultra",
-    "New": "ultra",
-    "New artwork": "ultra",
-    "No Rarity": "ultra",
-    "Noble Rare": "ultra",
-    "OCR": "ultra",
-    "OR": "ultra",
-    "ORR": "ultra",
-    "ORRR": "ultra",
-    "Oshi Super Rare": "ultra",
-    "Oshi Ultra Rare": "ultra",
-    "OSR": "ultra",
-    "Over-Frame Rare": "ultra",
-    "Persona Rare": "ultra",
-    "PGS": "ultra",
-    "PI": "ultra",
-    "Pirate Booty": "ultra",
-    "Platinum Rare": "ultra",
-    "Platinum Secret Rare": "ultra",
-    "Premium Gold Rare": "ultra",
-    "Prismatic Secret Rare": "ultra",
-    "PROMO (Alt)": "ultra",
-    "Promo +": "ultra",
-    "Promo Plus": "ultra",
-    "Promo-Alternate Art": "ultra",
-    "Quarter Century Secret Rare": "ultra",
-    "Radiant Rare": "ultra",
-    "RARE (Alt)": "ultra",
-    "Rare 1-Star": "ultra",
-    "Rare 2-Star": "ultra",
-    "Rare Extra Rare": "ultra",
-    "Rare Holo LV.X": "ultra",
-    "Rare PRIME": "ultra",
-    "RE+": "ultra",
-    "RGR": "ultra",
-    "RLR": "ultra",
-    "Round Table Rare": "ultra",
-    "RRR": "ultra",
-    "Ruler Rare": "ultra",
-    "RWBY Rare": "ultra",
-    "Saga Rare": "ultra",
-    "SAR": "ultra",
-    "SCR": "ultra",
-    "SEC": "ultra",
-    "SECP": "ultra",
-    "Secret": "ultra",
-    "Secret Rare": "ultra",
-    "SECRET RARE (Alt)": "ultra",
-    "Secret Rare Plus": "ultra",
-    "Secret Super Rare": "ultra",
-    "Secret Uber": "ultra",
-    "Secret Ultra Rare": "ultra",
-    "SECV": "ultra",
-    "SER": "ultra",
-    "SER+": "ultra",
-    "Serial Rare": "ultra",
-    "SFR": "ultra",
-    "SGR": "ultra",
-    "Shadow Rare": "ultra",
-    "Shana Parallel": "ultra",
-    "Shatterfoil Rare": "ultra",
-    "Shiny Holo Rare": "ultra",
-    "Shiny rare": "ultra",
-    "Shiny rare V": "ultra",
-    "Shiny rare VMAX": "ultra",
-    "Shiny Ultra Rare": "ultra",
-    "Showcase": "ultra",
-    "SIR": "ultra",
-    "SKR": "ultra",
-    "SP": "ultra",
-    "Special": "ultra",
-    "Special illustration rare": "ultra",
-    "Special Pack Rare": "ultra",
-    "Special Rare": "ultra",
-    "Spectacle Rare": "ultra",
-    "Spy Rare": "ultra",
-    "SR": "ultra",
-    "SRP": "ultra",
-    "SSP": "ultra",
-    "SSR": "ultra",
-    "Starlight Rare": "ultra",
-    "Starter Exclusive Extra Rare": "ultra",
-    "Starter Rare": "ultra",
-    "Sub Ruler Rare": "ultra",
-    "Super Legendary": "ultra",
-    "Super Parallel Rare": "ultra",
-    "SUPER RARE (Alt)": "ultra",
-    "Super Rare 1-Star": "ultra",
-    "Super Rare 2-Star": "ultra",
-    "Super Rare 3-Star": "ultra",
-    "Super Special": "ultra",
-    "Super Special Plus": "ultra",
-    "Super Special Rare": "ultra",
-    "SVR": "ultra",
-    "TDR": "ultra",
-    "TGR+": "ultra",
-    "Titan Rare": "ultra",
-    "Tokyo Revengers Rare": "ultra",
-    "TREASURE RARE": "ultra",
-    "Triple Rare": "ultra",
-    "Triple Rare Plus": "ultra",
-    "TRR": "ultra",
-    "Uber Rare": "ultra",
-    "Ultimate": "ultra",
-    "Ultimate Rare": "ultra",
-    "Ultra Chase": "ultra",
-    "Ultra Parallel Rare": "ultra",
-    "Ultra Rare": "ultra",
-    "Ultra Rare (Pharaoh's Rare)": "ultra",
-    "Ultra Rare Extra Rare": "ultra",
-    "Ultra Secret Rare": "ultra",
-    "Union Rare": "ultra",
-    "UR": "ultra",
-    "URR": "ultra",
-    "V - Very Rare": "ultra",
-    "Variant": "ultra",
-    "VDR": "ultra",
-    "Very Rare": "ultra",
-    "Verzaubert": "ultra",
-    "Visual Rare": "ultra",
-    "VR": "ultra",
-    "VSR": "ultra",
-    "X - Special": "ultra",
-    "X Rare": "ultra",
-    "XR": "ultra",
-    "XVR": "ultra",
-    "ZR": "ultra",
-
-    // Rare Tier Rarities
-    "Anniversary": "rare",
-    "Epic": "rare",
-    "Fabled": "rare",
-    "Four Diamond": "rare",
-    "Ghost Rare": "rare",
-    "Ghost/Gold Rare": "rare",
-    "Harmony Rare": "rare",
-    "Hero": "rare",
-    "Holo Double Rare": "rare",
-    "Holo Portrait Premium": "rare",
-    "Holo Rare": "rare",
-    "Iconic": "rare",
-    "Iconic Other": "rare",
-    "Iconic Rare": "rare",
-    "Iconica": "rare",
-    "Iconique": "rare",
-    "Ikonisch": "rare",
-    "Incantata": "rare",
-    "LEADER": "rare",
-    "Lesson": "rare",
-    "LGRR": "rare",
-    "LR": "rare",
-    "Marvel": "rare",
-    "Memoria": "rare",
-    "Premium": "rare",
-    "R": "rare",
-    "R+": "rare",
-    "Rara": "rare",
-    "Rare": "rare",
-    "Rare Holo": "rare",
-    "RE": "rare",
-    "Reprint": "rare",
-    "RR": "rare",
-    "SD": "rare",
-    "Selten": "rare",
-    "ST": "rare",
-    "Standard": "rare",
-    "Starfoil Rare": "rare",
-    "Starter": "rare",
-    "Starter Exclusive": "rare",
-    "T": "rare",
-    "TD": "rare",
-    "TGR": "rare",
-    "Three Diamond": "rare",
-    "Three Star": "rare",
-    "Très Rare": "rare",
-    "Trial Deck": "rare",
-    "Two Diamond": "rare",
-    "Two Shiny": "rare",
-    "Two Star": "rare",
-    "U+": "rare",
-    "Unique": "rare",
-
-    // Uncommon Tier Rarities
-    "C+": "uncommon",
-    "C++": "uncommon",
-    "Character Uncommon": "uncommon",
-    "Common 1-Star": "uncommon",
-    "Common 2-Star": "uncommon",
-    "Inhabituelle": "uncommon",
-    "Oshi Common": "uncommon",
-    "Starfoil": "uncommon",
-    "Super Rara": "uncommon",
-    "UC": "uncommon",
-    "Uncommon": "uncommon",
-    "UNCOMMON (Alt)": "uncommon",
-    "Uncommon 1-Star": "uncommon",
-    "Uncommon 2-Star": "uncommon",
-    "Uncommon 3-Star": "uncommon",
-    "Uncommon Extra Rare": "uncommon",
-    "Ungewöhnlich": "uncommon",
-
-    // Common Tier Rarities
-    "1st": "common",
-    "Action Point": "common",
-    "Action Point 1-Star": "common",
-    "Basic": "common",
-    "bonus": "common",
-    "Bronze": "common",
-    "C": "common",
-    "Character": "common",
-    "Character Card": "common",
-    "Character Common": "common",
-    "Character Common Alternate Art": "common",
-    "Climax Common": "common",
-    "Climax Rare": "common",
-    "Collaboration Rare": "common",
-    "Collector Promo": "common",
-    "Commune": "common",
-    "Comune": "common",
-    "Cross Rare": "common",
-    "DB": "common",
-    "F - Fomo": "common",
-    "Gewöhnlich": "common",
-    "Gift Marker": "common",
-    "H": "common",
-    "H - Hero": "common",
-    "Hanayome Rare": "common",
-    "Holo Common": "common",
-    "Holo Uncommon": "common",
-    "Holomem Rare": "common",
-    "LC": "common",
-    "N/A": "common",
-    "Non comune": "common",
-    "None": "common",
-    "Normal": "common",
-    "Normal Parallel Rare": "common",
-    "Oceanian debut": "common",
-    "One Diamond": "common",
-    "One Shiny": "common",
-    "One Star": "common",
-    "Ordinary": "common",
-    "Oshi Common": "common",
-    "P": "common",
-    "Platinum Common": "common",
-    "PR": "common",
-    "Promo": "common",
-    "Promo Plus": "common",
-    "Promotion": "common",
-    "Saga Rare": "common",
-    "Silver": "common",
-    "Special Yell": "common",
-    "Token": "common",
-    "WO": "common"
-};
-
-        function getRarityTier(rarityStr) {
-            if (!rarityStr) return 'common';
-            if (rarityTierMap[rarityStr]) {
-                return rarityTierMap[rarityStr];
-            }
-            const r = rarityStr.toLowerCase();
-            if (r.includes('sec') || r.includes('secret') || r.includes('sp') || r.includes('alt') || 
-                r.includes('alternate') || r.includes('variant') || r.includes('ssr') || r.includes('ur') || 
-                r.includes('lgr') || r.includes('lr') || r.includes('asr') || r.includes('ser')) {
-                return 'ultra';
-            }
-            if (r.includes('rare') || r.includes('r') || r.includes('holo') || r.includes('leader')) {
-                return 'rare';
-            }
-            if (r.includes('uncommon') || r.includes('uc')) {
-                return 'uncommon';
-            }
-            return 'common';
-        }
-
-        function createCardSlotElement(card, isOwned = true, isNew = false) {
-    const isSpecialVariant = card.Variant === "Variant";
-    const slot = document.createElement('div');
-    slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
-    
-    let badgesHtml = '';
-    if (isSpecialVariant && isOwned) {
-        badgesHtml += `<div class="special-badge">Variant</div>`;
-    }
-    if (isNew) {
-        badgesHtml += `<div class="special-badge" style="background: linear-gradient(135deg, #27ae60, #1e8449); left: 8px; right: auto;">New!</div>`;
     }
 
-    if (isOwned) {
-        // Render actual image once owned
-        slot.innerHTML = `
-            <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
-            ${badgesHtml}
-        `;
-    } else {
-        // Render clean placeholder showing only the Card Number if unowned
-        slot.innerHTML = `
-            <div class="unowned-number-slot">
-                <span>#${card.CardNumber || '??'}</span>
-            </div>
-        `;
-    }
-
-    return slot;
-}
-
-        function openPack() {
-    const selectedSet = document.getElementById('SetName-select').value;
-    const stage = document.getElementById('pack-stage');
-    
-    if (!selectedSet) {
-        alert("Please select a franchise and an expansion set first!");
-        return;
-    }
-
-    const setCards = masterData.filter(i => i.SetName === selectedSet);
-    if (setCards.length === 0) {
-        alert("No cards found for this set.");
-        return;
-    }
-
-    const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
-    setCards.forEach(card => {
-        const tier = getRarityTier(card.Rarity);
-        tiers[tier].push(card);
-    });
-
-    const fallbackPool = setCards;
-
-    function drawFromTier(tierKeys) {
-        for (let k of tierKeys) {
-            if (tiers[k] && tiers[k].length > 0) {
-                return tiers[k][Math.floor(Math.random() * tiers[k].length)];
-            }
-        }
-        return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
-    }
-
-    stage.innerHTML = '';
-
-    // 10-Card Booster Pack Distribution Blueprint
-    const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
-
-    slotBlueprint.forEach(targetTier => {
-        let card;
-        if (targetTier === 'common') {
-            card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
-        } else if (targetTier === 'uncommon') {
-            card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
-        } else if (targetTier === 'rare') {
-            card = drawFromTier(['rare', 'ultra', 'uncommon', 'common']);
-        } else {
-            card = drawFromTier(['ultra', 'rare', 'uncommon', 'common']);
-        }
-
-        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+    function populateFranchises() {
+        const franchiseSelect = document.getElementById('Franchise-select');
+        const franchises = [...new Set(masterData.map(item => item.Franchise))].filter(Boolean);
         
-        // Determine if this is a brand new card pull
-        const currentQty = inventory[key] || 0;
-        const isNewPull = currentQty === 0;
-
-        inventory[key] = currentQty + 1;
-
-        const slot = createCardSlotElement(card, true, isNewPull);
-        stage.appendChild(slot);
-    });
-
-    localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
-    updateStatus("Pack opened successfully!");
-}
-
-        function renderBinder() {
-    const selectedSet = document.getElementById('SetName-select').value;
-    const grid = document.getElementById('binder-grid');
-    grid.innerHTML = '';
-
-    if (!selectedSet) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">Select an expansion set to browse your binder pages.</div>';
-        document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
-        return;
+        franchiseSelect.innerHTML = '<option value="">-- Choose Franchise --</option>';
+        franchises.forEach(f => {
+            const opt = document.createElement('option');
+            opt.value = f;
+            opt.textContent = f;
+            franchiseSelect.appendChild(opt);
+        });
     }
 
-    const setCards = masterData.filter(i => i.SetName === selectedSet);
-    let ownedCount = 0;
-
-    setCards.forEach(card => {
-        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-        const isOwned = (inventory[key] || 0) > 0;
-        if (isOwned) ownedCount++;
-
-        const slot = createCardSlotElement(card, isOwned, false);
-        grid.appendChild(slot);
-    });
-
-    document.getElementById('binder-counter').textContent = `${ownedCount} / ${setCards.length} Unique Cards Owned`;
-}
-
-        function renderTracker() {
-            const selectedSet = document.getElementById('SetName-select').value;
-            const statsContainer = document.getElementById('tracker-stats');
-            const breakdownContainer = document.getElementById('breakdown-details');
-            
-            statsContainer.innerHTML = '';
-            breakdownContainer.innerHTML = '';
-
-            if (!selectedSet) {
-                statsContainer.innerHTML = '<div class="stat-card"><h4>Select an expansion set</h4><p>-</p></div>';
-                return;
-            }
-
-            const setCards = masterData.filter(i => i.SetName === selectedSet);
-            let totalCards = setCards.length;
-            let totalOwned = 0;
-
-            setCards.forEach(card => {
-                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-                if ((inventory[key] || 0) > 0) totalOwned++;
-            });
-
-            const overallPct = totalCards > 0 ? ((totalOwned / totalCards) * 100).toFixed(1) : 0;
-            statsContainer.innerHTML = `
-                <div class="stat-card">
-                    <h4>Overall Set Completion</h4>
-                    <p>${totalOwned} / ${totalCards} (${overallPct}%)</p>
-                </div>
-            `;
-
-            // Variant breakdown calculation
-            const variantMap = {};
-            setCards.forEach(card => {
-                const variant = card.Variant || 'Normal';
-                if (!variantMap[variant]) variantMap[variant] = { total: 0, owned: 0 };
-                variantMap[variant].total++;
-                const key = `${card.CardNumber}_${variant}`;
-                if ((inventory[key] || 0) > 0) variantMap[variant].owned++;
-            });
-
-            let variantHtml = '<h3>Variant Breakdown</h3><div class="tracker-stats-grid">';
-            for (const [variant, data] of Object.entries(variantMap)) {
-                const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
-                variantHtml += `
-                    <div class="stat-card">
-                        <h4>${variant} Variant</h4>
-                        <p>${data.owned} / ${data.total} (${pct}%)</p>
-                    </div>
-                `;
-            }
-            variantHtml += '</div>';
-
-            // Rarity breakdown calculation
-            const rarityMap = {};
-            setCards.forEach(card => {
-                const rarity = card.Rarity || 'Common';
-                if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned: 0 };
-                rarityMap[rarity].total++;
-                const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-                if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
-            });
-
-            let rarityHtml = '<h3 style="margin-top:1.5rem;">Rarity Breakdown</h3><div class="tracker-stats-grid">';
-            for (const [rarity, data] of Object.entries(rarityMap)) {
-                const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
-                rarityHtml += `
-                    <div class="stat-card">
-                        <h4>${rarity}</h4>
-                        <p>${data.owned} / ${data.total} (${pct}%)</p>
-                    </div>
-                `;
-            }
-            rarityHtml += '</div>';
-
-            breakdownContainer.innerHTML = variantHtml + rarityHtml;
-        }
-
-        function updateStatus(text) {
-            document.getElementById('status-badge').textContent = text;
-        }
-		function resetCollection() {
-    if (confirm("Are you sure you want to wipe your local collection inventory memory? This cannot be undone.")) {
-        inventory = {};
-        localStorage.removeItem('tcg_local_inventory');
-        updateStatus("Collection has been reset.");
+    function handleFranchiseChange() {
+        const selectedFranchise = document.getElementById('Franchise-select').value;
+        const setSelect = document.getElementById('SetName-select');
         
-        // Refresh active views if visible
+        setSelect.innerHTML = '<option value="">-- Choose Set --</option>';
+        if (!selectedFranchise) return;
+
+        const sets = [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
+        sets.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s;
+            opt.textContent = s;
+            setSelect.appendChild(opt);
+        });
+    }
+
+    function handleSetChange() {
         renderBinder();
         renderTracker();
     }
-}
 
-function exportSetCSV() {
-    // Filter masterData for all cards that exist in your local inventory across any set/franchise
-    const ownedCards = masterData.filter(card => {
-        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-        return (inventory[key] || 0) > 0;
-    });
+    function switchTab(tabId) {
+        document.querySelectorAll('.workspace').forEach(w => w.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
 
-    if (ownedCards.length === 0) {
-        alert("No owned cards found in your collection history to export.");
-        return;
+        if (tabId === 'packer') {
+            document.getElementById('packer-workspace').classList.add('active');
+            event.target.classList.add('active');
+        } else if (tabId === 'binder') {
+            document.getElementById('binder-workspace').classList.add('active');
+            event.target.classList.add('active');
+            renderBinder();
+        } else if (tabId === 'tracker') {
+            document.getElementById('tracker-workspace').classList.add('active');
+            event.target.classList.add('active');
+            renderTracker();
+        } else if (tabId === 'overview') {
+            document.getElementById('overview-workspace').classList.add('active');
+            event.target.classList.add('active');
+            renderGlobalOverview();
+        }
     }
 
-    // Build CSV columns including Franchise and SetName so you know where each card belongs
-    const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL", "Quantity"];
-    let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
+    // Helper to generate a strictly unique key per card based on Franchise, Set, Card Number, and Variant
+    function getCardKey(card) {
+        return `${card.Franchise || ''}__${card.SetName || ''}__${card.CardNumber || ''}__${card.Variant || 'Normal'}`;
+    }
 
-    ownedCards.forEach(card => {
-        const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
-        const qty = inventory[key] || 1;
+    // Exact mapping dictionary incorporating your rarities into probability tiers
+    const rarityTierMap = {
+        // Ultra Tier Rarities
+        "10000 Secret Rare": "ultra",
+        "10th RRR": "ultra",
+        "10th SEC": "ultra",
+        "10th SP": "ultra",
+        "15thSP": "ultra",
+        "ACE": "ultra",
+        "ACE SPEC Rare": "ultra",
+        "Alpha Rare": "ultra",
+        "ALT ART": "ultra",
+        "Alternate Art Common": "ultra",
+        "Alternate Art Rare": "ultra",
+        "Alternate Art Secret Rare": "ultra",
+        "Alternate Art Ultra Rare": "ultra",
+        "Alternate Art Uncommon": "ultra",
+        "Amazing Rare": "ultra",
+        "Anniversary Rare": "ultra",
+        "AoButa Rare": "ultra",
+        "AR": "ultra",
+        "Argent Rare": "ultra",
+        "ASR": "ultra",
+        "Avatar Rare": "ultra",
+        "Awesome Rare": "ultra",
+        "AxO": "ultra",
+        "Bakugan Elite": "ultra",
+        "Band Rare": "ultra",
+        "BanG Dream Rare": "ultra",
+        "BR": "ultra",
+        "BSR": "ultra",
+        "Chainsaw Man Rare": "ultra",
+        "Character Alternate Art Rare": "ultra",
+        "Character Common Alternate Art": "ultra",
+        "Character Extra Rare": "ultra",
+        "Character Rare": "ultra",
+        "Character Rare Alternate Art": "ultra",
+        "Character Super Rare": "ultra",
+        "Character Super Rare Alternate Art": "ultra",
+        "Character Ultra Rare": "ultra",
+        "Character Ultra Rare Alternate Art": "ultra",
+        "Chase": "ultra",
+        "CHR": "ultra",
+        "Chrome Rare": "ultra",
+        "Classic Collection": "ultra",
+        "Collaboration X Rare": "ultra",
+        "Collector Super Rare": "ultra",
+        "Collector Ultra Rare": "ultra",
+        "Collector's Rare": "ultra",
+        "COMMON (Alt)": "ultra",
+        "Crown": "ultra",
+        "Crown Rare": "ultra",
+        "CSR": "ultra",
+        "DANDADAN Rare": "ultra",
+        "Deadly Sin Rare": "ultra",
+        "Deculture Rare": "ultra",
+        "DiR": "ultra",
+        "Double Frame Rare": "ultra",
+        "Double Rare": "ultra",
+        "Double Rare Plus": "ultra",
+        "DR": "ultra",
+        "DSR": "ultra",
+        "Duel Terminal Normal Parallel Rare": "ultra",
+        "Duel Terminal Normal Rare Parallel Rare": "ultra",
+        "Duel Terminal Rare Parallel Rare": "ultra",
+        "Duel Terminal Super Parallel Rare": "ultra",
+        "Duel Terminal Ultra Parallel Rare": "ultra",
+        "Enchanted": "ultra",
+        "Enchantée": "ultra",
+        "ENR": "ultra",
+        "Epica": "ultra",
+        "Épique": "ultra",
+        "Episch": "ultra",
+        "ER": "ultra",
+        "European & Oceanian debut": "ultra",
+        "European debut": "ultra",
+        "EVA SAGA": "ultra",
+        "EX": "ultra",
+        "EXC": "ultra",
+        "Exceptional": "ultra",
+        "EXP": "ultra",
+        "EXRRR": "ultra",
+        "EXS": "ultra",
+        "Extra Rare": "ultra",
+        "Extra Secret": "ultra",
+        "Extra Secret Rare": "ultra",
+        "Festival Parallel": "ultra",
+        "FFR": "ultra",
+        "Foil Premium": "ultra",
+        "force-SMW": "ultra",
+        "FR": "ultra",
+        "Frame Rare": "ultra",
+        "Fujimi Fantasia Bunko Rare": "ultra",
+        "Full Art Trainer": "ultra",
+        "Genesis Extra Rare": "ultra",
+        "Girls Band Cry Rare": "ultra",
+        "Gold": "ultra",
+        "Gold Rare": "ultra",
+        "Gold Secret Rare": "ultra",
+        "GR": "ultra",
+        "Grand Master Rare": "ultra",
+        "Gun Gale Rare": "ultra",
+        "Hidden Rare": "ultra",
+        "High Rare": "ultra",
+        "Holo Rare V": "ultra",
+        "Holo Rare VMAX": "ultra",
+        "Holo Rare VSTAR": "ultra",
+        "Hololive Parallel": "ultra",
+        "HR": "ultra",
+        "Hyper rare": "ultra",
+        "Iconic Art": "ultra",
+        "Iconic Legend": "ultra",
+        "Iconic Secret": "ultra",
+        "IGR": "ultra",
+        "IM": "ultra",
+        "IMR": "ultra",
+        "IR": "ultra",
+        "Itsutsugo Parallel": "ultra",
+        "JoJo Rare": "ultra",
+        "Kaguya Rare": "ultra",
+        "Kessoku Band Rare": "ultra",
+        "KR": "ultra",
+        "LEADER (Alt)": "ultra",
+        "Legend": "ultra",
+        "Legend Rare": "ultra",
+        "Légendaire": "ultra",
+        "Legendär": "ultra",
+        "Legendary": "ultra",
+        "Leggendaria": "ultra",
+        "LGR": "ultra",
+        "LGRR": "ultra",
+        "LGRRR": "ultra",
+        "LGTR": "ultra",
+        "Lico Rico Rare": "ultra",
+        "LIR": "ultra",
+        "LR+": "ultra",
+        "LR++": "ultra",
+        "LRP": "ultra",
+        "LSP": "ultra",
+        "LSR": "ultra",
+        "LycoReco Parallel": "ultra",
+        "Maid Dragon Rare": "ultra",
+        "Majestic": "ultra",
+        "MAM": "ultra",
+        "Marvel Rare": "ultra",
+        "Mega Hyper Rare": "ultra",
+        "Mega Ultra Rare": "ultra",
+        "Mosaic Rare": "ultra",
+        "MSP": "ultra",
+        "Mythic": "ultra",
+        "New": "ultra",
+        "New artwork": "ultra",
+        "No Rarity": "ultra",
+        "Noble Rare": "ultra",
+        "OCR": "ultra",
+        "OR": "ultra",
+        "ORR": "ultra",
+        "ORRR": "ultra",
+        "Oshi Super Rare": "ultra",
+        "Oshi Ultra Rare": "ultra",
+        "OSR": "ultra",
+        "Over-Frame Rare": "ultra",
+        "Persona Rare": "ultra",
+        "PGS": "ultra",
+        "PI": "ultra",
+        "Pirate Booty": "ultra",
+        "Platinum Rare": "ultra",
+        "Platinum Secret Rare": "ultra",
+        "Premium Gold Rare": "ultra",
+        "Prismatic Secret Rare": "ultra",
+        "PROMO (Alt)": "ultra",
+        "Promo +": "ultra",
+        "Promo Plus": "ultra",
+        "Promo-Alternate Art": "ultra",
+        "Quarter Century Secret Rare": "ultra",
+        "Radiant Rare": "ultra",
+        "RARE (Alt)": "ultra",
+        "Rare 1-Star": "ultra",
+        "Rare 2-Star": "ultra",
+        "Rare Extra Rare": "ultra",
+        "Rare Holo LV.X": "ultra",
+        "Rare PRIME": "ultra",
+        "RE+": "ultra",
+        "RGR": "ultra",
+        "RLR": "ultra",
+        "Round Table Rare": "ultra",
+        "RRR": "ultra",
+        "Ruler Rare": "ultra",
+        "RWBY Rare": "ultra",
+        "Saga Rare": "ultra",
+        "SAR": "ultra",
+        "SCR": "ultra",
+        "SEC": "ultra",
+        "SECP": "ultra",
+        "Secret": "ultra",
+        "Secret Rare": "ultra",
+        "SECRET RARE (Alt)": "ultra",
+        "Secret Rare Plus": "ultra",
+        "Secret Super Rare": "ultra",
+        "Secret Uber": "ultra",
+        "Secret Ultra Rare": "ultra",
+        "SECV": "ultra",
+        "SER": "ultra",
+        "SER+": "ultra",
+        "Serial Rare": "ultra",
+        "SFR": "ultra",
+        "SGR": "ultra",
+        "Shadow Rare": "ultra",
+        "Shana Parallel": "ultra",
+        "Shatterfoil Rare": "ultra",
+        "Shiny Holo Rare": "ultra",
+        "Shiny rare": "ultra",
+        "Shiny rare V": "ultra",
+        "Shiny rare VMAX": "ultra",
+        "Shiny Ultra Rare": "ultra",
+        "Showcase": "ultra",
+        "SIR": "ultra",
+        "SKR": "ultra",
+        "SP": "ultra",
+        "Special": "ultra",
+        "Special illustration rare": "ultra",
+        "Special Pack Rare": "ultra",
+        "Special Rare": "ultra",
+        "Spectacle Rare": "ultra",
+        "Spy Rare": "ultra",
+        "SR": "ultra",
+        "SRP": "ultra",
+        "SSP": "ultra",
+        "SSR": "ultra",
+        "Starlight Rare": "ultra",
+        "Starter Exclusive Extra Rare": "ultra",
+        "Starter Rare": "ultra",
+        "Sub Ruler Rare": "ultra",
+        "Super Legendary": "ultra",
+        "Super Parallel Rare": "ultra",
+        "SUPER RARE (Alt)": "ultra",
+        "Super Rare 1-Star": "ultra",
+        "Super Rare 2-Star": "ultra",
+        "Super Rare 3-Star": "ultra",
+        "Super Special": "ultra",
+        "Super Special Plus": "ultra",
+        "Super Special Rare": "ultra",
+        "SVR": "ultra",
+        "TDR": "ultra",
+        "TGR+": "ultra",
+        "Titan Rare": "ultra",
+        "Tokyo Revengers Rare": "ultra",
+        "TREASURE RARE": "ultra",
+        "Triple Rare": "ultra",
+        "Triple Rare Plus": "ultra",
+        "TRR": "ultra",
+        "Uber Rare": "ultra",
+        "Ultimate": "ultra",
+        "Ultimate Rare": "ultra",
+        "Ultra Chase": "ultra",
+        "Ultra Parallel Rare": "ultra",
+        "Ultra Rare": "ultra",
+        "Ultra Rare (Pharaoh's Rare)": "ultra",
+        "Ultra Rare Extra Rare": "ultra",
+        "Ultra Secret Rare": "ultra",
+        "Union Rare": "ultra",
+        "UR": "ultra",
+        "URR": "ultra",
+        "V - Very Rare": "ultra",
+        "Variant": "ultra",
+        "VDR": "ultra",
+        "Very Rare": "ultra",
+        "Verzaubert": "ultra",
+        "Visual Rare": "ultra",
+        "VR": "ultra",
+        "VSR": "ultra",
+        "X - Special": "ultra",
+        "X Rare": "ultra",
+        "XR": "ultra",
+        "XVR": "ultra",
+        "ZR": "ultra",
 
-        const row = [
-            `"${(card.Franchise || '').replace(/"/g, '""')}"`,
-            `"${(card.SetName || '').replace(/"/g, '""')}"`,
-            `"${(card.CardNumber || '').replace(/"/g, '""')}"`,
-            `"${(card.Rarity || '').replace(/"/g, '""')}"`,
-            `"${(card.Variant || 'Normal').replace(/"/g, '""')}"`,
-            `"${(card.ImageURL || '').replace(/"/g, '""')}"`,
-            qty
-        ];
-        csvContent += row.join(",") + "\n";
-    });
+        // Rare Tier Rarities
+        "Anniversary": "rare",
+        "Epic": "rare",
+        "Fabled": "rare",
+        "Four Diamond": "rare",
+        "Ghost Rare": "rare",
+        "Ghost/Gold Rare": "rare",
+        "Harmony Rare": "rare",
+        "Hero": "rare",
+        "Holo Double Rare": "rare",
+        "Holo Portrait Premium": "rare",
+        "Holo Rare": "rare",
+        "Iconic": "rare",
+        "Iconic Other": "rare",
+        "Iconic Rare": "rare",
+        "Iconica": "rare",
+        "Iconique": "rare",
+        "Ikonisch": "rare",
+        "Incantata": "rare",
+        "LEADER": "rare",
+        "Lesson": "rare",
+        "LGRR": "rare",
+        "LR": "rare",
+        "Marvel": "rare",
+        "Memoria": "rare",
+        "Premium": "rare",
+        "R": "rare",
+        "R+": "rare",
+        "Rara": "rare",
+        "Rare": "rare",
+        "Rare Holo": "rare",
+        "RE": "rare",
+        "Reprint": "rare",
+        "RR": "rare",
+        "SD": "rare",
+        "Selten": "rare",
+        "ST": "rare",
+        "Standard": "rare",
+        "Starfoil Rare": "rare",
+        "Starter": "rare",
+        "Starter Exclusive": "rare",
+        "T": "rare",
+        "TD": "rare",
+        "TGR": "rare",
+        "Three Diamond": "rare",
+        "Three Star": "rare",
+        "Très Rare": "rare",
+        "Trial Deck": "rare",
+        "Two Diamond": "rare",
+        "Two Shiny": "rare",
+        "Two Star": "rare",
+        "U+": "rare",
+        "Unique": "rare",
 
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `full_tcg_collection_history.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    updateStatus("Full collection CSV exported successfully!");
-}
-    </script>
+        // Uncommon Tier Rarities
+        "C+": "uncommon",
+        "C++": "uncommon",
+        "Character Uncommon": "uncommon",
+        "Common 1-Star": "uncommon",
+        "Common 2-Star": "uncommon",
+        "Inhabituelle": "uncommon",
+        "Oshi Common": "uncommon",
+        "Starfoil": "uncommon",
+        "Super Rara": "uncommon",
+        "UC": "uncommon",
+        "Uncommon": "uncommon",
+        "UNCOMMON (Alt)": "uncommon",
+        "Uncommon 1-Star": "uncommon",
+        "Uncommon 2-Star": "uncommon",
+        "Uncommon 3-Star": "uncommon",
+        "Uncommon Extra Rare": "uncommon",
+        "Ungewöhnlich": "uncommon",
+
+        // Common Tier Rarities
+        "1st": "common",
+        "Action Point": "common",
+        "Action Point 1-Star": "common",
+        "Basic": "common",
+        "bonus": "common",
+        "Bronze": "common",
+        "C": "common",
+        "Character": "common",
+        "Character Card": "common",
+        "Character Common": "common",
+        "Character Common Alternate Art": "common",
+        "Climax Common": "common",
+        "Climax Rare": "common",
+        "Collaboration Rare": "common",
+        "Collector Promo": "common",
+        "Commune": "common",
+        "Comune": "common",
+        "Cross Rare": "common",
+        "DB": "common",
+        "F - Fomo": "common",
+        "Gewöhnlich": "common",
+        "Gift Marker": "common",
+        "H": "common",
+        "H - Hero": "common",
+        "Hanayome Rare": "common",
+        "Holo Common": "common",
+        "Holo Uncommon": "common",
+        "Holomem Rare": "common",
+        "LC": "common",
+        "N/A": "common",
+        "Non comune": "common",
+        "None": "common",
+        "Normal": "common",
+        "Normal Parallel Rare": "common",
+        "Oceanian debut": "common",
+        "One Diamond": "common",
+        "One Shiny": "common",
+        "One Star": "common",
+        "Ordinary": "common",
+        "P": "common",
+        "Platinum Common": "common",
+        "PR": "common",
+        "Promo": "common",
+        "Promo Plus": "common",
+        "Promotion": "common",
+        "Silver": "common",
+        "Special Yell": "common",
+        "Token": "common",
+        "WO": "common"
+    };
+
+    function getRarityTier(rarityStr) {
+        if (!rarityStr) return 'common';
+        if (rarityTierMap[rarityStr]) {
+            return rarityTierMap[rarityStr];
+        }
+        const r = rarityStr.toLowerCase();
+        if (r.includes('sec') || r.includes('secret') || r.includes('sp') || r.includes('alt') || 
+            r.includes('alternate') || r.includes('variant') || r.includes('ssr') || r.includes('ur') || 
+            r.includes('lgr') || r.includes('lr') || r.includes('asr') || r.includes('ser')) {
+            return 'ultra';
+        }
+        if (r.includes('rare') || r.includes('r') || r.includes('holo') || r.includes('leader')) {
+            return 'rare';
+        }
+        if (r.includes('uncommon') || r.includes('uc')) {
+            return 'uncommon';
+        }
+        return 'common';
+    }
+
+    function createCardSlotElement(card, isOwned = true, isNew = false) {
+        const isSpecialVariant = card.Variant === "Variant";
+        const slot = document.createElement('div');
+        slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
+        
+        let badgesHtml = '';
+        if (isSpecialVariant && isOwned) {
+            badgesHtml += `<div class="special-badge">Variant</div>`;
+        }
+        if (isNew) {
+            badgesHtml += `<div class="special-badge" style="background: linear-gradient(135deg, #27ae60, #1e8449); left: 8px; right: auto;">New!</div>`;
+        }
+
+        if (isOwned) {
+            slot.innerHTML = `
+                <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
+                ${badgesHtml}
+            `;
+        } else {
+            slot.innerHTML = `
+                <div class="unowned-number-slot">
+                    <span>#${card.CardNumber || '??'}</span>
+                </div>
+            `;
+        }
+
+        return slot;
+    }
+
+    function openPack() {
+        const selectedSet = document.getElementById('SetName-select').value;
+        const stage = document.getElementById('pack-stage');
+        
+        if (!selectedSet) {
+            alert("Please select a franchise and an expansion set first!");
+            return;
+        }
+
+        const setCards = masterData.filter(i => i.SetName === selectedSet);
+        if (setCards.length === 0) {
+            alert("No cards found for this set.");
+            return;
+        }
+
+        const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
+        setCards.forEach(card => {
+            const tier = getRarityTier(card.Rarity);
+            tiers[tier].push(card);
+        });
+
+        const fallbackPool = setCards;
+
+        function drawFromTier(tierKeys) {
+            for (let k of tierKeys) {
+                if (tiers[k] && tiers[k].length > 0) {
+                    return tiers[k][Math.floor(Math.random() * tiers[k].length)];
+                }
+            }
+            return fallbackPool[Math.floor(Math.random() - 1) || 0];
+        }
+
+        stage.innerHTML = '';
+
+        // Standard 10-card pack blueprint
+        const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
+
+        slotBlueprint.forEach((targetTier, index) => {
+            let card;
+
+            // If we are on the final slot designated for an Ultra chase card, 
+            // apply a realistic drop rate gate (e.g., ~12% chance for a true Ultra).
+            if (targetTier === 'ultra') {
+                const isUltraHit = Math.random() < 0.12; // 12% Chase Card Rate
+                if (isUltraHit && tiers['ultra'].length > 0) {
+                    card = drawFromTier(['ultra']);
+                } else {
+                    // Missed the chase! Fall back to a Rare or Uncommon slot pull
+                    card = drawFromTier(['rare', 'uncommon', 'common']);
+                }
+            } else if (targetTier === 'rare') {
+                // Rare slot with a small chance to upgrade to an Ultra anyway!
+                const isUpgradeHit = Math.random() < 0.05; // 5% lucky upgrade
+                if (isUpgradeHit && tiers['ultra'].length > 0) {
+                    card = drawFromTier(['ultra']);
+                } else {
+                    card = drawFromTier(['rare', 'uncommon', 'common']);
+                }
+            } else if (targetTier === 'uncommon') {
+                card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
+            } else {
+                card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
+            }
+
+            const key = getCardKey(card);
+            const currentQty = inventory[key] || 0;
+            const isNewPull = currentQty === 0;
+
+            inventory[key] = currentQty + 1;
+
+            const slot = createCardSlotElement(card, true, isNewPull);
+            stage.appendChild(slot);
+        });
+
+        localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
+        updateStatus("Pack opened successfully!");
+    }
+
+    function renderBinder() {
+        const selectedSet = document.getElementById('SetName-select').value;
+        const grid = document.getElementById('binder-grid');
+        grid.innerHTML = '';
+
+        if (!selectedSet) {
+            grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">Select an expansion set to browse your binder pages.</div>';
+            document.getElementById('binder-counter').textContent = `0 / 0 Owned`;
+            return;
+        }
+
+        const setCards = masterData.filter(i => i.SetName === selectedSet);
+        let ownedCount = 0;
+
+        setCards.forEach(card => {
+            const key = getCardKey(card);
+            const isOwned = (inventory[key] || 0) > 0;
+            if (isOwned) ownedCount++;
+
+            const slot = createCardSlotElement(card, isOwned, false);
+            grid.appendChild(slot);
+        });
+
+        document.getElementById('binder-counter').textContent = `${ownedCount} / ${setCards.length} Unique Cards Owned`;
+    }
+
+    function renderTracker() {
+        const selectedSet = document.getElementById('SetName-select').value;
+        const statsContainer = document.getElementById('tracker-stats');
+        const breakdownContainer = document.getElementById('breakdown-details');
+        
+        statsContainer.innerHTML = '';
+        breakdownContainer.innerHTML = '';
+
+        if (!selectedSet) {
+            statsContainer.innerHTML = '<div class="stat-card"><h4>Select an expansion set</h4><p>-</p></div>';
+            return;
+        }
+
+        const setCards = masterData.filter(i => i.SetName === selectedSet);
+        let totalCards = setCards.length;
+        let totalOwned = 0;
+
+        setCards.forEach(card => {
+            const key = getCardKey(card);
+            if ((inventory[key] || 0) > 0) totalOwned++;
+        });
+
+        const overallPct = totalCards > 0 ? ((totalOwned / totalCards) * 100).toFixed(1) : 0;
+        statsContainer.innerHTML = `
+            <div class="stat-card">
+                <h4>Overall Set Completion</h4>
+                <p>${totalOwned} / ${totalCards} (${overallPct}%)</p>
+            </div>
+        `;
+
+        const variantMap = {};
+        setCards.forEach(card => {
+            const variant = card.Variant || 'Normal';
+            if (!variantMap[variant]) variantMap[variant] = { total: 0, owned: 0 };
+            variantMap[variant].total++;
+            const key = getCardKey(card);
+            if ((inventory[key] || 0) > 0) variantMap[variant].owned++;
+        });
+
+        let variantHtml = '<h3>Variant Breakdown</h3><div class="tracker-stats-grid">';
+        for (const [variant, data] of Object.entries(variantMap)) {
+            const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
+            variantHtml += `
+                <div class="stat-card">
+                    <h4>${variant} Variant</h4>
+                    <p>${data.owned} / ${data.total} (${pct}%)</p>
+                </div>
+            `;
+        }
+        variantHtml += '</div>';
+
+        const rarityMap = {};
+        setCards.forEach(card => {
+            const rarity = card.Rarity || 'Common';
+            if (!rarityMap[rarity]) rarityMap[rarity] = { total: 0, owned: 0 };
+            rarityMap[rarity].total++;
+            const key = getCardKey(card);
+            if ((inventory[key] || 0) > 0) rarityMap[rarity].owned++;
+        });
+
+        let rarityHtml = '<h3 style="margin-top:1.5rem;">Rarity Breakdown</h3><div class="tracker-stats-grid">';
+        for (const [rarity, data] of Object.entries(rarityMap)) {
+            const pct = data.total > 0 ? ((data.owned / data.total) * 100).toFixed(1) : 0;
+            rarityHtml += `
+                <div class="stat-card">
+                    <h4>${rarity}</h4>
+                    <p>${data.owned} / ${data.total} (${pct}%)</p>
+                </div>
+            `;
+        }
+        rarityHtml += '</div>';
+
+        breakdownContainer.innerHTML = variantHtml + rarityHtml;
+    }
+
+    function updateStatus(text) {
+        document.getElementById('status-badge').textContent = text;
+    }
+
+    function resetCollection() {
+        if (confirm("Are you sure you want to wipe your local collection inventory memory? This cannot be undone.")) {
+            inventory = {};
+            localStorage.removeItem('tcg_local_inventory');
+            updateStatus("Collection has been reset.");
+            
+            renderBinder();
+            renderTracker();
+        }
+    }
+
+    function exportSetCSV() {
+        const ownedCards = masterData.filter(card => {
+            const key = getCardKey(card);
+            return (inventory[key] || 0) > 0;
+        });
+
+        if (ownedCards.length === 0) {
+            alert("No owned cards found in your collection history to export.");
+            return;
+        }
+
+        const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL", "Quantity"];
+        let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
+
+        ownedCards.forEach(card => {
+            const key = getCardKey(card);
+            const qty = inventory[key] || 1;
+
+            const row = [
+                `"${(card.Franchise || '').replace(/"/g, '""')}"`,
+                `"${(card.SetName || '').replace(/"/g, '""')}"`,
+                `"${(card.CardNumber || '').replace(/"/g, '""')}"`,
+                `"${(card.Rarity || '').replace(/"/g, '""')}"`,
+                `"${(card.Variant || 'Normal').replace(/"/g, '""')}"`,
+                `"${(card.ImageURL || '').replace(/"/g, '""')}"`,
+                qty
+            ];
+            csvContent += row.join(",") + "\n";
+        });
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", `full_tcg_collection_history.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        updateStatus("Full collection CSV exported successfully!");
+    }
+</script>
 </body>
 </html>
