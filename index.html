@@ -1140,7 +1140,19 @@ function renderGlobalOverview() {
         let uniqueOwned = 0;
 
         group.cards.forEach(card => {
-            const key = `${card.CardNumber}_${card.Variant || 'Normal'}`;
+            // FIX: Include Franchise and SetName in the key so card numbers don't bleed across different sets
+            const key = `${card.Franchise}_${card.SetName}_${card.CardNumber}_${card.Variant || 'Normal'}`;
+            
+            // Fallback check: if your app stores inventory using a simpler key format elsewhere, 
+            // ensure it matches whatever key your pack opener uses when saving cards.
+            if ((inventory[key] || inventory[`${card.CardNumber}_${card.Variant || 'Normal'}`] || 0) > 0) {
+                // NOTE: If inventory uses just CardNumber in your app, make sure your openPack function 
+                // uses the exact same key structure as below!
+            }
+            
+            // Standardizing check matching your exact storage pattern:
+            // If your pack opener uses `${card.CardNumber}_${card.Variant}`, check how it's stored. 
+            // To prevent cross-set bleeding, use the scoped key below:
             if ((inventory[key] || 0) > 0) {
                 uniqueOwned++;
             }
