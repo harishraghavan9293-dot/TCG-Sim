@@ -133,13 +133,24 @@
 
         /* Navigation Tabs styled as Leather Binder Index Tabs */
         .tabs-nav {
-            display: flex;
-            justify-content: center;
-            background: var(--wood-dark);
-            gap: 4px;
-            padding: 0.5rem 1rem 0 1rem;
-            border-bottom: 2px solid var(--accent-gold);
-        }
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding: 8px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #2b1d12;
+    margin: 15px 0;
+    border-top: 1px solid var(--border-binder);
+    border-bottom: 1px solid var(--border-binder);
+    scrollbar-width: none;
+}
+
+.tabs-nav::-webkit-scrollbar {
+    display: none;
+}
 
         .tab-btn {
             background: #3b271b;
@@ -157,6 +168,31 @@
             color: #b5a48f;
             transition: all 0.25s ease;
         }
+		.tabs-nav .tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Mobile-only layout (Screens 768px wide or smaller turn into a 2x2 grid) */
+@media (max-width: 768px) {
+    .tabs-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: visible;
+        white-space: normal;
+    }
+
+    .tabs-nav .tab-btn {
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 10px 4px;
+        font-size: 0.9rem;
+        flex-shrink: unset;
+    }
+}
 
         .tab-btn:hover {
             background: #503726;
