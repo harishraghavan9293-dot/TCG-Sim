@@ -1157,82 +1157,81 @@
     }
 
     function openPack() {
-        const selectedSet = document.getElementById('SetName-select').value;
-        const stage = document.getElementById('pack-stage');
-        
-        if (!selectedSet) {
-            alert("Please select a franchise and an expansion set first!");
-            return;
-        }
-
-        const setCards = masterData.filter(i => i.SetName === selectedSet);
-        if (setCards.length === 0) {
-            alert("No cards found for this set.");
-            return;
-        }
-
-        const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
-        setCards.forEach(card => {
-            const tier = getRarityTier(card.Rarity);
-            tiers[tier].push(card);
-        });
-
-        const fallbackPool = setCards;
-
-        function drawFromTier(tierKeys) {
-            for (let k of tierKeys) {
-                if (tiers[k] && tiers[k].length > 0) {
-                    return tiers[k][Math.floor(Math.random() * tiers[k].length)];
-                }
-            }
-            return fallbackPool[Math.floor(Math.random() - 1) || 0];
-        }
-
-        stage.innerHTML = '';
-
-        // Standard 10-card pack blueprint
-        const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
-
-        slotBlueprint.forEach((targetTier, index) => {
-            let card;
-
-            // If we are on the final slot designated for an Ultra chase card, 
-            // apply a realistic drop rate gate (e.g., ~12% chance for a true Ultra).
-            if (targetTier === 'ultra') {
-                const isUltraHit = Math.random() < 0.12; // 12% Chase Card Rate
-                if (isUltraHit && tiers['ultra'].length > 0) {
-                    card = drawFromTier(['ultra']);
-                } else {
-                    // Missed the chase! Fall back to a Rare or Uncommon slot pull
-                    card = drawFromTier(['rare', 'uncommon', 'common']);
-                }
-            } else if (targetTier === 'rare') {
-                // Rare slot with a small chance to upgrade to an Ultra anyway!
-                const isUpgradeHit = Math.random() < 0.05; // 5% lucky upgrade
-                if (isUpgradeHit && tiers['ultra'].length > 0) {
-                    card = drawFromTier(['ultra']);
-                } else {
-                    card = drawFromTier(['rare', 'uncommon', 'common']);
-                }
-            } else if (targetTier === 'uncommon') {
-                card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
-            } else {
-                card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
-            }
-
-            const key = getCardKey(card);
-            const currentQty = inventory[key] || 0;
-            const isNewPull = currentQty === 0;
-
-            inventory[key] = currentQty + 1;
-
-            const slot = createCardSlotElement(card, true, isNewPull);
-            stage.appendChild(slot);
-        });
-
-        localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
-        updateStatus("Pack opened successfully!");
+    // Assuming your UI has a franchise selector alongside your set name selector
+    const selectedFranchise = document.getElementById('Franchise-select').value;
+    const selectedSet = document.getElementById('SetName-select').value;
+    const stage = document.getElementById('pack-stage');
+    
+    if (!selectedFranchise || !selectedSet) {
+        alert("Please select a franchise and an expansion set first!");
+        return;
     }
+
+    // Strictly filter by BOTH Franchise and SetName to prevent sharing names like "Batman"
+    const setCards = masterData.filter(i => i.Franchise === selectedFranchise && i.SetName === selectedSet);
+    if (setCards.length === 0) {
+        alert("No cards found for this set.");
+        return;
+    }
+
+    const tiers = { common: [], uncommon: [], rare: [], ultra: [] };
+    setCards.forEach(card => {
+        const tier = getRarityTier(card.Rarity);
+        tiers[tier].push(card);
+    });
+
+    const fallbackPool = setCards;
+
+    function drawFromTier(tierKeys) {
+        for (let k of tierKeys) {
+            if (tiers[k] && tiers[k].length > 0) {
+                return tiers[k][Math.floor(Math.random() * tiers[k].length)];
+            }
+        }
+        return fallbackPool[Math.floor(Math.random() - 1) || 0];
+    }
+
+    stage.innerHTML = '';
+
+    // Standard 10-card pack blueprint
+    const slotBlueprint = ['common', 'common', 'common', 'common', 'common', 'common', 'uncommon', 'uncommon', 'rare', 'ultra'];
+
+    slotBlueprint.forEach((targetTier, index) => {
+        let card;
+
+        if (targetTier === 'ultra') {
+            const isUltraHit = Math.random() < 0.12; // 12% Chase Card Rate
+            if (isUltraHit && tiers['ultra'].length > 0) {
+                card = drawFromTier(['ultra']);
+            } else {
+                card = drawFromTier(['rare', 'uncommon', 'common']);
+            }
+        } else if (targetTier === 'rare') {
+            const isUpgradeHit = Math.random() < 0.05; // 5% lucky upgrade
+            if (isUpgradeHit && tiers['ultra'].length > 0) {
+                card = drawFromTier(['ultra']);
+            } else {
+                card = drawFromTier(['rare', 'uncommon', 'common']);
+            }
+        } else if (targetTier === 'uncommon') {
+            card = drawFromTier(['uncommon', 'rare', 'common', 'ultra']);
+        } else {
+            card = drawFromTier(['common', 'uncommon', 'rare', 'ultra']);
+        }
+
+        const key = getCardKey(card);
+        const currentQty = inventory[key] || 0;
+        const isNewPull = currentQty === 0;
+
+        inventory[key] = currentQty + 1;
+
+        const slot = createCardSlotElement(card, true, isNewPull);
+        stage.appendChild(slot);
+    });
+
+    localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
+    updateStatus("Pack opened successfully!");
+}
 
     function renderBinder() {
         const selectedSet = document.getElementById('SetName-select').value;
