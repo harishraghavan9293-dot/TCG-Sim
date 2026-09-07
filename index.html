@@ -480,6 +480,16 @@
     </style>
 </head>
 <body>
+<!-- Password Protection Overlay -->
+<div id="auth-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #111; z-index: 9999; display: flex; justify-content: center; align-items: center; color: white; font-family: sans-serif;">
+    <div style="background: #222; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        <h2>TCG Vault Locked</h2>
+        <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">Enter your app password to continue</p>
+        <input type="password" id="app-password-input" placeholder="Enter password" style="padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #444; background: #333; color: white; width: 200px; margin-bottom: 10px;"><br>
+        <button onclick="verifyPassword()" style="padding: 10px 20px; font-size: 16px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Unlock</button>
+        <p id="auth-error" style="color: #ff6b6b; font-size: 12px; margin-top: 10px; display: none;">Incorrect password</p>
+    </div>
+</div>
 
     <header>
         <h1>Arcane Binder</h1>
@@ -1350,27 +1360,58 @@
         }
     }
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1h6EiNq4lVliFuThDMZX4LrQnq5R_3p2Pgs4VxHi2We7B36lY_x54VbA3weXrhR_G/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOvhDOG4uFn_YLRWJKAIQ7b-ykat2E8EhmUVNlrR4VJIE3rYqz3E7QiqiReChu-mVx/exec";
+const BACKEND_TOKEN = "Backend_Token"; // Must match SECRET_TOKEN in your Google Apps Script
+const APP_PASSWORD = "TCG_1993";       // The password to unlock your frontend PWA
 
-// 1. EXPORT / PUSH: Sends owned cards directly to Google Sheet columns A-G without local download
+// Load last synced snapshot from localStorage (or empty object if first time)
+let lastSyncedInventory = JSON.parse(localStorage.getItem('tcg_last_synced_inventory')) || {};
+
+// Check auth status immediately on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const isAuthenticated = localStorage.getItem('tcg_authenticated');
+    if (isAuthenticated === "true") {
+        const overlay = document.getElementById('auth-overlay');
+        if (overlay) overlay.style.display = 'none';
+    }
+});
+
+function verifyPassword() {
+    const inputVal = document.getElementById('app-password-input').value;
+    if (inputVal === APP_PASSWORD) {
+        localStorage.setItem('tcg_authenticated', "true");
+        const overlay = document.getElementById('auth-overlay');
+        if (overlay) overlay.style.display = 'none';
+    } else {
+        const errorEl = document.getElementById('auth-error');
+        if (errorEl) errorEl.style.display = 'block';
+        document.getElementById('app-password-input').value = '';
+    }
+}
+
+// 1. EXPORT / PUSH: Sends ONLY the cards that changed or were added in this session (with token)
 async function exportSetCSV() {
-    const ownedCards = masterData.filter(card => {
+    // Find cards where quantity is greater than zero AND has changed since last sync
+    const sessionChanges = masterData.filter(card => {
         const key = getCardKey(card);
-        return (inventory[key] || 0) > 0;
+        const currentQty = inventory[key] || 0;
+        const lastSyncedQty = lastSyncedInventory[key] || 0;
+        
+        // Export if it's newly owned or quantity increased this session
+        return currentQty > lastSyncedQty;
     });
 
-    if (ownedCards.length === 0) {
-        alert("No owned cards found in your collection history to export.");
+    if (sessionChanges.length === 0) {
+        alert("No new changes or pack openings to export since your last sync.");
         return;
     }
 
-    // Format cards to match columns A-G: Franchise, SetName, CardName, CardID, Rarity, Variant, Quantity
-    const payload = ownedCards.map(card => {
+    const payloadCards = sessionChanges.map(card => {
         const key = getCardKey(card);
         return {
             Franchise: card.Franchise || '',
             SetName: card.SetName || '',
-            CardName: card.CardName || card.Name || '', // Adjust property name if your card object uses .Name
+            CardName: card.CardName || card.Name || '',
             CardID: card.CardNumber || '',
             Rarity: card.Rarity || '',
             Variant: card.Variant || 'Normal',
@@ -1378,33 +1419,42 @@ async function exportSetCSV() {
         };
     });
 
+    // Wrap cards and token together for backend validation
+    const bodyPayload = {
+        token: BACKEND_TOKEN,
+        cards: payloadCards
+    };
+
     try {
-        updateStatus("Syncing inventory to Google Sheet...");
+        updateStatus("Syncing session changes to Google Sheet...");
         await fetch(SCRIPT_URL, {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(bodyPayload)
         });
-        updateStatus("Inventory successfully synced to Google Sheet!");
+        
+        // Update our last synced snapshot to match current state after successful push
+        lastSyncedInventory = JSON.parse(JSON.stringify(inventory));
+        localStorage.setItem('tcg_last_synced_inventory', JSON.stringify(lastSyncedInventory));
+        
+        updateStatus("Session changes successfully synced to Google Sheet!");
     } catch (error) {
         console.error("Cloud sync failed:", error);
         updateStatus("Google Sheet sync failed.");
     }
 }
 
-// 2. PULL / SYNC: Pulls data from the Google Sheet and updates the app's inventory state
+// 2. PULL / SYNC: Pulls data from Google Sheet (with token) and updates both app inventory and sync baseline
 async function syncInventoryFromCloud() {
     try {
         updateStatus("Pulling inventory from Google Sheet...");
-        const response = await fetch(SCRIPT_URL);
+        const response = await fetch(`${SCRIPT_URL}?token=${BACKEND_TOKEN}`);
         const cloudCards = await response.json();
         
         if (Array.isArray(cloudCards) && cloudCards.length > 0) {
-            // Reconstruct the local inventory object from sheet rows
             inventory = {};
             cloudCards.forEach(card => {
-                // Temporarily mock a card object to generate the correct unique key using your getCardKey() function
                 const dummyCard = {
                     Franchise: card.Franchise,
                     SetName: card.SetName,
@@ -1415,19 +1465,23 @@ async function syncInventoryFromCloud() {
                 inventory[key] = card.Quantity;
             });
 
+            // Save to local storage and update our baseline so it knows what's synced
             localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
+            lastSyncedInventory = JSON.parse(JSON.stringify(inventory));
+            localStorage.setItem('tcg_last_synced_inventory', JSON.stringify(lastSyncedInventory));
+            
             updateStatus("Inventory synced successfully from Google Sheet!");
             
-            // Re-render UI if your app supports it
             if (typeof renderCollection === 'function') renderCollection();
         } else {
-            updateStatus("Cloud inventory is empty.");
+            updateStatus("Cloud inventory is empty or unauthorized.");
         }
     } catch (error) {
         console.error("Failed to sync from cloud:", error);
         updateStatus("Sync from cloud failed.");
     }
 }
+
 </script>
 </body>
 </html>
