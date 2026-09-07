@@ -506,6 +506,7 @@
 	<div class="config-group">
     <button onclick="resetCollection()" style="background: linear-gradient(135deg, #a93226, #78281f);">Reset Collection</button>
     <button onclick="exportSetCSV()">Export History</button>
+	<button onclick="syncInventoryFromCloud()">Sync Inventory</button>
     </div>
 
     <!-- Navigation Tabs -->
@@ -1349,46 +1350,84 @@
         }
     }
 
-    function exportSetCSV() {
-        const ownedCards = masterData.filter(card => {
-            const key = getCardKey(card);
-            return (inventory[key] || 0) > 0;
-        });
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1h6EiNq4lVliFuThDMZX4LrQnq5R_3p2Pgs4VxHi2We7B36lY_x54VbA3weXrhR_G/exec";
 
-        if (ownedCards.length === 0) {
-            alert("No owned cards found in your collection history to export.");
-            return;
-        }
+// 1. EXPORT / PUSH: Sends owned cards directly to Google Sheet columns A-G without local download
+async function exportSetCSV() {
+    const ownedCards = masterData.filter(card => {
+        const key = getCardKey(card);
+        return (inventory[key] || 0) > 0;
+    });
 
-        const headers = ["Franchise", "SetName", "CardNumber", "Rarity", "Variant", "ImageURL", "Quantity"];
-        let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
-
-        ownedCards.forEach(card => {
-            const key = getCardKey(card);
-            const qty = inventory[key] || 1;
-
-            const row = [
-                `"${(card.Franchise || '').replace(/"/g, '""')}"`,
-                `"${(card.SetName || '').replace(/"/g, '""')}"`,
-                `"${(card.CardNumber || '').replace(/"/g, '""')}"`,
-                `"${(card.Rarity || '').replace(/"/g, '""')}"`,
-                `"${(card.Variant || 'Normal').replace(/"/g, '""')}"`,
-                `"${(card.ImageURL || '').replace(/"/g, '""')}"`,
-                qty
-            ];
-            csvContent += row.join(",") + "\n";
-        });
-
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", `full_tcg_collection_history.csv`);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        updateStatus("Full collection CSV exported successfully!");
+    if (ownedCards.length === 0) {
+        alert("No owned cards found in your collection history to export.");
+        return;
     }
+
+    // Format cards to match columns A-G: Franchise, SetName, CardName, CardID, Rarity, Variant, Quantity
+    const payload = ownedCards.map(card => {
+        const key = getCardKey(card);
+        return {
+            Franchise: card.Franchise || '',
+            SetName: card.SetName || '',
+            CardName: card.CardName || card.Name || '', // Adjust property name if your card object uses .Name
+            CardID: card.CardNumber || '',
+            Rarity: card.Rarity || '',
+            Variant: card.Variant || 'Normal',
+            Quantity: inventory[key] || 1
+        };
+    });
+
+    try {
+        updateStatus("Syncing inventory to Google Sheet...");
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        updateStatus("Inventory successfully synced to Google Sheet!");
+    } catch (error) {
+        console.error("Cloud sync failed:", error);
+        updateStatus("Google Sheet sync failed.");
+    }
+}
+
+// 2. PULL / SYNC: Pulls data from the Google Sheet and updates the app's inventory state
+async function syncInventoryFromCloud() {
+    try {
+        updateStatus("Pulling inventory from Google Sheet...");
+        const response = await fetch(SCRIPT_URL);
+        const cloudCards = await response.json();
+        
+        if (Array.isArray(cloudCards) && cloudCards.length > 0) {
+            // Reconstruct the local inventory object from sheet rows
+            inventory = {};
+            cloudCards.forEach(card => {
+                // Temporarily mock a card object to generate the correct unique key using your getCardKey() function
+                const dummyCard = {
+                    Franchise: card.Franchise,
+                    SetName: card.SetName,
+                    CardNumber: card.CardID,
+                    Variant: card.Variant
+                };
+                const key = getCardKey(dummyCard);
+                inventory[key] = card.Quantity;
+            });
+
+            localStorage.setItem('tcg_local_inventory', JSON.stringify(inventory));
+            updateStatus("Inventory synced successfully from Google Sheet!");
+            
+            // Re-render UI if your app supports it
+            if (typeof renderCollection === 'function') renderCollection();
+        } else {
+            updateStatus("Cloud inventory is empty.");
+        }
+    } catch (error) {
+        console.error("Failed to sync from cloud:", error);
+        updateStatus("Sync from cloud failed.");
+    }
+}
 </script>
 </body>
 </html>
