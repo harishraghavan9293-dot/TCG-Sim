@@ -1525,7 +1525,6 @@ function renderSimulatorOverview() {
     const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
     
     let franchiseMap = {};
-    let totalDiscoveredSets = 0;
 
     // 2. Build the map directly from your inventory keys (Franchise__SetName__CardNumber__Variant)
     Object.keys(currentInventory).forEach(key => {
@@ -1547,7 +1546,7 @@ function renderSimulatorOverview() {
         }
     });
 
-    // 3. Enrich total card counts from masterData if available
+    // 3. If masterData is loaded, enrich it with total card counts for accurate set sizes
     if (window.masterData && masterData.length > 0) {
         masterData.forEach(card => {
             const franchise = card.Franchise;
@@ -1570,11 +1569,15 @@ function renderSimulatorOverview() {
         return;
     }
 
+    let totalDiscoveredSets = 0;
+
     sortedFranchises.forEach(franchise => {
         const setsObj = franchiseMap[franchise];
         const setNames = Object.keys(setsObj).sort((a, b) => {
-            const pctA = setsObj[a].totalCards > 0 ? (setsObj[a].ownedCards / setsObj[a].totalCards) : 0;
-            const pctB = setsObj[b].totalCards > 0 ? (setsObj[b].ownedCards / setsObj[b].totalCards) : 0;
+            const dataA = setsObj[a];
+            const dataB = setsObj[b];
+            const pctA = dataA.totalCards > 0 ? (dataA.ownedCards / dataA.totalCards) : 0;
+            const pctB = dataB.totalCards > 0 ? (dataB.ownedCards / dataB.totalCards) : 0;
             return pctB - pctA || a.localeCompare(b);
         });
 
@@ -1583,7 +1586,7 @@ function renderSimulatorOverview() {
             totalDiscoveredSets++;
             const data = setsObj[setName];
             const total = data.totalCards > 0 ? data.totalCards : data.ownedCards;
-            const pct = Math.round((data.ownedCards / total) * 100);
+            const pct = total > 0 ? Math.round((data.ownedCards / total) * 100) : 100;
             const isCompleted = data.ownedCards >= total;
 
             setsHtml += `
@@ -1618,7 +1621,6 @@ function renderSimulatorOverview() {
         summaryEl.textContent = `${totalDiscoveredSets} SETS DISCOVERED`;
     }
 }
-
 </script>
 </body>
 </html>
