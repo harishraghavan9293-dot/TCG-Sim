@@ -1521,122 +1521,126 @@ function renderSimulatorOverview() {
     if (!container) return;
     container.innerHTML = '';
 
-    if (!window.masterData || masterData.length === 0) {
-        container.innerHTML = `
-            <div class="col-span-full p-6 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
-                <p class="text-xs font-bold text-neutral-900">MASTER DATA NOT LOADED YET</p>
-            </div>`;
-        return;
-    }
-
-    const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
-
-    // 1. Group all master cards by Franchise and SetName
-    let franchiseMap = {};
-    
-    masterData.forEach(card => {
-        const franchise = card.Franchise || 'Unknown';
-        const setName = card.SetName || 'Unknown Set';
-        
-        const key = typeof getCardKey === 'function' 
-            ? getCardKey(card) 
-            : `${franchise}__${setName}__${card.CardNumber || card.CardID || ''}__${card.Variant || 'Normal'}`;
-        
-        const qty = currentInventory[key] || 0;
-
-        if (!franchiseMap[franchise]) {
-            franchiseMap[franchise] = {};
-        }
-        if (!franchiseMap[franchise][setName]) {
-            franchiseMap[franchise][setName] = { totalCards: 0, ownedCards: 0 };
+    try {
+        if (!window.masterData || masterData.length === 0) {
+            container.innerHTML = `
+                <div class="col-span-full p-6 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
+                    <p class="text-xs font-bold text-neutral-900">MASTER DATA NOT LOADED YET</p>
+                </div>`;
+            return;
         }
 
-        franchiseMap[franchise][setName].totalCards++;
-        if (qty > 0) {
-            franchiseMap[franchise][setName].ownedCards++;
-        }
-    });
+        const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
 
-    let totalDiscoveredSets = 0;
-    let totalAllSets = 0;
-    let activeFranchisesCount = 0;
-
-    // 2. Sort franchises A to Z
-    const sortedFranchises = Object.keys(franchiseMap).sort();
-
-    sortedFranchises.forEach(franchise => {
-        const setsObj = franchiseMap[franchise];
-        const setNames = Object.keys(setsObj);
+        let franchiseMap = {};
         
-        if (setNames.length === 0) return;
-        activeFranchisesCount++;
+        masterData.forEach(card => {
+            const franchise = card.Franchise || 'Unknown';
+            const setName = card.SetName || 'Unknown Set';
+            
+            const key = typeof getCardKey === 'function' 
+                ? getCardKey(card) 
+                : `${franchise}__${setName}__${card.CardNumber || card.CardID || ''}__${card.Variant || 'Normal'}`;
+            
+            const qty = currentInventory[key] || 0;
 
-        let openedSets = [];
-        let unopenedSets = [];
+            if (!franchiseMap[franchise]) {
+                franchiseMap[franchise] = {};
+            }
+            if (!franchiseMap[franchise][setName]) {
+                franchiseMap[franchise][setName] = { totalCards: 0, ownedCards: 0 };
+            }
 
-        setNames.forEach(setName => {
-            const data = setsObj[setName];
-            totalAllSets++;
-            const pct = data.totalCards > 0 ? Math.round((data.ownedCards / data.totalCards) * 100) : 0;
-
-            if (data.ownedCards > 0) {
-                totalDiscoveredSets++;
-                openedSets.push({ setName, ...data, pct });
-            } else {
-                unopenedSets.push({ setName, ...data, pct: 0 });
+            franchiseMap[franchise][setName].totalCards++;
+            if (qty > 0) {
+                franchiseMap[franchise][setName].ownedCards++;
             }
         });
 
-        // 3. Sort opened sets by completion % (Highest to Lowest), then alphabetically
-        openedSets.sort((a, b) => b.pct - a.pct || a.setName.localeCompare(b.setName));
-        // Sort unopened sets alphabetically
-        unopenedSets.sort((a, b) => a.setName.localeCompare(b.setName));
+        let totalDiscoveredSets = 0;
+        let totalAllSets = 0;
+        let activeFranchisesCount = 0;
 
-        // Combine: opened sets first, unopened sets last
-        const orderedSets = [...openedSets, ...unopenedSets];
+        const sortedFranchises = Object.keys(franchiseMap).sort();
 
-        let setsHtml = '';
-        orderedSets.forEach(setInfo => {
-            const isOpened = setInfo.ownedCards > 0;
-            const isCompleted = isOpened && setInfo.ownedCards >= setInfo.totalCards;
+        sortedFranchises.forEach(franchise => {
+            const setsObj = franchiseMap[franchise];
+            const setNames = Object.keys(setsObj);
             
-            let badgeClass = 'bg-[#fdfbf7] text-neutral-400 border-neutral-300';
-            if (isCompleted) {
-                badgeClass = 'bg-neutral-900 text-[#f4eee1] border-neutral-900';
-            } else if (isOpened) {
-                badgeClass = 'bg-[#f4eee1] text-neutral-900 border-neutral-900';
-            }
+            if (setNames.length === 0) return;
+            activeFranchisesCount++;
 
-            setsHtml += `
-                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0 ${isOpened ? '' : 'opacity-50'}">
-                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setInfo.setName}">
-                        ${setInfo.setName.toUpperCase()}
-                    </span>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${badgeClass}">
-                            ${setInfo.ownedCards}/${setInfo.totalCards} (${isOpened ? setInfo.pct + '%' : '0%'})
+            let openedSets = [];
+            let unopenedSets = [];
+
+            setNames.forEach(setName => {
+                const data = setsObj[setName];
+                totalAllSets++;
+                const pct = data.totalCards > 0 ? Math.round((data.ownedCards / data.totalCards) * 100) : 0;
+
+                if (data.ownedCards > 0) {
+                    totalDiscoveredSets++;
+                    openedSets.push({ setName, ...data, pct });
+                } else {
+                    unopenedSets.push({ setName, ...data, pct: 0 });
+                }
+            });
+
+            openedSets.sort((a, b) => b.pct - a.pct || a.setName.localeCompare(b.setName));
+            unopenedSets.sort((a, b) => a.setName.localeCompare(b.setName));
+
+            const orderedSets = [...openedSets, ...unopenedSets];
+
+            let setsHtml = '';
+            orderedSets.forEach(setInfo => {
+                const isOpened = setInfo.ownedCards > 0;
+                const isCompleted = isOpened && setInfo.ownedCards >= setInfo.totalCards;
+                
+                let badgeClass = 'bg-[#fdfbf7] text-neutral-400 border-neutral-300';
+                if (isCompleted) {
+                    badgeClass = 'bg-neutral-900 text-[#f4eee1] border-neutral-900';
+                } else if (isOpened) {
+                    badgeClass = 'bg-[#f4eee1] text-neutral-900 border-neutral-900';
+                }
+
+                setsHtml += `
+                    <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0 ${isOpened ? '' : 'opacity-50'}">
+                        <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setInfo.setName}">
+                            ${setInfo.setName.toUpperCase()}
                         </span>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${badgeClass}">
+                                ${setInfo.ownedCards}/${setInfo.totalCards} (${isOpened ? setInfo.pct + '%' : '0%'})
+                            </span>
+                        </div>
                     </div>
+                `;
+            });
+
+            const cardEl = document.createElement('div');
+            cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
+            cardEl.innerHTML = `
+                <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
+                    <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
+                    <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${openedSets.length}/${setNames.length} ACTIVE</span>
+                </div>
+                <div class="space-y-1">
+                    ${setsHtml}
                 </div>
             `;
+            container.appendChild(cardEl);
         });
 
-        const cardEl = document.createElement('div');
-        cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
-        cardEl.innerHTML = `
-            <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
-                <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
-                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${openedSets.length}/${setNames.length} ACTIVE</span>
-            </div>
-            <div class="space-y-1">
-                ${setsHtml}
-            </div>
-        `;
-        container.appendChild(cardEl);
-    });
+        if (summaryEl) {
+            summaryEl.textContent = `${totalDiscoveredSets} / ${totalAllSets} SETS DISCOVERED`;
+        }
 
-    if (summaryEl) {
-        summaryEl.textContent = `${totalDiscoveredSets} / ${totalAllSets} SETS DISCOVERED`;
+    } catch (err) {
+        console.error("Registry Render Error:", err);
+        container.innerHTML = `
+            <div class="col-span-full p-4 bg-red-100 border-2 border-red-900 text-red-900 rounded text-xs font-mono">
+                <strong>Error rendering registry:</strong> ${err.message}
+            </div>`;
     }
 }
 
