@@ -524,28 +524,9 @@
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
         <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
         <button class="tab-btn" onclick="switchTab('tracker')">📊 Analytics</button>
-		<button class="tab-btn" onclick="switchTab('overview')">🗞️ Registry</button>
 		
     </div>
 	
-
-<!-- THE NEW SIMULATOR OVERVIEW / REGISTRY TAB -->
-<div id="overview-workspace" class="workspace space-y-4">
-  <!-- Section Header -->
-  <div class="border-b-2 border-neutral-900 pb-2 flex justify-between items-end">
-    <div>
-      <h2 class="text-lg sm:text-xl font-bold tracking-tight uppercase">The Bureau Registry</h2>
-      <p class="text-[10px] sm:text-xs text-neutral-600 font-mono">COLLECTED SETS & DISCOVERED FRANCHISES</p>
-    </div>
-    <span id="overviewStatsSummary" class="handwritten text-sm text-neutral-800">0 SETS DISCOVERED</span>
-  </div>
-
-  <!-- Dynamic Grid for Discovered Sets -->
-  <div id="overviewContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    <!-- Populated dynamically via JS -->
-  </div>
-</div>
-
     <!-- Tab 1: Pack Opener Workspace -->
     <div id="packer-workspace" class="workspace active">
         <div class="section-header-card" style="display:flex; flex-direction:column; align-items:flex-start; gap:0.75rem;">
@@ -581,21 +562,6 @@
         </div>
     </div>
 	
-	<!-- THE NEW SIMULATOR OVERVIEW / REGISTRY WORKSPACE -->
-<div id="overview-workspace" class="workspace">
-  <div class="border-b-2 border-neutral-900 pb-2 flex justify-between items-end mb-4">
-    <div>
-      <h2 class="text-lg sm:text-xl font-bold tracking-tight uppercase">The Registry</h2>
-      <p class="text-[10px] sm:text-xs text-neutral-600 font-mono">COLLECTED SETS & DISCOVERED FRANCHISES</p>
-    </div>
-    <span id="overviewStatsSummary" class="handwritten text-sm text-neutral-800">0 SETS DISCOVERED</span>
-  </div>
-
-  <div id="overviewContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-    <!-- Populated dynamically via JS -->
-  </div>
-</div>
-		
     <script>
     let masterData = [];
     let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
@@ -1513,113 +1479,6 @@ async function syncInventoryFromCloud() {
     } catch (error) {
         console.error("Failed to sync from cloud:", error);
         updateStatus("Sync from cloud failed.");
-    }
-}
-
-function renderSimulatorOverview() {
-    const container = document.getElementById('overviewContainer');
-    const summaryEl = document.getElementById('overviewStatsSummary');
-    if (!container) return;
-    container.innerHTML = '';
-
-    // 1. Grab inventory directly from memory or localStorage
-    const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
-    
-    let franchiseMap = {};
-
-    // 2. Build the map directly from your inventory keys (Franchise__SetName__CardNumber__Variant)
-    Object.keys(currentInventory).forEach(key => {
-        const qty = currentInventory[key] || 0;
-        if (qty <= 0) return;
-
-        const parts = key.split('__');
-        if (parts.length >= 2) {
-            const franchise = parts[0] || 'Unknown';
-            const setName = parts[1] || 'Unknown Set';
-
-            if (!franchiseMap[franchise]) {
-                franchiseMap[franchise] = {};
-            }
-            if (!franchiseMap[franchise][setName]) {
-                franchiseMap[franchise][setName] = { ownedCards: 0, totalCards: 0 };
-            }
-            franchiseMap[franchise][setName].ownedCards++;
-        }
-    });
-
-    // 3. If masterData is loaded, enrich it with total card counts for accurate set sizes
-    if (window.masterData && masterData.length > 0) {
-        masterData.forEach(card => {
-            const franchise = card.Franchise;
-            const setName = card.SetName;
-            if (franchiseMap[franchise] && franchiseMap[franchise][setName]) {
-                franchiseMap[franchise][setName].totalCards++;
-            }
-        });
-    }
-
-    const sortedFranchises = Object.keys(franchiseMap).sort();
-
-    if (sortedFranchises.length === 0) {
-        container.innerHTML = `
-            <div class="col-span-full p-8 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
-                <p class="text-xs font-bold text-neutral-900 mb-1">NO CARDS PULLED YET</p>
-                <p class="text-[10px] text-neutral-600 font-mono">OPEN SOME PACKS TO POPULATE YOUR COLLECTED REGISTRY!</p>
-            </div>`;
-        if (summaryEl) summaryEl.textContent = `0 SETS DISCOVERED`;
-        return;
-    }
-
-    let totalDiscoveredSets = 0;
-
-    sortedFranchises.forEach(franchise => {
-        const setsObj = franchiseMap[franchise];
-        const setNames = Object.keys(setsObj).sort((a, b) => {
-            const dataA = setsObj[a];
-            const dataB = setsObj[b];
-            const pctA = dataA.totalCards > 0 ? (dataA.ownedCards / dataA.totalCards) : 0;
-            const pctB = dataB.totalCards > 0 ? (dataB.ownedCards / dataB.totalCards) : 0;
-            return pctB - pctA || a.localeCompare(b);
-        });
-
-        let setsHtml = '';
-        setNames.forEach(setName => {
-            totalDiscoveredSets++;
-            const data = setsObj[setName];
-            const total = data.totalCards > 0 ? data.totalCards : data.ownedCards;
-            const pct = total > 0 ? Math.round((data.ownedCards / total) * 100) : 100;
-            const isCompleted = data.ownedCards >= total;
-
-            setsHtml += `
-                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0">
-                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setName}">
-                        ${setName.toUpperCase()}
-                    </span>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${isCompleted ? 'bg-neutral-900 text-[#f4eee1] border-neutral-900' : 'bg-[#f4eee1] text-neutral-900 border-neutral-900'}">
-                            ${data.ownedCards}/${total} (${pct}%)
-                        </span>
-                    </div>
-                </div>
-            `;
-        });
-
-        const cardEl = document.createElement('div');
-        cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
-        cardEl.innerHTML = `
-            <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
-                <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
-                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${setNames.length} ACTIVE SETS</span>
-            </div>
-            <div class="space-y-1">
-                ${setsHtml}
-            </div>
-        `;
-        container.appendChild(cardEl);
-    });
-
-    if (summaryEl) {
-        summaryEl.textContent = `${totalDiscoveredSets} SETS DISCOVERED`;
     }
 }
 </script>
