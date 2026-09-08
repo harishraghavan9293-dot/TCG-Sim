@@ -524,8 +524,26 @@
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
         <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
         <button class="tab-btn" onclick="switchTab('tracker')">📊 Analytics</button>
+		<button class="tab-btn" onclick="switchTab('overview')">🗞️ Registry</button>
 		
     </div>
+	
+	<!-- THE NEW SIMULATOR OVERVIEW / REGISTRY TAB -->
+<div id="viewOverview" class="space-y-4" style="display: none;">
+  <!-- Section Header -->
+  <div class="border-b-2 border-neutral-900 pb-2 flex justify-between items-end">
+    <div>
+      <h2 class="text-lg sm:text-xl font-bold tracking-tight uppercase">The Bureau Registry</h2>
+      <p class="text-[10px] sm:text-xs text-neutral-600 font-mono">COLLECTED SETS & DISCOVERED FRANCHISES</p>
+    </div>
+    <span id="overviewStatsSummary" class="handwritten text-sm text-neutral-800">0 SETS DISCOVERED</span>
+  </div>
+
+  <!-- Dynamic Grid for Discovered Sets -->
+  <div id="overviewContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <!-- Populated dynamically via JS -->
+  </div>
+</div>
 
     <!-- Tab 1: Pack Opener Workspace -->
     <div id="packer-workspace" class="workspace active">
@@ -562,6 +580,21 @@
         </div>
     </div>
 	
+	<!-- THE NEW SIMULATOR OVERVIEW / REGISTRY WORKSPACE -->
+<div id="overview-workspace" class="workspace" style="display: none;">
+  <div class="border-b-2 border-neutral-900 pb-2 flex justify-between items-end mb-4">
+    <div>
+      <h2 class="text-lg sm:text-xl font-bold tracking-tight uppercase">The Bureau Registry</h2>
+      <p class="text-[10px] sm:text-xs text-neutral-600 font-mono">COLLECTED SETS & DISCOVERED FRANCHISES</p>
+    </div>
+    <span id="overviewStatsSummary" class="handwritten text-sm text-neutral-800">0 SETS DISCOVERED</span>
+  </div>
+
+  <div id="overviewContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <!-- Populated dynamically via JS -->
+  </div>
+</div>
+		
     <script>
     let masterData = [];
     let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
@@ -707,7 +740,7 @@
         } else if (tabId === 'overview') {
             document.getElementById('overview-workspace').classList.add('active');
             event.target.classList.add('active');
-            renderGlobalOverview();
+            renderSimulatorOverview();
         }
     }
 
@@ -1479,6 +1512,101 @@ async function syncInventoryFromCloud() {
     } catch (error) {
         console.error("Failed to sync from cloud:", error);
         updateStatus("Sync from cloud failed.");
+    }
+}
+
+function renderSimulatorOverview() {
+    const container = document.getElementById('overviewContainer');
+    const summaryEl = document.getElementById('overviewStatsSummary');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (!window.masterData || masterData.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full p-6 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
+                <p class="text-xs font-bold text-neutral-900">MASTER DATA NOT LOADED YET</p>
+            </div>`;
+        return;
+    }
+
+    // 1. Group master cards by Franchise and SetName, checking if they exist in 'inventory'
+    let franchiseMap = {};
+    
+    masterData.forEach(card => {
+        const franchise = card.Franchise || 'Unknown';
+        const setName = card.SetName || 'Unknown Set';
+        const key = typeof getCardKey === 'function' ? getCardKey(card) : `${franchise}_${setName}_${card.CardNumber || card.CardID}`;
+        const qty = inventory[key] || 0;
+
+        if (!franchiseMap[franchise]) {
+            franchiseMap[franchise] = {};
+        }
+        if (!franchiseMap[franchise][setName]) {
+            franchiseMap[franchise][setName] = { totalCards: 0, ownedCards: 0 };
+        }
+
+        franchiseMap[franchise][setName].totalCards++;
+        if (qty > 0) {
+            franchiseMap[franchise][setName].ownedCards++;
+        }
+    });
+
+    // 2. Filter to ONLY sets where at least 1 card has been pulled (ownedCards > 0)
+    let activeFranchisesCount = 0;
+    let totalStartedSets = 0;
+
+    Object.keys(franchiseMap).sort().forEach(franchise => {
+        const setsObj = franchiseMap[franchise];
+        const startedSetsInFranchise = Object.keys(setsObj).filter(setName => setsObj[setName].ownedCards > 0);
+
+        if (startedSetsInFranchise.length === 0) return; // Skip franchises with zero pulled cards
+
+        activeFranchisesCount++;
+        let setsHtml = '';
+
+        startedSetsInFranchise.sort().forEach(setName => {
+            totalStartedSets++;
+            const data = setsObj[setName];
+            const isCompleted = data.ownedCards >= data.totalCards;
+            const pct = Math.round((data.ownedCards / data.totalCards) * 100);
+
+            setsHtml += `
+                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0">
+                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setName}">${setName.toUpperCase()}</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-mono px-1.5 py-0.5 border border-neutral-900 rounded ${isCompleted ? 'bg-neutral-900 text-[#f4eee1]' : 'bg-[#f4eee1] text-neutral-900'}">
+                            ${data.ownedCards}/${data.totalCards} (${pct}%)
+                        </span>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Create the franchise card block
+        const card = document.createElement('div');
+        card.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
+        card.innerHTML = `
+            <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
+                <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
+                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${startedSetsInFranchise.length} SETS STARTED</span>
+            </div>
+            <div class="space-y-1">
+                ${setsHtml}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (totalStartedSets === 0) {
+        container.innerHTML = `
+            <div class="col-span-full p-8 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
+                <p class="text-xs font-bold text-neutral-900 mb-1">NO CARDS PULLED YET</p>
+                <p class="text-[10px] text-neutral-600 font-mono">OPEN SOME PACKS TO POPULATE YOUR COLLECTED REGISTRY!</p>
+            </div>`;
+    }
+
+    if (summaryEl) {
+        summaryEl.textContent = `${totalStartedSets} SETS ACROSS ${activeFranchisesCount} FRANCHISES`;
     }
 }
 
