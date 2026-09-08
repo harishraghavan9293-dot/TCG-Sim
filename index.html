@@ -1521,126 +1521,101 @@ function renderSimulatorOverview() {
     if (!container) return;
     container.innerHTML = '';
 
-    try {
-        if (!window.masterData || masterData.length === 0) {
-            container.innerHTML = `
-                <div class="col-span-full p-6 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
-                    <p class="text-xs font-bold text-neutral-900">MASTER DATA NOT LOADED YET</p>
-                </div>`;
-            return;
-        }
+    // 1. Grab inventory directly from memory or localStorage
+    const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
+    
+    let franchiseMap = {};
+    let totalDiscoveredSets = 0;
 
-        const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
+    // 2. Build the map directly from your inventory keys (Franchise__SetName__CardNumber__Variant)
+    Object.keys(currentInventory).forEach(key => {
+        const qty = currentInventory[key] || 0;
+        if (qty <= 0) return;
 
-        let franchiseMap = {};
-        
-        masterData.forEach(card => {
-            const franchise = card.Franchise || 'Unknown';
-            const setName = card.SetName || 'Unknown Set';
-            
-            const key = typeof getCardKey === 'function' 
-                ? getCardKey(card) 
-                : `${franchise}__${setName}__${card.CardNumber || card.CardID || ''}__${card.Variant || 'Normal'}`;
-            
-            const qty = currentInventory[key] || 0;
+        const parts = key.split('__');
+        if (parts.length >= 2) {
+            const franchise = parts[0] || 'Unknown';
+            const setName = parts[1] || 'Unknown Set';
 
             if (!franchiseMap[franchise]) {
                 franchiseMap[franchise] = {};
             }
             if (!franchiseMap[franchise][setName]) {
-                franchiseMap[franchise][setName] = { totalCards: 0, ownedCards: 0 };
+                franchiseMap[franchise][setName] = { ownedCards: 0, totalCards: 0 };
             }
+            franchiseMap[franchise][setName].ownedCards++;
+        }
+    });
 
-            franchiseMap[franchise][setName].totalCards++;
-            if (qty > 0) {
-                franchiseMap[franchise][setName].ownedCards++;
+    // 3. Enrich total card counts from masterData if available
+    if (window.masterData && masterData.length > 0) {
+        masterData.forEach(card => {
+            const franchise = card.Franchise;
+            const setName = card.SetName;
+            if (franchiseMap[franchise] && franchiseMap[franchise][setName]) {
+                franchiseMap[franchise][setName].totalCards++;
             }
         });
+    }
 
-        let totalDiscoveredSets = 0;
-        let totalAllSets = 0;
-        let activeFranchisesCount = 0;
+    const sortedFranchises = Object.keys(franchiseMap).sort();
 
-        const sortedFranchises = Object.keys(franchiseMap).sort();
+    if (sortedFranchises.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full p-8 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
+                <p class="text-xs font-bold text-neutral-900 mb-1">NO CARDS PULLED YET</p>
+                <p class="text-[10px] text-neutral-600 font-mono">OPEN SOME PACKS TO POPULATE YOUR COLLECTED REGISTRY!</p>
+            </div>`;
+        if (summaryEl) summaryEl.textContent = `0 SETS DISCOVERED`;
+        return;
+    }
 
-        sortedFranchises.forEach(franchise => {
-            const setsObj = franchiseMap[franchise];
-            const setNames = Object.keys(setsObj);
-            
-            if (setNames.length === 0) return;
-            activeFranchisesCount++;
+    sortedFranchises.forEach(franchise => {
+        const setsObj = franchiseMap[franchise];
+        const setNames = Object.keys(setsObj).sort((a, b) => {
+            const pctA = setsObj[a].totalCards > 0 ? (setsObj[a].ownedCards / setsObj[a].totalCards) : 0;
+            const pctB = setsObj[b].totalCards > 0 ? (setsObj[b].ownedCards / setsObj[b].totalCards) : 0;
+            return pctB - pctA || a.localeCompare(b);
+        });
 
-            let openedSets = [];
-            let unopenedSets = [];
+        let setsHtml = '';
+        setNames.forEach(setName => {
+            totalDiscoveredSets++;
+            const data = setsObj[setName];
+            const total = data.totalCards > 0 ? data.totalCards : data.ownedCards;
+            const pct = Math.round((data.ownedCards / total) * 100);
+            const isCompleted = data.ownedCards >= total;
 
-            setNames.forEach(setName => {
-                const data = setsObj[setName];
-                totalAllSets++;
-                const pct = data.totalCards > 0 ? Math.round((data.ownedCards / data.totalCards) * 100) : 0;
-
-                if (data.ownedCards > 0) {
-                    totalDiscoveredSets++;
-                    openedSets.push({ setName, ...data, pct });
-                } else {
-                    unopenedSets.push({ setName, ...data, pct: 0 });
-                }
-            });
-
-            openedSets.sort((a, b) => b.pct - a.pct || a.setName.localeCompare(b.setName));
-            unopenedSets.sort((a, b) => a.setName.localeCompare(b.setName));
-
-            const orderedSets = [...openedSets, ...unopenedSets];
-
-            let setsHtml = '';
-            orderedSets.forEach(setInfo => {
-                const isOpened = setInfo.ownedCards > 0;
-                const isCompleted = isOpened && setInfo.ownedCards >= setInfo.totalCards;
-                
-                let badgeClass = 'bg-[#fdfbf7] text-neutral-400 border-neutral-300';
-                if (isCompleted) {
-                    badgeClass = 'bg-neutral-900 text-[#f4eee1] border-neutral-900';
-                } else if (isOpened) {
-                    badgeClass = 'bg-[#f4eee1] text-neutral-900 border-neutral-900';
-                }
-
-                setsHtml += `
-                    <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0 ${isOpened ? '' : 'opacity-50'}">
-                        <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setInfo.setName}">
-                            ${setInfo.setName.toUpperCase()}
+            setsHtml += `
+                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0">
+                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setName}">
+                        ${setName.toUpperCase()}
+                    </span>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${isCompleted ? 'bg-neutral-900 text-[#f4eee1] border-neutral-900' : 'bg-[#f4eee1] text-neutral-900 border-neutral-900'}">
+                            ${data.ownedCards}/${total} (${pct}%)
                         </span>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${badgeClass}">
-                                ${setInfo.ownedCards}/${setInfo.totalCards} (${isOpened ? setInfo.pct + '%' : '0%'})
-                            </span>
-                        </div>
                     </div>
-                `;
-            });
-
-            const cardEl = document.createElement('div');
-            cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
-            cardEl.innerHTML = `
-                <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
-                    <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
-                    <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${openedSets.length}/${setNames.length} ACTIVE</span>
-                </div>
-                <div class="space-y-1">
-                    ${setsHtml}
                 </div>
             `;
-            container.appendChild(cardEl);
         });
 
-        if (summaryEl) {
-            summaryEl.textContent = `${totalDiscoveredSets} / ${totalAllSets} SETS DISCOVERED`;
-        }
+        const cardEl = document.createElement('div');
+        cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
+        cardEl.innerHTML = `
+            <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
+                <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
+                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${setNames.length} ACTIVE SETS</span>
+            </div>
+            <div class="space-y-1">
+                ${setsHtml}
+            </div>
+        `;
+        container.appendChild(cardEl);
+    });
 
-    } catch (err) {
-        console.error("Registry Render Error:", err);
-        container.innerHTML = `
-            <div class="col-span-full p-4 bg-red-100 border-2 border-red-900 text-red-900 rounded text-xs font-mono">
-                <strong>Error rendering registry:</strong> ${err.message}
-            </div>`;
+    if (summaryEl) {
+        summaryEl.textContent = `${totalDiscoveredSets} SETS DISCOVERED`;
     }
 }
 
