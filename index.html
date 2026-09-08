@@ -1529,14 +1529,19 @@ function renderSimulatorOverview() {
         return;
     }
 
-    // 1. Group master cards by Franchise and SetName, checking if they exist in 'inventory'
+    // Safely grab inventory from global or fallback straight to localStorage
+    const activeInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory')) || {};
+
+    // 1. Group master cards by Franchise and SetName using your exact getCardKey
     let franchiseMap = {};
     
     masterData.forEach(card => {
         const franchise = card.Franchise || 'Unknown';
         const setName = card.SetName || 'Unknown Set';
-        const key = typeof getCardKey === 'function' ? getCardKey(card) : `${franchise}_${setName}_${card.CardNumber || card.CardID}`;
-        const qty = inventory[key] || 0;
+        
+        // Uses your exact app helper function
+        const key = getCardKey(card);
+        const qty = activeInventory[key] || 0;
 
         if (!franchiseMap[franchise]) {
             franchiseMap[franchise] = {};
@@ -1559,7 +1564,7 @@ function renderSimulatorOverview() {
         const setsObj = franchiseMap[franchise];
         const startedSetsInFranchise = Object.keys(setsObj).filter(setName => setsObj[setName].ownedCards > 0);
 
-        if (startedSetsInFranchise.length === 0) return; // Skip franchises with zero pulled cards
+        if (startedSetsInFranchise.length === 0) return; // Skip untouched franchises
 
         activeFranchisesCount++;
         let setsHtml = '';
@@ -1583,9 +1588,9 @@ function renderSimulatorOverview() {
         });
 
         // Create the franchise card block
-        const card = document.createElement('div');
-        card.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
-        card.innerHTML = `
+        const cardEl = document.createElement('div');
+        cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
+        cardEl.innerHTML = `
             <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
                 <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
                 <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${startedSetsInFranchise.length} SETS STARTED</span>
@@ -1594,7 +1599,7 @@ function renderSimulatorOverview() {
                 ${setsHtml}
             </div>
         `;
-        container.appendChild(card);
+        container.appendChild(cardEl);
     });
 
     if (totalStartedSets === 0) {
