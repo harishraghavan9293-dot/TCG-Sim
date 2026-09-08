@@ -1529,19 +1529,20 @@ function renderSimulatorOverview() {
         return;
     }
 
-    // Safely grab inventory from global or fallback straight to localStorage
-    const activeInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory')) || {};
+    const currentInventory = window.inventory || JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
 
-    // 1. Group master cards by Franchise and SetName using your exact getCardKey
+    // 1. Group all master cards by Franchise and SetName
     let franchiseMap = {};
     
     masterData.forEach(card => {
         const franchise = card.Franchise || 'Unknown';
         const setName = card.SetName || 'Unknown Set';
         
-        // Uses your exact app helper function
-        const key = getCardKey(card);
-        const qty = activeInventory[key] || 0;
+        const key = typeof getCardKey === 'function' 
+            ? getCardKey(card) 
+            : `${franchise}__${setName}__${card.CardNumber || card.CardID || ''}__${card.Variant || 'Normal'}`;
+        
+        const qty = currentInventory[key] || 0;
 
         if (!franchiseMap[franchise]) {
             franchiseMap[franchise] = {};
@@ -1556,44 +1557,76 @@ function renderSimulatorOverview() {
         }
     });
 
-    // 2. Filter to ONLY sets where at least 1 card has been pulled (ownedCards > 0)
+    let totalDiscoveredSets = 0;
+    let totalAllSets = 0;
     let activeFranchisesCount = 0;
-    let totalStartedSets = 0;
 
-    Object.keys(franchiseMap).sort().forEach(franchise => {
+    // 2. Sort franchises A to Z
+    const sortedFranchises = Object.keys(franchiseMap).sort();
+
+    sortedFranchises.forEach(franchise => {
         const setsObj = franchiseMap[franchise];
-        const startedSetsInFranchise = Object.keys(setsObj).filter(setName => setsObj[setName].ownedCards > 0);
-
-        if (startedSetsInFranchise.length === 0) return; // Skip untouched franchises
-
+        const setNames = Object.keys(setsObj);
+        
+        if (setNames.length === 0) return;
         activeFranchisesCount++;
-        let setsHtml = '';
 
-        startedSetsInFranchise.sort().forEach(setName => {
-            totalStartedSets++;
+        let openedSets = [];
+        let unopenedSets = [];
+
+        setNames.forEach(setName => {
             const data = setsObj[setName];
-            const isCompleted = data.ownedCards >= data.totalCards;
-            const pct = Math.round((data.ownedCards / data.totalCards) * 100);
+            totalAllSets++;
+            const pct = data.totalCards > 0 ? Math.round((data.ownedCards / data.totalCards) * 100) : 0;
+
+            if (data.ownedCards > 0) {
+                totalDiscoveredSets++;
+                openedSets.push({ setName, ...data, pct });
+            } else {
+                unopenedSets.push({ setName, ...data, pct: 0 });
+            }
+        });
+
+        // 3. Sort opened sets by completion % (Highest to Lowest), then alphabetically
+        openedSets.sort((a, b) => b.pct - a.pct || a.setName.localeCompare(b.setName));
+        // Sort unopened sets alphabetically
+        unopenedSets.sort((a, b) => a.setName.localeCompare(b.setName));
+
+        // Combine: opened sets first, unopened sets last
+        const orderedSets = [...openedSets, ...unopenedSets];
+
+        let setsHtml = '';
+        orderedSets.forEach(setInfo => {
+            const isOpened = setInfo.ownedCards > 0;
+            const isCompleted = isOpened && setInfo.ownedCards >= setInfo.totalCards;
+            
+            let badgeClass = 'bg-[#fdfbf7] text-neutral-400 border-neutral-300';
+            if (isCompleted) {
+                badgeClass = 'bg-neutral-900 text-[#f4eee1] border-neutral-900';
+            } else if (isOpened) {
+                badgeClass = 'bg-[#f4eee1] text-neutral-900 border-neutral-900';
+            }
 
             setsHtml += `
-                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0">
-                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setName}">${setName.toUpperCase()}</span>
+                <div class="flex justify-between items-center text-xs py-1.5 border-b border-dashed border-neutral-300 last:border-b-0 ${isOpened ? '' : 'opacity-50'}">
+                    <span class="handwritten text-sm text-neutral-800 truncate max-w-[160px]" title="${setInfo.setName}">
+                        ${setInfo.setName.toUpperCase()}
+                    </span>
                     <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-mono px-1.5 py-0.5 border border-neutral-900 rounded ${isCompleted ? 'bg-neutral-900 text-[#f4eee1]' : 'bg-[#f4eee1] text-neutral-900'}">
-                            ${data.ownedCards}/${data.totalCards} (${pct}%)
+                        <span class="text-[10px] font-mono px-1.5 py-0.5 border rounded ${badgeClass}">
+                            ${setInfo.ownedCards}/${setInfo.totalCards} (${isOpened ? setInfo.pct + '%' : '0%'})
                         </span>
                     </div>
                 </div>
             `;
         });
 
-        // Create the franchise card block
         const cardEl = document.createElement('div');
         cardEl.className = 'p-3.5 bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)] space-y-2';
         cardEl.innerHTML = `
             <div class="flex justify-between items-center border-b-2 border-neutral-900 pb-1.5">
                 <span class="font-bold text-xs uppercase tracking-wide text-neutral-900">${franchise}</span>
-                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${startedSetsInFranchise.length} SETS STARTED</span>
+                <span class="text-[10px] font-mono font-bold bg-neutral-200 px-1.5 py-0.5 border border-neutral-900 rounded">${openedSets.length}/${setNames.length} ACTIVE</span>
             </div>
             <div class="space-y-1">
                 ${setsHtml}
@@ -1602,16 +1635,8 @@ function renderSimulatorOverview() {
         container.appendChild(cardEl);
     });
 
-    if (totalStartedSets === 0) {
-        container.innerHTML = `
-            <div class="col-span-full p-8 text-center bg-[#fdfbf7] border-2 border-neutral-900 rounded shadow-[2px_2px_0px_0px_rgba(26,26,26,0.9)]">
-                <p class="text-xs font-bold text-neutral-900 mb-1">NO CARDS PULLED YET</p>
-                <p class="text-[10px] text-neutral-600 font-mono">OPEN SOME PACKS TO POPULATE YOUR COLLECTED REGISTRY!</p>
-            </div>`;
-    }
-
     if (summaryEl) {
-        summaryEl.textContent = `${totalStartedSets} SETS ACROSS ${activeFranchisesCount} FRANCHISES`;
+        summaryEl.textContent = `${totalDiscoveredSets} / ${totalAllSets} SETS DISCOVERED`;
     }
 }
 
