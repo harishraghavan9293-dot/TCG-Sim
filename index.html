@@ -1387,22 +1387,19 @@ function verifyPassword() {
 
 // 1. EXPORT / PUSH: Sends ONLY the cards that changed or were added in this session (with token)
 async function exportSetCSV() {
-    // Find cards where quantity is greater than zero AND has changed since last sync
-    const sessionChanges = masterData.filter(card => {
+    // Filter for ALL cards currently owned (quantity > 0), ensuring full history sync
+    const fullInventoryCards = masterData.filter(card => {
         const key = getCardKey(card);
         const currentQty = inventory[key] || 0;
-        const lastSyncedQty = lastSyncedInventory[key] || 0;
-        
-        // Export if it's newly owned or quantity increased this session
-        return currentQty > lastSyncedQty;
+        return currentQty > 0;
     });
 
-    if (sessionChanges.length === 0) {
-        alert("No new changes or pack openings to export since your last sync.");
+    if (fullInventoryCards.length === 0) {
+        alert("No cards in inventory to export.");
         return;
     }
 
-    const payloadCards = sessionChanges.map(card => {
+    const payloadCards = fullInventoryCards.map(card => {
         const key = getCardKey(card);
         return {
             Franchise: card.Franchise || '',
@@ -1422,7 +1419,7 @@ async function exportSetCSV() {
     };
 
     try {
-        updateStatus("Syncing session changes to Google Sheet...");
+        updateStatus("Syncing full inventory to Google Sheet...");
         await fetch(SCRIPT_URL, {
             method: "POST",
             mode: "no-cors",
@@ -1434,7 +1431,7 @@ async function exportSetCSV() {
         lastSyncedInventory = JSON.parse(JSON.stringify(inventory));
         localStorage.setItem('tcg_last_synced_inventory', JSON.stringify(lastSyncedInventory));
         
-        updateStatus("Session changes successfully synced to Google Sheet!");
+        updateStatus("Full inventory successfully synced to Google Sheet!");
     } catch (error) {
         console.error("Cloud sync failed:", error);
         updateStatus("Google Sheet sync failed.");
