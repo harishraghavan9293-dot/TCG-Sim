@@ -504,12 +504,13 @@
                 <option value="">Choose Franchise</option>
             </select>
         </div>
-        <div class="config-group">
-            <label for="SetName-select">Set:</label>
-            <select id="SetName-select" onchange="handleSetChange()">
-                <option value="">Choose Set</option>
-            </select>
-        </div>
+        <div class="config-group" style="position: relative;">
+    <label for="SetName-input">Set:</label>
+    <div style="position: relative; display: inline-block;">
+        <input type="text" id="SetName-input" placeholder="Type or choose set..." oninput="filterSets()" onfocus="showSetDropdown()" autocomplete="off" style="padding: 0.55rem 1rem; border: 2px solid var(--border-binder); border-radius: 8px; font-size: 0.95rem; background: #fffdf9; color: var(--text-main); outline: none; width: 220px;">
+        <div id="set-dropdown-list" style="display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: 200px; overflow-y: auto; background: #fffdf9; border: 2px solid var(--border-binder); border-top: none; border-radius: 0 0 8px 8px; z-index: 1000; box-shadow: 0 4px 12px rgba(42, 27, 18, 0.15);"></div>
+    </div>
+</div>
         <button onclick="refreshMasterData()">🔄 Sync Database</button>
         <span id="status-badge">Ready</span>
     </div>
@@ -565,6 +566,7 @@
     <script>
     let masterData = [];
     let inventory = JSON.parse(localStorage.getItem('tcg_local_inventory') || '{}');
+	let selectedSetName = ""; // Tracks the currently active searchable set
 
     // IndexedDB Local Caching Framework
     const dbName = "TCGFieldJournalDB";
@@ -669,25 +671,85 @@
     }
 
     function handleFranchiseChange() {
-        const selectedFranchise = document.getElementById('Franchise-select').value;
-        const setSelect = document.getElementById('SetName-select');
-        
-        setSelect.innerHTML = '<option value="">-- Choose Set --</option>';
-        if (!selectedFranchise) return;
+    const selectedFranchise = document.getElementById('Franchise-select').value;
+    const setInput = document.getElementById('SetName-input');
+    
+    if (setInput) setInput.value = "";
+    selectedSetName = "";
+    hideSetDropdown();
+    
+    if (!selectedFranchise) return;
+    renderBinder();
+    renderTracker();
+}
 
-        const sets = [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
-        sets.forEach(s => {
-            const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s;
-            setSelect.appendChild(opt);
-        });
+    function getAvailableSets() {
+    const selectedFranchise = document.getElementById('Franchise-select').value;
+    if (!selectedFranchise) {
+        return [...new Set(masterData.map(i => i.SetName))].filter(Boolean);
     }
+    return [...new Set(masterData.filter(i => i.Franchise === selectedFranchise).map(i => i.SetName))].filter(Boolean);
+}
 
-    function handleSetChange() {
-        renderBinder();
-        renderTracker();
+function showSetDropdown() {
+    const dropdown = document.getElementById('set-dropdown-list');
+    const inputEl = document.getElementById('SetName-input');
+    if (!dropdown || !inputEl) return;
+    
+    const query = inputEl.value.toLowerCase();
+    const sets = getAvailableSets();
+    const filtered = sets.filter(s => s.toLowerCase().includes(query));
+    
+    if (filtered.length === 0) {
+        dropdown.style.display = 'none';
+        return;
     }
+    
+    dropdown.innerHTML = '';
+    filtered.forEach(s => {
+        const item = document.createElement('div');
+        item.textContent = s;
+        item.style.padding = '8px 12px';
+        item.style.cursor = 'pointer';
+        item.style.borderBottom = '1px solid #f0e6d2';
+        item.onmouseover = () => item.style.background = 'rgba(197, 155, 39, 0.1)';
+        item.onmouseout = () => item.style.background = 'transparent';
+        item.onmousedown = (e) => {
+            e.preventDefault(); // Prevents input blur before selection triggers
+            selectSet(s);
+        };
+        dropdown.appendChild(item);
+    });
+    
+    dropdown.style.display = 'block';
+}
+
+function hideSetDropdown() {
+    setTimeout(() => {
+        const dropdown = document.getElementById('set-dropdown-list');
+        if (dropdown) dropdown.style.display = 'none';
+    }, 200);
+}
+
+function filterSets() {
+    showSetDropdown();
+}
+
+function selectSet(setName) {
+    const inputEl = document.getElementById('SetName-input');
+    if (inputEl) inputEl.value = setName;
+    selectedSetName = setName;
+    hideSetDropdown();
+    renderBinder();
+    renderTracker();
+}
+
+// Global click listener to close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('#SetName-input') && !e.target.closest('#set-dropdown-list')) {
+        hideSetDropdown();
+    }
+});
 
     function switchTab(tabId) {
         document.querySelectorAll('.workspace').forEach(w => w.classList.remove('active'));
@@ -1166,7 +1228,7 @@
     function openPack() {
     // Assuming your UI has a franchise selector alongside your set name selector
     const selectedFranchise = document.getElementById('Franchise-select').value;
-    const selectedSet = document.getElementById('SetName-select').value;
+    const selectedSet = selectedSetName;
     const stage = document.getElementById('pack-stage');
     
     if (!selectedFranchise || !selectedSet) {
@@ -1241,7 +1303,7 @@
 }
 
     function renderBinder() {
-        const selectedSet = document.getElementById('SetName-select').value;
+        const selectedSet = selectedSetName;
         const grid = document.getElementById('binder-grid');
         grid.innerHTML = '';
 
@@ -1267,7 +1329,7 @@
     }
 
     function renderTracker() {
-        const selectedSet = document.getElementById('SetName-select').value;
+        const selectedSet = selectedSetName;
         const statsContainer = document.getElementById('tracker-stats');
         const breakdownContainer = document.getElementById('breakdown-details');
         
