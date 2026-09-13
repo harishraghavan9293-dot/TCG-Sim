@@ -525,6 +525,7 @@
         <button class="tab-btn active" onclick="switchTab('packer')">📦 Pack Opener</button>
         <button class="tab-btn" onclick="switchTab('binder')">📖 Journal</button>
         <button class="tab-btn" onclick="switchTab('tracker')">📊 Analytics</button>
+		<button class="tab-btn" onclick="switchTab('favorites')">⭐ Favorites</button>
 		
     </div>
 	
@@ -562,6 +563,30 @@
             <div id="breakdown-details" style="display: flex; flex-direction: column; gap: 1rem;"></div>
         </div>
     </div>
+	<div id="favorites-workspace" class="workspace">
+    <h2>Hall of Fame</h2>
+    
+    <!-- Stats / Showcase Counter -->
+    <div id="favorites-stats" style="margin-bottom: 1.5rem;">
+        <div class="stat-card">
+            <h4>Total Favorites</h4>
+            <p id="favorites-count-display">0 Cards</p>
+        </div>
+    </div>
+
+    <!-- Franchise Filter Dropdown -->
+    <div style="margin-bottom: 1.5rem;">
+        <label for="favorites-franchise-filter" style="font-weight: bold; margin-right: 0.5rem;">Filter Franchise:</label>
+        <select id="favorites-franchise-filter" onchange="renderFavorites()" style="padding: 6px 12px; border-radius: 4px; border: 1px solid #dcd6c8;">
+            <option value="">All Franchises</option>
+        </select>
+    </div>
+
+    <!-- Display Shelf Grid -->
+    <div id="favorites-grid" class="binder-grid">
+        <!-- Favorited cards will render here -->
+    </div>
+</div>
 	
     <script>
     let masterData = [];
@@ -766,6 +791,10 @@ document.addEventListener('click', (e) => {
             document.getElementById('tracker-workspace').classList.add('active');
             event.target.classList.add('active');
             renderTracker();
+        } else if (tabId === 'favorites') {
+        document.getElementById('favorites-workspace').classList.add('active');
+        event.target.classList.add('active');
+        renderFavorites();
         }
     }
 
@@ -1196,34 +1225,48 @@ document.addEventListener('click', (e) => {
         return 'common';
     }
 
-    function createCardSlotElement(card, isOwned = true, isNew = false) {
-        const isSpecialVariant = card.Variant === "Variant";
-        const slot = document.createElement('div');
-        slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
-        
-        let badgesHtml = '';
-        if (isSpecialVariant && isOwned) {
-            badgesHtml += `<div class="special-badge">Variant</div>`;
-        }
-        if (isNew) {
-            badgesHtml += `<div class="special-badge" style="background: linear-gradient(135deg, #27ae60, #1e8449); left: 8px; right: auto;">New!</div>`;
-        }
-
-        if (isOwned) {
-            slot.innerHTML = `
-                <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
-                ${badgesHtml}
-            `;
-        } else {
-            slot.innerHTML = `
-                <div class="unowned-number-slot">
-                    <span>#${card.CardNumber || '??'}</span>
-                </div>
-            `;
-        }
-
-        return slot;
+    function createCardSlotElement(card, isOwned = true, isNew = false, showHeart = false) {
+    const isSpecialVariant = card.Variant === "Variant";
+    const slot = document.createElement('div');
+    slot.className = `card-slot ${isOwned ? '' : 'unowned'} ${isSpecialVariant ? 'special-variant' : ''}`;
+    
+    let badgesHtml = '';
+    if (isSpecialVariant && isOwned) {
+        badgesHtml += `<div class="special-badge">V</div>`;
     }
+    if (isNew) {
+        badgesHtml += `<div class="special-badge" style="background: linear-gradient(135deg, #27ae60, #1e8449); left: 8px; right: auto;">N!</div>`;
+    }
+
+    let heartHtml = '';
+    if (showHeart) {
+        const key = getCardKey(card);
+        const isFav = favoritesInventory[key] ? '❤️' : '🤍';
+        heartHtml = `
+            <button onclick="toggleFavorite(${JSON.stringify(card).replace(/"/g, '&quot;')}, event)" 
+                style="position: absolute; top: 6px; right: 6px; background: rgba(255,255,255,0.85); border: none; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; z-index: 5;"
+                title="Toggle Favorite">
+                ${isFav}
+            </button>`;
+    }
+
+    if (isOwned) {
+        slot.innerHTML = `
+            <img src="${card.ImageURL || ''}" alt="Card" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'140\'><rect width=\'100%\' height=\'100%\' fill=\'#e2d9c8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'11\' font-family=\'serif\' fill=\'#725a41\'>No Image</text></svg>'">
+            ${badgesHtml}
+            ${heartHtml}
+        `;
+    } else {
+        slot.innerHTML = `
+            <div class="unowned-number-slot">
+                <span>#${card.CardNumber || '??'}</span>
+            </div>
+            ${heartHtml}
+        `;
+    }
+
+    return slot;
+}
 
     function openPack() {
     // Assuming your UI has a franchise selector alongside your set name selector
@@ -1535,6 +1578,77 @@ async function syncInventoryFromCloud() {
         console.error("Failed to sync from cloud:", error);
         updateStatus("Sync from cloud failed.");
     }
+}
+let favoritesInventory = JSON.parse(localStorage.getItem('tcg_favorites_inventory') || '{}');
+
+// 1. Toggle Favorite status from the Journal tab
+function toggleFavorite(card, event) {
+    if (event) event.stopPropagation();
+    const key = getCardKey(card);
+    
+    if (favoritesInventory[key]) {
+        delete favoritesInventory[key];
+    } else {
+        favoritesInventory[key] = true;
+    }
+    
+    localStorage.setItem('tcg_favorites_inventory', JSON.stringify(favoritesInventory));
+    
+    // Re-render views if active
+    if (typeof renderBinder === 'function') renderBinder();
+    if (typeof renderFavorites === 'function') renderFavorites();
+}
+function populateFavoritesFilter() {
+    const filterSelect = document.getElementById('favorites-franchise-filter');
+    if (!filterSelect) return;
+    
+    // Get unique franchises from favorited items
+    const favoritedCards = masterData.filter(card => favoritesInventory[getCardKey(card)]);
+    const franchises = [...new Set(favoritedCards.map(i => i.Franchise))].filter(Boolean);
+    
+    const currentSelection = filterSelect.value;
+    filterSelect.innerHTML = '<option value="">All Franchises</option>';
+    
+    franchises.forEach(f => {
+        const opt = document.createElement('option');
+        opt.value = f;
+        opt.textContent = f;
+        filterSelect.appendChild(opt);
+    });
+    
+    filterSelect.value = franchises.includes(currentSelection) ? currentSelection : "";
+}
+function renderFavorites() {
+    populateFavoritesFilter();
+    
+    const grid = document.getElementById('favorites-grid');
+    const countDisplay = document.getElementById('favorites-count-display');
+    const selectedFranchiseFilter = document.getElementById('favorites-franchise-filter')?.value || '';
+    
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    // Filter masterData for cards that are favorited
+    let favoritedCards = masterData.filter(card => favoritesInventory[getCardKey(card)]);
+    
+    if (selectedFranchiseFilter) {
+        favoritedCards = favoritedCards.filter(card => card.Franchise === selectedFranchiseFilter);
+    }
+
+    if (countDisplay) {
+        countDisplay.textContent = `${favoritedCards.length} Favorited Cards`;
+    }
+
+    if (favoritedCards.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 4rem; font-family:\'Caveat\', cursive; font-size:1.5rem; color: #8a735c;">No favorite cards found. Heart cards in your Journal tab to showcase them here!</div>';
+        return;
+    }
+
+    // Optional: Group or display directly in the grid with hearts enabled (showHeart = true)
+    favoritedCards.forEach(card => {
+        const slot = createCardSlotElement(card, true, false, true);
+        grid.appendChild(slot);
+    });
 }
 </script>
 </body>
