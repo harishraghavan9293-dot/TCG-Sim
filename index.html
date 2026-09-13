@@ -480,9 +480,23 @@
 /* Favorites Workspace Layout */
 #favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem 0;
+}
+
+/* Tablet layout (3 cards per row) */
+@media (min-width: 600px) {
+    #favorites-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Laptop / Desktop layout (5 cards per row) */
+@media (min-width: 1024px) {
+    #favorites-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 /* Ensure card slots maintain proper TCG card proportions in the grid */
