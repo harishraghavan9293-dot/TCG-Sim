@@ -1364,7 +1364,7 @@ document.addEventListener('click', (e) => {
             const isOwned = (inventory[key] || 0) > 0;
             if (isOwned) ownedCount++;
 
-            const slot = createCardSlotElement(card, isOwned, false);
+            const slot = createCardSlotElement(card, isOwned, false, true);
             grid.appendChild(slot);
         });
 
